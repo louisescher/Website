@@ -43,6 +43,12 @@ $(document).ready(() => {
         sec.classList.toggle('active');
         setTimeout(function() {
             homeScroll()
+            document.getElementById('home-nav').classList.add('black');
+            document.getElementById('about-nav').classList.remove('black');
+            document.getElementById('skills-nav').classList.remove('black');
+            document.getElementById('tools-nav').classList.remove('black');
+            document.getElementById('projects-nav').classList.remove('black');
+            document.getElementById('contact-nav').classList.remove('black');
         }, 500)
     });
     $('#about').on("click", function(){
@@ -50,6 +56,12 @@ $(document).ready(() => {
         sec.classList.toggle('active');
         setTimeout(function() {
             aboutScroll()
+            document.getElementById('home-nav').classList.remove('black');
+            document.getElementById('about-nav').classList.add('black');
+            document.getElementById('skills-nav').classList.remove('black');
+            document.getElementById('tools-nav').classList.remove('black');
+            document.getElementById('projects-nav').classList.remove('black');
+            document.getElementById('contact-nav').classList.remove('black');
         }, 500)
     });
     $('#programming').on("click", function(){
@@ -57,6 +69,12 @@ $(document).ready(() => {
         sec.classList.toggle('active');
         setTimeout(function() {
             programmingScroll()
+            document.getElementById('home-nav').classList.remove('black');
+            document.getElementById('about-nav').classList.remove('black');
+            document.getElementById('skills-nav').classList.add('black');
+            document.getElementById('tools-nav').classList.remove('black');
+            document.getElementById('projects-nav').classList.remove('black');
+            document.getElementById('contact-nav').classList.remove('black');
         }, 500)
     });
     $('#tools').on("click", function(){
@@ -64,6 +82,12 @@ $(document).ready(() => {
         sec.classList.toggle('active');
         setTimeout(function() {
             toolsScroll()
+            document.getElementById('home-nav').classList.remove('black');
+            document.getElementById('about-nav').classList.remove('black');
+            document.getElementById('skills-nav').classList.remove('black');
+            document.getElementById('tools-nav').classList.add('black');
+            document.getElementById('projects-nav').classList.remove('black');
+            document.getElementById('contact-nav').classList.remove('black');
         }, 500)
     });
     $('#projects').on("click", function(){
@@ -71,6 +95,12 @@ $(document).ready(() => {
         sec.classList.toggle('active');
         setTimeout(function() {
             projectsScroll()
+            document.getElementById('home-nav').classList.remove('black');
+            document.getElementById('about-nav').classList.remove('black');
+            document.getElementById('skills-nav').classList.remove('black');
+            document.getElementById('tools-nav').classList.remove('black');
+            document.getElementById('projects-nav').classList.add('black');
+            document.getElementById('contact-nav').classList.remove('black');
         }, 500)
     });
     $('#contact').on("click", function(){
@@ -78,6 +108,12 @@ $(document).ready(() => {
         sec.classList.toggle('active');
         setTimeout(function() {
             contactScroll()
+            document.getElementById('home-nav').classList.remove('black');
+            document.getElementById('about-nav').classList.remove('black');
+            document.getElementById('skills-nav').classList.remove('black');
+            document.getElementById('tools-nav').classList.remove('black');
+            document.getElementById('projects-nav').classList.remove('black');
+            document.getElementById('contact-nav').classList.add('black');
         }, 500)
     });
 });

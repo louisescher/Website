@@ -181,6 +181,10 @@ a:visited {color:rgb(255, 255, 255)}
     font-weight: 600;
 }
 
+li {
+    margin-bottom: 0.5rem;
+}
+
 
 /*
 <header>
@@ -200,6 +204,10 @@ a:visited {color:rgb(255, 255, 255)}
     animation: glitch-skew 1s infinite linear alternate-reverse;
     font-weight: 100;
     font-size: 70px;
+}
+
+.smol {
+    font-size: 25px;
 }
 .glitch::before {
     content: attr(data-text);
@@ -437,15 +445,37 @@ a:visited {color:rgb(255, 255, 255)}
 
 @media screen and (max-width: 1570px) {
     #avatar {
-        opacity: 0;
-        -ms-user-select: None;
-        -moz-user-select: None;
-        -webkit-user-select: None;
-        user-select: None;
-        z-index: 0 !important;
+        display: none;
     }
     .header-relative-div {
         left: 94vw;
+    }
+    .wrapper {
+        margin-left: 2rem;
+        width: 100%;
+        width: 90%;
+    }
+    .landingpage-flexwrapper {
+        width: 100%;
+    }
+    #pagepart {
+        margin-bottom: 100%;
+    }
+    .skillspage {
+        position: relative;
+        top: -200px;
+    }
+    .aboutpage#pagepart {
+        margin-bottom: 66%;
+    }
+    .langpage#pagepart {
+        margin-bottom: 66%;
+    }
+    .toolpage#pagepart {
+        margin-bottom: 66%;
+    }
+    .projectpage#pagepart {
+        margin-bottom: 68%;
     }
 }
 
@@ -453,10 +483,23 @@ a:visited {color:rgb(255, 255, 255)}
     .wrapper {
         margin-left: 2rem;
         width: 100%;
-        margin-top: 5rem;
+        margin-top: 4rem;
+        width: 90%;
     }
-    #pagepart {
-        margin-bottom: 75vh;
+    .landingpage#pagepart {
+        margin-bottom: 130%;
+    }
+    .aboutpage#pagepart {
+        margin-bottom: 84%;
+    }
+    .langpage#pagepart {
+        margin-bottom: 84%;
+    }
+    .toolpage#pagepart {
+        margin-bottom: 86%;
+    }
+    .projectpage#pagepart {
+        margin-bottom: 86%;
     }
 }
 
@@ -493,12 +536,24 @@ a:visited {color:rgb(255, 255, 255)}
         top: 20px;
     }
     .wrapper {
-        margin-top: 5rem;
+        margin-top: 1.5rem;
         margin-left: 1rem;
-        padding-left: 1rem;
+        width: 70%;
     }
-    #pagepart {
-        margin-bottom: 84vh;
+    .landingpage#pagepart {
+        margin-bottom: 190%;
+    }
+    .aboutpage#pagepart {
+        margin-bottom: 125%;
+    }
+    .langpage#pagepart {
+        margin-bottom: 140%;
+    }
+    .toolpage#pagepart {
+        margin-bottom: 145%;
+    }
+    .projectpage#pagepart {
+        margin-bottom: 130%;
     }
 }
 
@@ -506,6 +561,21 @@ a:visited {color:rgb(255, 255, 255)}
     .header-relative-div {
         left: 89vw;
         top: 20px;
+    }
+    .landingpage#pagepart {
+        margin-bottom: 240%;
+    }
+    .aboutpage#pagepart {
+        margin-bottom: 160%;
+    }
+    .langpage#pagepart {
+        margin-bottom: 220%;
+    }
+    .toolpage#pagepart {
+        margin-bottom: 200%;
+    }
+    .projectpage#pagepart {
+        margin-bottom: 160%;
     }
 }
 

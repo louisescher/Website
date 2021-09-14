@@ -18,17 +18,22 @@ function aboutScroll() {
 }
 function programmingScroll() {
     $('body,html').animate({
-        scrollTop: 1950
+        scrollTop: 1980
+    }, 600);
+}
+function toolsScroll() {
+    $('body,html').animate({
+        scrollTop: 2800
     }, 600);
 }
 function projectsScroll() {
     $('body,html').animate({
-        scrollTop: 2700
+        scrollTop: 3690
     }, 600);
 }
 function contactScroll() {
     $('body,html').animate({
-        scrollTop: 3450
+        scrollTop: 4620
     }, 600);
 }
 
@@ -52,6 +57,13 @@ $(document).ready(() => {
         sec.classList.toggle('active');
         setTimeout(function() {
             programmingScroll()
+        }, 500)
+    });
+    $('#tools').on("click", function(){
+        var sec = document.getElementById('sec');
+        sec.classList.toggle('active');
+        setTimeout(function() {
+            toolsScroll()
         }, 500)
     });
     $('#projects').on("click", function(){

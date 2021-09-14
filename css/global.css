@@ -1,0 +1,568 @@
+:root {
+    --app-accent: #14171F;
+}
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+}
+
+/*Import von Custom Font*/
+
+@font-face {
+    font-family: 'anuratiregular';
+    src: url('../fonts/anurati-webfont.woff2') format('woff2'),
+         url('../fonts/anurati-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*Standart-Specification*/
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/*Custom Scrollbar*/
+
+main::-webkit-scrollbar {
+    font-size: 25px;
+    width: 0.4rem;
+}
+main::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+main::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
+}
+
+/*Links*/
+
+a:link {color:rgb(255, 255, 255); font-size: 15pt;}
+a:hover {color:rgb(255, 255, 255); font-size: 15pt;}
+a:active {color:rgb(255, 255, 255); font-size: 15pt}
+a:visited {color:rgb(255, 255, 255); font-size: 15pt;}
+a {font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+
+main {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden auto;
+    background-color: var(--app-accent);
+    background-image: url(../img/Background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top right;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} 
+#wrapper {
+    position: relative;
+    z-index: 50;
+    margin: 0 auto 0 150px;
+    width: 50%;
+    height: auto;
+    color: #fff;
+}
+#about_entry p {
+    position: relative;
+    z-index: 50;
+    margin: 0 auto 0 20px;
+    width: 50%;
+    height: auto;
+    color: #fff;
+    font-size: 20px;
+}
+/*Bild*/
+#pfp {
+    z-index: 0;
+    position: absolute;
+    top: 17%;
+    left: 60%;
+    height: 80%;
+    margin: 0 0 0 auto;
+    width: 50%;
+    overflow: hidden;
+    opacity: 100%;
+}
+
+/*Text*/
+
+h1 {
+    font-family: 'anuratiregular','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    font-size: 35px;
+    font-weight: lighter;
+}
+
+li a {
+    line-height: 50px;
+    color: rgb(0, 225, 255);
+    display: block;
+    padding: 0 5px 5px 5px;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+li:first-child a {padding-left: 0;}
+
+li:last-child a {padding-right: 0;}
+
+li a i {
+    font-size: 30px;
+    line-height: 30px;
+}
+
+li a span {
+    position: relative;
+    top: -3px;
+}
+
+p {
+    color: #f2f2f2;
+    font-size: 22px;
+}
+
+p a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+p.nomargin {margin-bottom: 0;}
+
+.fullstack {
+    margin-bottom: 30px;
+    display: block;
+}
+
+.fullstack i {
+    padding: 0 5px;
+    font-size: 50px;
+}
+
+/*Navbar*/
+
+#navbar {
+    list-style-type: none;
+    position: relative;
+    z-index: 99 !important; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#nav_current_home a {
+    display: block;
+    color: #006eff;
+    text-align: center;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+#nav_current_twitch a {
+    display: block;
+    color: #894cfa;
+    text-align: center;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+#nav_current_discord a {
+    display: block;
+    color: #7289da;
+    text-align: center;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+#nav_current_sup a {
+    display: block;
+    color: #ff004c;
+    text-align: center;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+#nav_current_about a {
+    display: block;
+    color: #00ffdd;
+    text-align: center;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+#nav_current_projects a {
+    display: block;
+    color: #ff00d4;
+    text-align: center;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+#nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+#navbar a {
+    display: block;
+    text-align: center;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+#nav_twitch a:hover {
+    animation: tile_twitch 0.5s;
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;         /* When the spec is finished */
+}
+
+#nav_discord a:hover {
+    animation: tile_discord 0.5s;
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;         /* When the spec is finished */
+}
+
+#nav_support a:hover {
+    animation: tile_support 0.5s;
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;         /* When the spec is finished */
+}
+
+#nav_translate a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+#nav_translate a:hover {
+    animation: tile_translate 0.5s;
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;         /* When the spec is finished */
+}
+
+#nav_about a:hover {
+    animation: tile_about 0.5s;
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;         /* When the spec is finished */
+}
+
+#nav_home a:hover {
+    animation: tile_home 0.5s;
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;         /* When the spec is finished */
+} 
+
+#nav_projects a:hover {
+    animation: tile_proj 0.5s;
+    -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+    -moz-animation-fill-mode: forwards;    /* FF 5+ */
+    -o-animation-fill-mode: forwards;      /* Not implemented yet */
+    -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;         /* When the spec is finished */
+} 
+
+#menu {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 8px;
+    text-decoration: none;
+}
+
+/*Gradients und Custom Font entrys*/
+
+#bug-report {
+    color: grey;
+    font-size: small;
+}
+
+#htmlspan {
+    background: linear-gradient(to right, #FF6C00 0%, #ff9100 50%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent
+}
+
+#cssspan {
+    background: linear-gradient(to right, #0064FF 0%, #00b7ff 50%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent
+}
+
+#pyspan {
+    background: linear-gradient(to right, #FFCD00 0%, #d9ff00 50%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent
+}
+
+#jsspan {
+    background: linear-gradient(to right, #FFCD00 0%, #e5ff00 50%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent
+}
+
+#javaspan {
+    background: linear-gradient(to right, #ec0000 0%, #ee2400 50%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent
+}
+
+#aboutowner {
+    background: linear-gradient(to right, #002fff 0%, #00ff55 50%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent
+}
+
+#abouthoster {
+    background: linear-gradient(to right, #048600 0%, #7bff00 50%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent
+}
+
+#abouthoster a span {
+    background: linear-gradient(to right, #00aeff 0%, #00e1ff 50%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    text-decoration: underline;
+    
+}
+
+#abouticons {
+    background: linear-gradient(to right, #00ff80 0%, #00ccff 50%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent
+}
+
+#aboutimages {
+    background: linear-gradient(to right, #ff0000 0%, #d0ff00 50%);
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent
+}
+
+#header {
+    font-family: 'anuratiregular','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(to right, rgb(0, 110, 255), rgb(153, 0, 255));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#header2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(to right, rgb(153, 0, 255), rgb(204, 0, 255));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#header3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(to right, rgb(204, 0, 255), rgb(255, 0, 106));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#projheader {
+    font-family: 'anuratiregular','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(to right, rgb(0, 110, 255), rgb(255, 0, 221));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#error {
+    font-family: 'anuratiregular','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*Screen size recognition*/
+
+@media screen and (min-width: 1323px) {
+    ul.links li {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1px) {
+    h1 {
+        margin-top: calc(100vh/4);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #wrapper {
+        width: 80%;
+        margin: 0 auto;
+    }
+    #pfp {display: none;}
+    main {
+        background-image: url(../img/Background_m.jpg);
+        background-color: var(--app-accent);
+
+    }
+    #twitchplayer {
+        display: none;
+    }
+	#discordframe {
+        width: 300px;
+		height: 450px;
+    }
+    #navbar {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 336px) {
+    #wrapper {
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+        top: 0px;
+    }
+    #pfp {display: none;}
+    main {
+        background-image: url(../img/Background_m.jpg);
+        background-color: var(--app-accent);
+
+    }
+    #twitchplayer {
+        display: none;
+    }
+	#discordframe {
+        width: 300px;
+		height: 450px;
+    }
+    #navbar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #wrapper {
+        width: 80%;
+        margin: 0 auto;
+    }
+    #pfp {display: none;}
+}
+
+
+/*Keyframes*/
+
+@keyframes tile_home {
+    0% {
+        color: rgb(255, 255, 255);
+    }
+    100% {
+        color: #006eff;
+    }
+}
+
+@keyframes tile_twitch {
+    0% {
+        color: rgb(255, 255, 255);
+    }
+    100% {
+        color: #894cfa;
+    }
+}
+
+@keyframes tile_discord {
+    0% {
+        color: rgb(255, 255, 255);
+    }
+    100% {
+        color: #7289da;
+    }
+}
+
+@keyframes tile_support {
+    0% {
+        color: rgb(255, 255, 255);
+    }
+    100% {
+        color: #ff004c;
+    }
+}
+
+@keyframes tile_translate {
+    0% {
+        color: rgb(255, 255, 255);
+    }
+    100% {
+        color: rgb(0, 255, 106)
+    }
+}
+
+@keyframes tile_about {
+    0% {
+        color: rgb(255, 255, 255);
+    }
+    100% {
+        color: #00ffdd
+    }
+}
+
+@keyframes tile_proj {
+    0% {
+        color: rgb(255, 255, 255);
+    }
+    100% {
+        color: #ff00d4
+    }
+}

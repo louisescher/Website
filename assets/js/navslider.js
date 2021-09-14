@@ -9,27 +9,27 @@ function toggle(){
 function homeScroll() {
     $('body,html').animate({
         scrollTop: 0
-    }, 500);
+    }, 600);
 }
 function aboutScroll() {
     $('body,html').animate({
         scrollTop: 1200
-    }, 500);
+    }, 600);
 }
 function programmingScroll() {
     $('body,html').animate({
         scrollTop: 1950
-    }, 500);
+    }, 600);
 }
 function projectsScroll() {
     $('body,html').animate({
         scrollTop: 2700
-    }, 500);
+    }, 600);
 }
 function contactScroll() {
     $('body,html').animate({
         scrollTop: 3450
-    }, 500);
+    }, 600);
 }
 
 $(document).ready(() => {

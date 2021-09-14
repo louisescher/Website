@@ -1,0 +1,373 @@
+/*Font-Import*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --site-accent: #14171F;
+    --hover-clr: rgb(234, 151, 255);
+    --nav-clr: rgb(164, 53, 255);
+}
+
+* {
+    font-family: 'Rubik', sans-serif;
+    text-rendering: optimizeLegibility;
+    text-decoration: none;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: var(--site-accent);
+}
+
+/*Custom Scrollbar*/
+
+body::-webkit-scrollbar {
+    font-size: 25px;
+    width: 0.4rem;
+}
+body::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+body::-webkit-scrollbar-thumb {
+    background: rgb(194, 194, 194);
+}
+
+ul {
+    list-style-type: none;
+}
+
+/*Links*/
+
+a:link {color:rgb(255, 255, 255)}
+a:hover {color:rgb(255, 255, 255)}
+a:active {color:rgb(255, 255, 255)}
+a:visited {color:rgb(255, 255, 255)}
+
+/*classes*/
+
+/*Navbar*/
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    animation: fade_in;
+    animation-duration: 0.5s;
+    margin-left: 2rem;
+    background-color: #222;
+    margin-right: 2.4rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;    
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px #111;
+    transition: all 100ms ease-in;
+    z-index: 100 !important;
+}
+
+.navitem {
+    margin-right: 1rem;
+}
+
+.navitem.button{
+    margin-left: auto;
+}
+
+.navitem a {
+    color: rgb(189, 189, 189);
+    text-decoration: none;
+    transition: all 300ms ease-in;
+}
+
+.navitem a:hover {
+    color: var(--hover-clr);
+    cursor: pointer;
+}
+
+.navitem.current a {
+    color: var(--nav-clr)
+}
+
+/*Buttons*/
+
+button {
+    background: none;
+	color: white;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.dropbutton {
+    background: none;
+	color: white;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/*Dropdownul*/
+
+.relative-div {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+}
+
+.dropuldiv {
+    display: flex;
+    position: absolute;
+    animation: slide_down;
+    animation-duration: 0.3s;
+}
+
+.dropdownul {
+    margin-left: auto;
+    margin-top: -0.5rem;
+    margin-right: 2.4rem;
+    background-color: #222;
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: -1px 5px 10px #111;
+    z-index: 99 !important;
+}
+
+.dropdownul li {
+    margin: 1em;
+}
+
+.dropuldiv {
+    animation: fade_in;
+    animation-duration: 0.2s;
+}
+
+/*Wrapper*/
+
+.wrapper {
+    position: relative;
+    color: white;
+    z-index: 50;
+    margin: 0 auto 0 150px;
+    margin-top: 15rem;
+    width: 50%;
+    height: auto;
+    font-size: 20px;
+    animation: slide_up;
+    animation-duration: 2s;
+}
+
+.name {
+    display: inline-block;
+    background: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 60, 255));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    overflow: hidden;
+}
+
+.snakename {
+    display: inline-block;
+    background: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 60, 255));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    overflow: hidden;
+    font-family: 'Press Start 2P';
+}
+
+.contact {
+    display: flex;
+    margin-right: 1rem;
+    font-size: 22px;
+} 
+
+.contact a {
+    transition: all 300ms ease-in;
+} 
+
+.contact.button a:hover {
+    transition: all 300ms ease-in;
+    color: var(--hover-clr);
+    cursor: pointer;
+}
+
+.skilluls {
+    display: flex;
+    font-size: 16px;
+}
+
+.skillsheader {
+    display: inline-block;
+    background: linear-gradient(to right, rgb(0, 110, 255), rgb(0, 255, 157));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    overflow: hidden;
+}
+
+/*IDs*/
+
+#pfp {
+    z-index: 0;
+    position: absolute;
+    top: 17%;
+    left: 60%;
+    height: 80%;
+    margin: 0 0 0 auto;
+    width: 50%;
+    overflow: hidden;
+    opacity: 100%;
+    animation: slide_left;
+    animation-duration: 2s;
+    z-index: 1 !important;
+}
+#avatar {
+    z-index: 0;
+    position: absolute;
+    top: 17%;
+    left: 60%;
+    height: 80%;
+    margin: 0 0 0 auto;
+    width: 50%;
+    overflow: hidden;
+    opacity: 100%;
+    animation: fade_in;
+    animation-duration: 2s;
+    z-index: 1 !important;
+}
+
+/*Keyframes*/
+
+@keyframes slide_up {
+    0% {
+        bottom: -200px;
+        opacity: 0%;
+    }
+    100% {
+        bottom: 0px;
+        opacity: 100%;
+    }
+}
+
+@keyframes slide_down {
+    0% {
+        top: -30px;
+        opacity: 0%;
+    }
+    100% {
+        top: 0px;
+        opacity: 100%;
+    }
+}
+ 
+@keyframes fade_in {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes slide_left {
+    0% {
+        left: 100%;
+        opacity: 0%;
+    }
+    100% {
+        left: 60%;
+        opacity: 100%;
+    }
+}
+
+@keyframes easter_egg {
+    0% {
+        opacity: 0%;
+    }
+    20% {
+        opacity: 100%;
+    }
+    80% {
+        opacity: 0%;
+    }
+}
+
+/*Media*/
+
+@media screen and (max-width: 1200px) {
+    .wrapper {
+        width: 80%;
+    }
+    #pfp {display: none;}
+    #avatar {display: none;}
+}
+
+@media screen and (max-width: 469px) {
+    .wrapper {
+        width: 90%;
+        margin-top: 1rem;
+        margin: 1rem;
+    }
+    .navitem {
+        color: white;
+        margin-right: 0.5rem;
+    }
+    #pfp {display: none;}
+    #avatar {display: none;}
+}
+
+@media screen and (max-width: 440px) {
+    .navbar {
+        padding-left: 0.5rem;    
+    }
+    .wrapper {
+        width: 90%;
+        margin-left: 1rem;
+    }
+    .contact {
+       display: grid;
+    }
+    .navitem {
+        color: white;
+        margin-right: 0.5rem;
+        margin-left: 0.2rem;
+    }
+    #pfp {display: none;}
+    #avatar {display: none;}
+}
+
+@media screen and (max-width: 860px) {
+    .wrapper {
+        width: 70%;
+        margin-top: 1rem;
+        margin: 0;
+        left: 50px;
+        top: 100px;
+    }
+    .skilluls {
+        flex-direction: column;
+    }
+    #pfp {display: none;}
+    #avatar {display: none;}
+}
+
+@media screen and (max-width: 630px) {
+    .wrapper {
+        width: 80%;
+        margin-top: 0rem;
+        top: 0%;
+        margin: 0;
+    }
+    #pfp {display: none;}
+    #avatar {display: none;}
+}

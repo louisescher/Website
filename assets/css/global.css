@@ -447,16 +447,8 @@ li {
 }
 
 @media screen and (max-width: 1570px) {
-    #avatar {
-        display: none;
-    }
     .header-relative-div {
         left: 94vw;
-    }
-    .wrapper {
-        margin-left: 2rem;
-        width: 100%;
-        width: 90%;
     }
     .landingpage-flexwrapper {
         width: 100%;
@@ -483,6 +475,9 @@ li {
 }
 
 @media screen and (max-width: 1000px) {
+    #avatar {
+        display: none;
+    }
     .wrapper {
         margin-left: 2rem;
         width: 100%;
@@ -503,6 +498,11 @@ li {
     }
     .projectpage#pagepart {
         margin-bottom: 86%;
+    }#avatar {
+        display: none;
+    }
+    .header-relative-div {
+        left: 94vw;
     }
 }
 

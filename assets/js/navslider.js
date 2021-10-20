@@ -23,7 +23,6 @@ function loadScroll() {
 }
 
 $(document).ready(() => {
-    loadAllPages();
     loadScroll();
     $('#home').on("click", function(){
         var sec = document.getElementById('sec');

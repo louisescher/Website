@@ -17,7 +17,7 @@ function loadScroll() {
         scrollTop: window.screen.height * window.devicePixelRatio * 2.5
     }, 0);
     setTimeout(1000); 
-    $('body,html').animate({ 
+    $('body,html').animate({  
         scrollTop: 0
     }, 1000);
 }

@@ -16,7 +16,7 @@ function loadScroll() {
     $('body,html').animate({
         scrollTop: window.screen.height * window.devicePixelRatio * 2.5
     }, 0);
-    setTimeout(1000);
+    setTimeout(1000); 
     $('body,html').animate({
         scrollTop: 0
     }, 1000);
@@ -24,8 +24,6 @@ function loadScroll() {
 function loadAllPages() {
     $('html').load('body')
 }
-
-//Alle Pages einzeln, auf Load von unten nach oben scrollen, vor verlassen timeout setzen und nach unten scrollen
 
 $(document).ready(() => {
     loadAllPages();

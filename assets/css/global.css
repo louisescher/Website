@@ -148,7 +148,8 @@ a:visited {color:rgb(255, 255, 255)}
 }
 
 #pagepart {
-    margin-bottom: 65vh;
+    height: 100%;
+    margin-bottom: 120vh;
 }
 
 .blocks-seperator-img {
@@ -474,6 +475,13 @@ li {
     }
 }
 
+
+@media screen and (max-width: 1650px) {
+    #avatar {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     #avatar {
         display: none;
@@ -483,23 +491,6 @@ li {
         width: 100%;
         margin-top: 4rem;
         width: 90%;
-    }
-    .landingpage#pagepart {
-        margin-bottom: 130%;
-    }
-    .aboutpage#pagepart {
-        margin-bottom: 84%;
-    }
-    .langpage#pagepart {
-        margin-bottom: 84%;
-    }
-    .toolpage#pagepart {
-        margin-bottom: 86%;
-    }
-    .projectpage#pagepart {
-        margin-bottom: 86%;
-    }#avatar {
-        display: none;
     }
     .header-relative-div {
         left: 94vw;
@@ -517,9 +508,6 @@ li {
     }
     .landingpage-flexwrapper h1 {
         font-size: 50px;
-    }
-    #pagepart {
-        margin-bottom: 84vh;
     }
 }
 

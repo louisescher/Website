@@ -6,114 +6,91 @@ function toggle(){
 
 //Slidermenu scrolls
 
-function homeScroll() {
+function leaveScroll() {
+    setTimeout(1000)
+    $('body,html').animate({
+        scrollTop: window.screen.height * window.devicePixelRatio * 1
+    }, 1000);
+}
+function loadScroll() {
+    $('body,html').animate({
+        scrollTop: window.screen.height * window.devicePixelRatio * 2.5
+    }, 0);
+    setTimeout(1000);
     $('body,html').animate({
         scrollTop: 0
-    }, 600);
+    }, 1000);
 }
-function aboutScroll() {
-    $('body,html').animate({
-        scrollTop: 1200
-    }, 600);
-}
-function programmingScroll() {
-    $('body,html').animate({
-        scrollTop: 1980
-    }, 600);
-}
-function toolsScroll() {
-    $('body,html').animate({
-        scrollTop: 2800
-    }, 600);
-}
-function projectsScroll() {
-    $('body,html').animate({
-        scrollTop: 3690
-    }, 600);
-}
-function contactScroll() {
-    $('body,html').animate({
-        scrollTop: 4620
-    }, 600);
+function loadAllPages() {
+    $('html').load('body')
 }
 
+//Alle Pages einzeln, auf Load von unten nach oben scrollen, vor verlassen timeout setzen und nach unten scrollen
+
 $(document).ready(() => {
+    loadAllPages();
+    loadScroll();
     $('#home').on("click", function(){
         var sec = document.getElementById('sec');
         sec.classList.toggle('active');
+        leaveScroll()
         setTimeout(function() {
-            homeScroll()
-            document.getElementById('home-nav').classList.add('black');
-            document.getElementById('about-nav').classList.remove('black');
-            document.getElementById('skills-nav').classList.remove('black');
-            document.getElementById('tools-nav').classList.remove('black');
-            document.getElementById('projects-nav').classList.remove('black');
-            document.getElementById('contact-nav').classList.remove('black');
-        }, 500)
+            window.location.href = "index.html";
+        }, 1000);
     });
+
     $('#about').on("click", function(){
         var sec = document.getElementById('sec');
         sec.classList.toggle('active');
+        leaveScroll()
         setTimeout(function() {
-            aboutScroll()
-            document.getElementById('home-nav').classList.remove('black');
-            document.getElementById('about-nav').classList.add('black');
-            document.getElementById('skills-nav').classList.remove('black');
-            document.getElementById('tools-nav').classList.remove('black');
-            document.getElementById('projects-nav').classList.remove('black');
-            document.getElementById('contact-nav').classList.remove('black');
-        }, 500)
+            window.location.href = "about.html";
+        }, 1000);
     });
+
     $('#programming').on("click", function(){
         var sec = document.getElementById('sec');
         sec.classList.toggle('active');
+        leaveScroll()
         setTimeout(function() {
-            programmingScroll()
-            document.getElementById('home-nav').classList.remove('black');
-            document.getElementById('about-nav').classList.remove('black');
-            document.getElementById('skills-nav').classList.add('black');
-            document.getElementById('tools-nav').classList.remove('black');
-            document.getElementById('projects-nav').classList.remove('black');
-            document.getElementById('contact-nav').classList.remove('black');
-        }, 500)
+            window.location.href = "skills.html";
+        }, 1000);
+        
     });
+
     $('#tools').on("click", function(){
         var sec = document.getElementById('sec');
         sec.classList.toggle('active');
+        leaveScroll()
         setTimeout(function() {
-            toolsScroll()
-            document.getElementById('home-nav').classList.remove('black');
-            document.getElementById('about-nav').classList.remove('black');
-            document.getElementById('skills-nav').classList.remove('black');
-            document.getElementById('tools-nav').classList.add('black');
-            document.getElementById('projects-nav').classList.remove('black');
-            document.getElementById('contact-nav').classList.remove('black');
-        }, 500)
+            window.location.href = "tools.html";
+        }, 1000);
     });
+
+    $('#gear').on("click", function(){
+        var sec = document.getElementById('sec');
+        sec.classList.toggle('active');
+        leaveScroll()
+        setTimeout(function() {
+            window.location.href = "equipment.html";
+        }, 1000);
+    });
+
     $('#projects').on("click", function(){
         var sec = document.getElementById('sec');
         sec.classList.toggle('active');
+        leaveScroll()
         setTimeout(function() {
-            projectsScroll()
-            document.getElementById('home-nav').classList.remove('black');
-            document.getElementById('about-nav').classList.remove('black');
-            document.getElementById('skills-nav').classList.remove('black');
-            document.getElementById('tools-nav').classList.remove('black');
-            document.getElementById('projects-nav').classList.add('black');
-            document.getElementById('contact-nav').classList.remove('black');
-        }, 500)
+            window.location.href = "projects.html";
+        }, 1000);
     });
+
     $('#contact').on("click", function(){
         var sec = document.getElementById('sec');
         sec.classList.toggle('active');
+        leaveScroll()
         setTimeout(function() {
-            contactScroll()
-            document.getElementById('home-nav').classList.remove('black');
-            document.getElementById('about-nav').classList.remove('black');
-            document.getElementById('skills-nav').classList.remove('black');
-            document.getElementById('tools-nav').classList.remove('black');
-            document.getElementById('projects-nav').classList.remove('black');
-            document.getElementById('contact-nav').classList.add('black');
-        }, 500)
+            window.location.href = "contact.html";
+        }, 1000);
     });
 });

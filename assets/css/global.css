@@ -139,6 +139,7 @@ a:visited {color:rgb(255, 255, 255)}
     height: auto;
     transition: 0.4s ease;
     z-index: 900;
+    opacity: 0;
 }
 
 .color {
@@ -213,6 +214,7 @@ li {
 .smol {
     font-size: 25px;
 }
+
 .glitch::before {
     content: attr(data-text);
     position: absolute;
@@ -227,6 +229,7 @@ li {
    /* Runs our glitch-anim defined below to run in a 5s loop, infinitely, with an alternating animation to keep things fresh. */
     animation: glitch-anim 10s infinite linear alternate-reverse;
 }
+
 .glitch::after {
     content: attr(data-text);
     position: absolute;
@@ -238,7 +241,8 @@ li {
     text-shadow: -1px 0 #00fff9, 1px 1px #ff00c1;
     animation: glitch-anim2 1.8s infinite linear alternate-reverse;
 }
-/* Creates an animation with 20 steaps. For each step, it calculates a percentage for the specific step. It then generates a random clip box to be used for the random glitch effect. Also adds a very subtle skew to change the 'thickness' of the glitch.*/
+
+/* Creates an animation with 20 steps. For each step, it calculates a percentage for the specific step. It then generates a random clip box to be used for the random glitch effect. Also adds a very subtle skew to change the 'thickness' of the glitch.*/
 @keyframes glitch-anim {
     0% {
         clip: rect(85px, 9999px, 36px, 0);
@@ -454,25 +458,6 @@ li {
     .landingpage-flexwrapper {
         width: 100%;
     }
-    #pagepart {
-        margin-bottom: 100%;
-    }
-    .skillspage {
-        position: relative;
-        top: -200px;
-    }
-    .aboutpage#pagepart {
-        margin-bottom: 66%;
-    }
-    .langpage#pagepart {
-        margin-bottom: 66%;
-    }
-    .toolpage#pagepart {
-        margin-bottom: 66%;
-    }
-    .projectpage#pagepart {
-        margin-bottom: 68%;
-    }
 }
 
 
@@ -494,6 +479,9 @@ li {
     }
     .header-relative-div {
         left: 94vw;
+    }
+    #pagepart {
+        margin-bottom: 200vh;
     }
 }
 
@@ -531,42 +519,12 @@ li {
         margin-left: 1rem;
         width: 70%;
     }
-    .landingpage#pagepart {
-        margin-bottom: 190%;
-    }
-    .aboutpage#pagepart {
-        margin-bottom: 125%;
-    }
-    .langpage#pagepart {
-        margin-bottom: 140%;
-    }
-    .toolpage#pagepart {
-        margin-bottom: 145%;
-    }
-    .projectpage#pagepart {
-        margin-bottom: 130%;
-    }
 }
 
 @media screen and (max-width: 400px) {
     .header-relative-div {
         left: 89vw;
         top: 20px;
-    }
-    .landingpage#pagepart {
-        margin-bottom: 240%;
-    }
-    .aboutpage#pagepart {
-        margin-bottom: 160%;
-    }
-    .langpage#pagepart {
-        margin-bottom: 220%;
-    }
-    .toolpage#pagepart {
-        margin-bottom: 230%;
-    }
-    .projectpage#pagepart {
-        margin-bottom: 190%;
     }
 }
 

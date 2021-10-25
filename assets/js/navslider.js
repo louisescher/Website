@@ -16,6 +16,7 @@ function loadScroll() {
     $('body,html').animate({
         scrollTop: window.screen.height * window.devicePixelRatio * 2.5
     }, 0);
+    $('.wrapper').fadeTo("fast", 1);
     setTimeout(1000); 
     $('body,html').animate({
         scrollTop: 0
@@ -66,7 +67,7 @@ $(document).ready(() => {
         sec.classList.toggle('active');
         leaveScroll()
         setTimeout(function() {
-            window.location.href = "equipment.html";
+            window.location.href = "gear.html";
         }, 1000);
     });
 

@@ -949,7 +949,7 @@ li {
     }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (max-width: 1400px) {
     * {
         font-family: 'Montserrat', sans-serif;
         text-rendering: optimizeLegibility;
@@ -1076,7 +1076,7 @@ li {
         font-size: 3.5vh;
     }
 }
-@media screen and (max-width: 2100px) {
+@media screen and (min-width: 2100px) {
     * {
         font-family: 'Montserrat', sans-serif;
         text-rendering: optimizeLegibility;

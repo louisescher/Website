@@ -949,7 +949,7 @@ li {
     }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (min-width: 2500px) {
     * {
         font-family: 'Montserrat', sans-serif;
         text-rendering: optimizeLegibility;
@@ -959,14 +959,14 @@ li {
     }
     #toggle {
         position: fixed;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         cursor: pointer;
     }
     #toggle::before {
         content: '';
         position: absolute;
-        top: 9px;
+        top: 8px;
         width: 100%;
         height: 3px;
         background: #fff;
@@ -974,7 +974,7 @@ li {
     #toggle::after {
         content: '';
         position: absolute;
-        bottom: 9px;
+        bottom: 8px;
         width: 100%;
         height: 3px;
         background: #fff;
@@ -993,33 +993,33 @@ li {
     }
     
     .header-relative-div.active ~ .wrapper {
-        -webkit-transform: translateX(-600px);
-            -ms-transform: translateX(-600px);
-                transform: translateX(-600px);
+        -webkit-transform: translateX(-600px); 
+            -ms-transform: translateX(-600px); 
+                transform: translateX(-600px); 
     }
     
     .header-relative-div.active + #toggle {
-        -webkit-transform: translateX(-600px);
-            -ms-transform: translateX(-600px);
-                transform: translateX(-600px);
+        -webkit-transform: translateX(-600px); 
+            -ms-transform: translateX(-600px); 
+                transform: translateX(-600px); 
     }
     
     .header-relative-div.active + #sec {
-        -webkit-transform: translateX(-600px);
-            -ms-transform: translateX(-600px);
-                transform: translateX(-600px);
+        -webkit-transform: translateX(-600px); 
+            -ms-transform: translateX(-600px); 
+                transform: translateX(-600px); 
     }
     
     .header-relative-div.active ~ .navslide {
-        -webkit-transform: translateX(-600px);
-            -ms-transform: translateX(-600px);
-                transform: translateX(-600px);
+        -webkit-transform: translateX(-600px); 
+            -ms-transform: translateX(-600px); 
+                transform: translateX(-600px); 
     }
     
     .header-relative-div.active {
-        -webkit-transform: translateX(-600px);
-            -ms-transform: translateX(-600px);
-                transform: translateX(-600px);
+        -webkit-transform: translateX(-600px); 
+            -ms-transform: translateX(-600px); 
+                transform: translateX(-600px); 
     }
     
     .wrapper {
@@ -1056,7 +1056,7 @@ li {
         position: relative;
         left: -350px;
         top: -200px;
-        width: 1300px;
+        width: 1500px;
         height: auto;
         -webkit-filter: drop-shadow(0px 10px 15px #000);
         filter: drop-shadow(0px 10px 15px #000);
@@ -1076,7 +1076,7 @@ li {
         font-size: 3.5vh;
     }
 }
-@media screen and (min-width: 2100px) {
+@media screen and (min-width: 3770px) {
     * {
         font-family: 'Montserrat', sans-serif;
         text-rendering: optimizeLegibility;
@@ -1085,9 +1085,11 @@ li {
         color: #fff;
     }
     #toggle {
+        margin-top: 0.5rem;
+        margin-right: 0.3rem;
         position: fixed;
-        width: 70px;
-        height: 70px;
+        width: 75px;
+        height: 75px;
         cursor: pointer;
     }
     #toggle::before {
@@ -1161,8 +1163,8 @@ li {
     }
     
     .wrapper {
-        margin: 0 auto 0 10%;
-        margin-top: 7rem;
+        margin: 0 auto 0 12%;
+        margin-top: 8rem;
         width: 70%;
         height: auto;
         -webkit-transition: 0.4s ease;
@@ -1173,8 +1175,8 @@ li {
     }
     
     .wrapper.home {
-        margin: 0 auto 0 10%;
-        margin-top: 7rem;
+        margin: 0 auto 0 12%;
+        margin-top: 8rem;
         width: 90%;
         height: auto;
         -webkit-transition: 0.4s ease;
@@ -1193,8 +1195,8 @@ li {
         margin-left: auto;
         position: relative;
         left: -350px;
-        top: -150px;
-        width: 2000px;
+        top: -250px;
+        width: 2200px;
         height: auto;
         -webkit-filter: drop-shadow(0px 10px 15px #000);
         filter: drop-shadow(0px 10px 15px #000);

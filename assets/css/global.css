@@ -821,8 +821,76 @@ li {
     .header-relative-div {
         left: 94vw;
     }
-    #pagepart {
-        margin-bottom: 200vh;
+    * {
+        font-family: 'Montserrat', sans-serif;
+        text-rendering: optimizeLegibility;
+        text-decoration: none;
+        font-size: 3vh;
+        color: #fff;
+    }
+    #toggle {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+    #toggle::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+    }
+    #toggle::after {
+        content: '';
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+    }
+    .navslide {
+        position: fixed;
+        width: 250px;
+        height: 100vh;
+        left: 100vw;
+        top: 0px;
+        background-color: var(--nav-clr);
+        z-index: 999 !important;
+        -webkit-transition: 0.4s ease;
+        -o-transition: 0.4s ease;
+        transition: 0.4s ease;
+    }
+    
+    .header-relative-div.active ~ .wrapper {
+        -webkit-transform: translateX(-250px); 
+            -ms-transform: translateX(-250px); 
+                transform: translateX(-250px); 
+    }
+    
+    .header-relative-div.active + #toggle {
+        -webkit-transform: translateX(-250px); 
+            -ms-transform: translateX(-250px); 
+                transform: translateX(-250px); 
+    }
+    
+    .header-relative-div.active + #sec {
+        -webkit-transform: translateX(-250px); 
+            -ms-transform: translateX(-250px); 
+                transform: translateX(-250px); 
+    }
+    
+    .header-relative-div.active ~ .navslide {
+        -webkit-transform: translateX(-250px); 
+            -ms-transform: translateX(-250px); 
+                transform: translateX(-250px); 
+    }
+    
+    .header-relative-div.active {
+        -webkit-transform: translateX(-250px); 
+            -ms-transform: translateX(-250px); 
+                transform: translateX(-250px); 
     }
 }
 

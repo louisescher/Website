@@ -89,3 +89,4 @@ $(document).ready(() => {
         }, 1000);
     });
 });
+//Check for nth-child number for current element, then check if Number of clicked element is higher or lower

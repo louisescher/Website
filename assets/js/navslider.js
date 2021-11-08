@@ -169,7 +169,7 @@ $(document).ready(() => {
         }
     });
 
-    $(window).unload(function(){
+    $(window).on("unload", function() {
         window.localStorage.removeItem('LastRedirect');
     });
 });

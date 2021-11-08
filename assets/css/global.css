@@ -819,6 +819,12 @@ li {
         margin-top: 4rem;
         width: 90%;
     }
+    .wrapper.home {
+        margin-left: 2rem;
+        width: 100%;
+        margin-top: 4rem;
+        width: 90%;
+    }
     .header-relative-div {
         left: 94vw;
     }
@@ -907,6 +913,9 @@ li {
     .landingpage-flexwrapper h1 {
         font-size: 50px;
     }
+    body {
+        margin-top: 90vh;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -921,19 +930,14 @@ li {
 
 @media screen and (max-width: 600px) {
     .header-relative-div {
-        left: 90vw;
+        left: 88vw;
         top: 20px;
-    }
-    .wrapper {
-        margin-top: 1.5rem;
-        margin-left: 1rem;
-        width: 70%;
     }
 }
 
 @media screen and (max-width: 400px) {
     .header-relative-div {
-        left: 89vw;
+        left: 86vw;
         top: 20px;
     }
 }
@@ -975,6 +979,16 @@ li {
         -webkit-transition: 0.4s;
         -o-transition: 0.4s;
         transition: 0.4s;
+    }
+    .wrapper {
+        margin-top: 1.5rem;
+        margin-left: 1rem;
+        width: 70%;
+    }
+    .wrapper.home {
+        margin-top: 1.5rem;
+        margin-left: 1rem;
+        width: 70%;
     }
 }
 

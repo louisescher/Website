@@ -57,7 +57,6 @@ function leaveScrollLower() {
     }, 2000);
 }
 function leaveScrollHigher() {
-    $("body").css("margin-top", "110vh")
     $('body,html').animate({
         scrollTop: window.screen.height * window.devicePixelRatio * 1.6
     }, 1000);
@@ -66,7 +65,7 @@ function leaveScrollHigher() {
 function redirectLower() {
     var sec = document.getElementById('sec');
     sec.classList.toggle('active');
-    lastRedirect = {'LastRedirect': 0}; // 1 or 0
+    lastRedirect = 0; // 1 or 0
     localStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
     leaveScrollHigher();
     setTimeout(function() {
@@ -76,7 +75,7 @@ function redirectLower() {
 function redirectHigher() {
     var sec = document.getElementById('sec');
     sec.classList.toggle('active');
-    lastRedirect = {'LastRedirect': 1}; // 1 or 0
+    lastRedirect = 1; // 1 or 0
     localStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
     leaveScrollLower();
     setTimeout(function() {
@@ -85,8 +84,7 @@ function redirectHigher() {
 }
 
 $(document).ready(() => {
-    console.log('retrievedObject: ', JSON.parse(retrievedObject));
-    if(retrievedObject == 1) {
+    if(JSON.parse(retrievedObject) == 1) {
         loadScrollLower();
     } else {
         loadScrollHigher();
@@ -168,10 +166,6 @@ $(document).ready(() => {
             redirectLower();
         }
     });
-
-    $(window).on("unload", function() {
-        window.localStorage.removeItem('LastRedirect');
-    });
 });
-//Check for nth-child number for current element, then check if Number of clicked element is higher or lower, also don't fucking ignore mobile glitch
+//Check for nth-child number for current element, then check if Number of clicked element is higher or lower
 //(https://developer.mozilla.org/de/docs/Web/CSS/:nth-child, https://stackoverflow.com/questions/10547261/get-the-nth-child-number-of-an-element-in-jquery)

@@ -93,6 +93,7 @@ $(document).ready(() => {
 
     $('#home').on("click", function(){
         if($(this).index()+1 < currentLocation) {    // Wenns lower ist = Nach oben
+            console.log($(this).index()+1);
             redirectHigher();
             setTimeout(function() {
                 window.location.href = window.location.origin;
@@ -100,6 +101,7 @@ $(document).ready(() => {
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
+            console.log($(this).index()+1);
             redirectLower();
             setTimeout(function() {
                 window.location.href = window.location.origin;

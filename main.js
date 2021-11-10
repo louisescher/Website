@@ -78,15 +78,14 @@ function redirectHigher() {
 }
 
 $(document).ready(() => {
+    console.log(currentLocation)
     if (localStorage.getItem("LastRedirect") === null) {
         retrievedObject = 0;
     }
     if(JSON.parse(retrievedObject) == 1) {
-        console.log("1");
         console.log(retrievedObject);
         loadScrollLower();
     } else {
-        console.log("2");
         console.log(retrievedObject);
         loadScrollHigher();
     }

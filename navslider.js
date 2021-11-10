@@ -91,7 +91,7 @@ $(document).ready(() => {
     }
 
     $('#home').on("click", function(){
-        hrefLocation = "index.html";
+        hrefLocation = "/path/index.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {
@@ -102,7 +102,7 @@ $(document).ready(() => {
     });
 
     $('#about').on("click", function(){
-        hrefLocation = "about.html";
+        hrefLocation = "/path/about.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {
@@ -113,7 +113,7 @@ $(document).ready(() => {
     });
 
     $('#programming').on("click", function(){
-        hrefLocation = "skills.html";
+        hrefLocation = "/path/skills.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {
@@ -124,7 +124,7 @@ $(document).ready(() => {
     });
 
     $('#tools').on("click", function(){
-        hrefLocation = "tools.html";
+        hrefLocation = "/path/tools.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {
@@ -135,7 +135,7 @@ $(document).ready(() => {
     });
 
     $('#gear').on("click", function(){
-        hrefLocation = "gear.html";
+        hrefLocation = "/path/gear.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {
@@ -146,7 +146,7 @@ $(document).ready(() => {
     });
 
     $('#projects').on("click", function(){
-        hrefLocation = "projects.html";
+        hrefLocation = "/path/projects.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {
@@ -157,7 +157,7 @@ $(document).ready(() => {
     });
 
     $('#contact').on("click", function(){
-        hrefLocation = "contact.html";
+        hrefLocation = "/path/contact.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {

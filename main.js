@@ -91,14 +91,14 @@ $(document).ready(() => {
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
             setTimeout(function() {
-                window.location.href = window.location.hostname;
+                window.location.replace(window.location.origin);
             }, 1000);
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
             redirectLower();
             setTimeout(function() {
-                window.location.href = window.location.hostname;
+                window.location.replace(window.location.origin);
             }, 1000);
         }
     });

@@ -6,17 +6,17 @@ var page = path.split("/").pop();
 
 if(page == "index.html" || window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
     currentLocation = 1;
-} if(page == "about.html" && window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
+} if(page == "about.html" && window.location.hostname === "codedotspirit.dev" && window.location.hostname === "codedotspirit.pages.dev") {
     currentLocation = 2;
-} if(page == "skills.html" && window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
+} if(page == "skills.html" && window.location.hostname === "codedotspirit.dev" && window.location.hostname === "codedotspirit.pages.dev") {
     currentLocation = 3;
-} if(page == "tools.html" && window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
+} if(page == "tools.html" && window.location.hostname === "codedotspirit.dev" && window.location.hostname === "codedotspirit.pages.dev") {
     currentLocation = 4;
-} if(page == "gear.html" && window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
+} if(page == "gear.html" && window.location.hostname === "codedotspirit.dev" && window.location.hostname === "codedotspirit.pages.dev") {
     currentLocation = 5;
-} if(page == "projects.html" && window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
+} if(page == "projects.html" && window.location.hostname === "codedotspirit.dev" && window.location.hostname === "codedotspirit.pages.dev") {
     currentLocation = 6;
-} if(page == "contact.html" && window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
+} if(page == "contact.html" && window.location.hostname === "codedotspirit.dev" && window.location.hostname === "codedotspirit.pages.dev") {
     currentLocation = 7;
 }
 

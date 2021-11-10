@@ -229,7 +229,6 @@ li {
 
 .navslide-li {
     width: fit-content;
-    transition: all 300ms ease-in;
 }
 
 /*SCSS*/

@@ -98,7 +98,7 @@ $(document).ready(() => {
             setTimeout(function() {
                 window.location.href = window.location.origin;
             }, 1000);
-        } if($(this).index()+1 == currentLocation) {
+        } if($(this).index()+1 === currentLocation) {
             console.log($(this).index()+1);
             return;
         } if($(this).index()+1 > currentLocation) {

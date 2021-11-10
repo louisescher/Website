@@ -4,7 +4,7 @@ var path = window.location.pathname;
 var page = path.split("/").pop();
 
 
-if(page == "index.html") {
+if(page == "index.html" || window.location.hostname === "codedotspirit.dev") {
     currentLocation = 1;
 } if(page == "about.html") {
     currentLocation = 2;
@@ -91,14 +91,14 @@ $(document).ready(() => {
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
             setTimeout(function() {
-                window.location.href = "index.html";
+                window.location.href = "./index.html";
             }, 1000);
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
             redirectLower();
             setTimeout(function() {
-                window.location.href = "index.html";
+                window.location.href = "./index.html";
             }, 1000);
         }
     });
@@ -107,14 +107,14 @@ $(document).ready(() => {
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
             setTimeout(function() {
-                window.location.href = "about.html";
+                window.location.href = "./about.html";
             }, 1000);
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
             redirectLower();
             setTimeout(function() {
-                window.location.href = "about.html";
+                window.location.href = "./about.html";
             }, 1000);
         }
     });
@@ -123,14 +123,14 @@ $(document).ready(() => {
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
             setTimeout(function() {
-                window.location.href = "skills.html";
+                window.location.href = "./skills.html";
             }, 1000);
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
             redirectLower();
             setTimeout(function() {
-                window.location.href = "skills.html";
+                window.location.href = "./skills.html";
             }, 1000);
         }
     });
@@ -139,14 +139,14 @@ $(document).ready(() => {
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
             setTimeout(function() {
-                window.location.href = "tools.html";
+                window.location.href = "./tools.html";
             }, 1000);
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
             redirectLower();
             setTimeout(function() {
-                window.location.href = "tools.html";
+                window.location.href = "./tools.html";
             }, 1000);
         }
     });
@@ -155,14 +155,14 @@ $(document).ready(() => {
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
             setTimeout(function() {
-                window.location.href = "gear.html";
+                window.location.href = "./gear.html";
             }, 1000);
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
             redirectLower();
             setTimeout(function() {
-                window.location.href = "gear.html";
+                window.location.href = "./gear.html";
             }, 1000);
         }
     });
@@ -171,14 +171,14 @@ $(document).ready(() => {
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
             setTimeout(function() {
-                window.location.href = "projects.html";
+                window.location.href = "./projects.html";
             }, 1000);
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
             redirectLower();
             setTimeout(function() {
-                window.location.href = "projects.html";
+                window.location.href = "./projects.html";
             }, 1000);
         }
     });
@@ -187,14 +187,14 @@ $(document).ready(() => {
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
             setTimeout(function() {
-                window.location.href = "contact.html";
+                window.location.href = "./contact.html";
             }, 1000);
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
             redirectLower();
             setTimeout(function() {
-                window.location.href = "contact.html";
+                window.location.href = "./contact.html";
             }, 1000);
         }
     });

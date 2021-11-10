@@ -4,7 +4,7 @@ var path = window.location.pathname;
 var page = path.split("/").pop();
 
 
-if(page == "index.html" || window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
+if(page == "") {
     currentLocation = 1;
 } if(page == "about.html") {
     currentLocation = 2;

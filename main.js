@@ -92,16 +92,13 @@ $(document).ready(() => {
     }
 
     $('#home').on("click", function(){
-        if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
+        if($(this).index()+1 < currentLocation) {    // Wenns lower ist = Nach oben
             redirectHigher();
             setTimeout(function() {
                 window.location.href = window.location.origin;
             }, 1000);
         } if($(this).index()+1 == currentLocation) {
-            redirectLower();
-            setTimeout(function() {
-                window.location.href = window.location.origin;
-            }, 1000);
+            return;
         } if($(this).index()+1 > currentLocation) {
             redirectLower();
             setTimeout(function() {
@@ -119,6 +116,7 @@ $(document).ready(() => {
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
+            console.log($(this).index()+1)
             redirectLower();
             setTimeout(function() {
                 window.location.href = "./about.html";

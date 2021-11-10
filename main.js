@@ -21,7 +21,7 @@ if(page == "index.html" || window.location.hostname === "codedotspirit.dev" || w
 }
 
 var lastRedirect; // 1 or 0
-var retrievedObject = sessionStorage.getItem('LastRedirect');
+var retrievedObject = localStorage.getItem('LastRedirect');
 
 //Navbarslider Toggle
 function toggle(){
@@ -66,19 +66,19 @@ function redirectLower() {
     var sec = document.getElementById('sec');
     sec.classList.toggle('active');
     lastRedirect = 0; // 1 or 0
-    sessionStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
+    localStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
     leaveScrollHigher();
 }
 function redirectHigher() {
     var sec = document.getElementById('sec');
     sec.classList.toggle('active');
     lastRedirect = 1; // 1 or 0
-    sessionStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
+    localStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
     leaveScrollLower();
 }
 
 $(document).ready(() => {
-    if (sessionStorage.getItem("LastRedirect") === null) {
+    if (localStorage.getItem("LastRedirect") === null) {
         retrievedObject = 0;
     }
     if(JSON.parse(retrievedObject) == 1) {

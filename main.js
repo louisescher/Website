@@ -4,7 +4,7 @@ var path = window.location.pathname;
 var page = path.split("/").pop();
 
 
-if(page == "") {
+if(page == "index.html") {
     currentLocation = 1;
 } if(page == "about.html") {
     currentLocation = 2;

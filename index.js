@@ -84,11 +84,11 @@ $(document).ready(() => {
     console.log(currentLocation)
     if (localStorage.getItem("LastRedirect") === null) {
         retrievedObject = 8;
-    } else if(JSON.parseInt(retrievedObject) > currentLocation) {
-        console.log(retrievedObject);
+    } else if(parseInt(retrievedObject) > currentLocation) {
+        console.log(parseInt(retrievedObject));
         loadScrollHigher();
-    } else if(JSON.parseInt(retrievedObject) < currentLocation) {
-        console.log(retrievedObject);
+    } else if(parseInt(retrievedObject) < currentLocation) {
+        console.log(parseInt(retrievedObject));
         loadScrollHigher();
     }
 

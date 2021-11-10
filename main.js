@@ -82,8 +82,10 @@ $(document).ready(() => {
         retrievedObject = 0;
     }
     if(JSON.parse(retrievedObject) == 1) {
+        console.log("1")
         loadScrollLower();
     } else {
+        console.log("2")
         loadScrollHigher();
     }
 

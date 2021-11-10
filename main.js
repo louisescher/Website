@@ -109,6 +109,7 @@ $(document).ready(() => {
 
     $('#about').on("click", function(){
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
+            console.log($(this).index()+1);
             redirectHigher();
             setTimeout(function() {
                 window.location.href = "./about.html";
@@ -116,7 +117,7 @@ $(document).ready(() => {
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
-            console.log($(this).index()+1)
+            console.log($(this).index()+1);
             redirectLower();
             setTimeout(function() {
                 window.location.href = "./about.html";
@@ -126,6 +127,7 @@ $(document).ready(() => {
 
     $('#programming').on("click", function(){
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
+            console.log($(this).index()+1);
             redirectHigher();
             setTimeout(function() {
                 window.location.href = "./skills.html";
@@ -133,6 +135,7 @@ $(document).ready(() => {
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
+            console.log($(this).index()+1);
             redirectLower();
             setTimeout(function() {
                 window.location.href = "./skills.html";
@@ -142,6 +145,7 @@ $(document).ready(() => {
 
     $('#tools').on("click", function(){
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
+            console.log($(this).index()+1);
             redirectHigher();
             setTimeout(function() {
                 window.location.href = "./tools.html";
@@ -149,6 +153,7 @@ $(document).ready(() => {
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
+            console.log($(this).index()+1);
             redirectLower();
             setTimeout(function() {
                 window.location.href = "./tools.html";

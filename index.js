@@ -84,19 +84,20 @@ $(document).ready(() => {
     console.log(currentLocation)
     if (localStorage.getItem("LastRedirect") === null) {
         retrievedObject = 8;
-    } else if(JSON.parse(retrievedObject) > currentLocation) {
+    } else if(JSON.parseInt(retrievedObject) > currentLocation) {
         console.log(retrievedObject);
-        loadScrollLower();
-    } else if(JSON.parse(retrievedObject) < currentLocation) {
+        loadScrollHigher();
+    } else if(JSON.parseInt(retrievedObject) < currentLocation) {
         console.log(retrievedObject);
         loadScrollHigher();
     }
 
     $('#home').on("click", function(){
         if($(this).index()+1 < currentLocation) {    // Wenns lower ist = Nach oben
+            console.log($(this).index()+1);
             redirectHigher();
             setTimeout(function() {
-                window.location.href = "./index.html";
+                window.location.href = window.location.hostname;
             }, 1000);
         } if($(this).index()+1 == currentLocation) {
             console.log($(this).index()+1);
@@ -105,7 +106,7 @@ $(document).ready(() => {
             console.log($(this).index()+1);
             redirectLower();
             setTimeout(function() {
-                window.location.href = "./index.html";
+                window.location.href = window.location.hostname;
             }, 1000);
         }
     });
@@ -118,7 +119,6 @@ $(document).ready(() => {
                 window.location.href = "./about.html";
             }, 1000);
         } if($(this).index()+1 == currentLocation) {
-            console.log($(this).index()+1);
             return;
         } if($(this).index()+1 > currentLocation) {
             console.log($(this).index()+1);
@@ -213,3 +213,5 @@ $(document).ready(() => {
         }
     });
 });
+//Check for nth-child number for current element, then check if Number of clicked element is higher or lower
+//(https://developer.mozilla.org/de/docs/Web/CSS/:nth-child, https://stackoverflow.com/questions/10547261/get-the-nth-child-number-of-an-element-in-jquery)

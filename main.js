@@ -6,22 +6,18 @@ var page = path.split("/").pop();
 
 if(page == "index.html" || window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
     currentLocation = 1;
-}
-
-if (window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
-    if(page == "about.html") {
-        currentLocation = 2;
-    } if(page == "skills.html") {
-        currentLocation = 3;
-    } if(page == "tools.html") {
-        currentLocation = 4;
-    } if(page == "gear.html") {
-        currentLocation = 5;
-    } if(page == "projects.html") {
-        currentLocation = 6;
-    } if(page == "contact.html") {
-        currentLocation = 7;
-    }
+} if(page == "about.html") {
+    currentLocation = 2;
+} if(page == "skills.html") {
+    currentLocation = 3;
+} if(page == "tools.html") {
+    currentLocation = 4;
+} if(page == "gear.html") {
+    currentLocation = 5;
+} if(page == "projects.html") {
+    currentLocation = 6;
+} if(page == "contact.html") {
+    currentLocation = 7;
 }
 
 var lastRedirect; // 1 or 0

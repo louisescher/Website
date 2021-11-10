@@ -4,7 +4,7 @@ var path = window.location.pathname;
 var page = path.split("/").pop();
 
 
-if(page == "index.html" || window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
+if(page == "index.html") {
     currentLocation = 1;
 } if(page == "about.html") {
     currentLocation = 2;
@@ -98,7 +98,7 @@ $(document).ready(() => {
             setTimeout(function() {
                 window.location.href = window.location.origin;
             }, 1000);
-        } if($(this).index()+1 === currentLocation) {
+        } if($(this).index()+1 == currentLocation) {
             console.log($(this).index()+1);
             return;
         } if($(this).index()+1 > currentLocation) {

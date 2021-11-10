@@ -84,6 +84,9 @@ function redirectHigher() {
 }
 
 $(document).ready(() => {
+    if (sessionStorage.getItem("LastRedirect") === null) {
+        retrievedObject = 0;
+    }
     if(JSON.parse(retrievedObject) == 1) {
         loadScrollLower();
     } else {

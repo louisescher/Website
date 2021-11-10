@@ -21,7 +21,7 @@ if(page == "index.html") {
 
 var hrefLocation;
 var lastRedirect; // 1 or 0
-var retrievedObject = localStorage.getItem('LastRedirect');
+var retrievedObject = sessionStorage.getItem('LastRedirect');
 
 //Navbarslider Toggle
 function toggle(){
@@ -66,7 +66,7 @@ function redirectLower() {
     var sec = document.getElementById('sec');
     sec.classList.toggle('active');
     lastRedirect = 0; // 1 or 0
-    localStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
+    sessionStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
     leaveScrollHigher();
     setTimeout(function() {
         window.location.href = hrefLocation;
@@ -76,7 +76,7 @@ function redirectHigher() {
     var sec = document.getElementById('sec');
     sec.classList.toggle('active');
     lastRedirect = 1; // 1 or 0
-    localStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
+    sessionStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
     leaveScrollLower();
     setTimeout(function() {
         window.location.href = hrefLocation;
@@ -91,7 +91,7 @@ $(document).ready(() => {
     }
 
     $('#home').on("click", function(){
-        hrefLocation = "/path/index.html";
+        hrefLocation = "index.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {
@@ -102,7 +102,7 @@ $(document).ready(() => {
     });
 
     $('#about').on("click", function(){
-        hrefLocation = "/path/about.html";
+        hrefLocation = "about.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {
@@ -113,7 +113,7 @@ $(document).ready(() => {
     });
 
     $('#programming').on("click", function(){
-        hrefLocation = "/path/skills.html";
+        hrefLocation = "/skills.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {
@@ -124,7 +124,7 @@ $(document).ready(() => {
     });
 
     $('#tools').on("click", function(){
-        hrefLocation = "/path/tools.html";
+        hrefLocation = "/tools.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {
@@ -135,7 +135,7 @@ $(document).ready(() => {
     });
 
     $('#gear').on("click", function(){
-        hrefLocation = "/path/gear.html";
+        hrefLocation = "/gear.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {
@@ -146,7 +146,7 @@ $(document).ready(() => {
     });
 
     $('#projects').on("click", function(){
-        hrefLocation = "/path/projects.html";
+        hrefLocation = "/projects.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {
@@ -157,7 +157,7 @@ $(document).ready(() => {
     });
 
     $('#contact').on("click", function(){
-        hrefLocation = "/path/contact.html";
+        hrefLocation = "/contact.html";
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
             redirectHigher();
         } if($(this).index()+1 == currentLocation) {

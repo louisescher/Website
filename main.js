@@ -79,18 +79,14 @@ function redirectHigher() {
 }
 
 $(document).ready(() => {
-    console.log("Current Page: " + currentLocation);
     if(currentLocation == 1) {
-        console.log("You are on the Home Page!")
         loadScrollHigher();
     } else {
         if (sessionStorage.getItem("LastRedirect") === null) {
             retrievedObject = 8;
         } else if(parseInt(retrievedObject) > currentLocation) {
-            console.log("Last Page was Higher than current Page: " + parseInt(retrievedObject));
             loadScrollHigher();
         } else if(parseInt(retrievedObject) < currentLocation) {
-            console.log("Last Page was lower than current Page: " + parseInt(retrievedObject));
             loadScrollLower();
         }
     }
@@ -134,7 +130,6 @@ $(document).ready(() => {
 
     $('#programming').on("click", function(){
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
-            console.log($(this).index()+1);
             redirectHigher();
             setTimeout(function() {
                 window.location.href = "./skills.html";
@@ -142,7 +137,6 @@ $(document).ready(() => {
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
-            console.log($(this).index()+1);
             redirectLower();
             setTimeout(function() {
                 window.location.href = "./skills.html";
@@ -152,7 +146,6 @@ $(document).ready(() => {
 
     $('#tools').on("click", function(){
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
-            console.log($(this).index()+1);
             redirectHigher();
             setTimeout(function() {
                 window.location.href = "./tools.html";
@@ -160,7 +153,6 @@ $(document).ready(() => {
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
-            console.log($(this).index()+1);
             redirectLower();
             setTimeout(function() {
                 window.location.href = "./tools.html";

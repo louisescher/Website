@@ -5,24 +5,24 @@ var page = path.split("/").pop();
 
 //Letzte Page als Session Storage
 
-if(page == "about.html") {
+if(page == "about.html" || page == "about") {
     currentLocation = 2;
-} else if(page == "skills.html") {
+} else if(page == "skills.html" || page == "skills") {
     currentLocation = 3;
-} else if(page == "tools.html") {
+} else if(page == "tools.html" || page == "tools") {
     currentLocation = 4;
-} else if(page == "gear.html") {
+} else if(page == "gear.html" || page == "gear") {
     currentLocation = 5;
-} else if(page == "projects.html") {
+} else if(page == "projects.html" || page == "projects") {
     currentLocation = 6;
-} else if(page == "contact.html") {
+} else if(page == "contact.html" || page == "contact") {
     currentLocation = 7;
 } else {
     currentLocation = 1;
 }
 
 var lastRedirect; // 1 or 0
-var retrievedObject = localStorage.getItem('LastRedirect');
+var retrievedObject = sessionStorage.getItem('LastRedirect');
 
 //Navbarslider Toggle
 function toggle(){
@@ -67,14 +67,14 @@ function redirectLower() {
     var sec = document.getElementById('sec');
     sec.classList.toggle('active');
     lastRedirect = currentLocation; // 1 or 0
-    localStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
+    sessionStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
     leaveScrollHigher();
 }
 function redirectHigher() {
     var sec = document.getElementById('sec');
     sec.classList.toggle('active');
     lastRedirect = currentLocation; // 1 or 0
-    localStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
+    sessionStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
     leaveScrollLower();
 }
 
@@ -84,7 +84,7 @@ $(document).ready(() => {
         console.log("You are on the Home Page!")
         loadScrollHigher();
     } else {
-        if (localStorage.getItem("LastRedirect") === null) {
+        if (sessionStorage.getItem("LastRedirect") === null) {
             retrievedObject = 8;
         } else if(parseInt(retrievedObject) > currentLocation) {
             console.log("Last Page was Higher than current Page: " + parseInt(retrievedObject));

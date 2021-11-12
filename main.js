@@ -216,5 +216,3 @@ $(document).ready(() => {
         }
     });
 });
-//Check for nth-child number for current element, then check if Number of clicked element is higher or lower
-//(https://developer.mozilla.org/de/docs/Web/CSS/:nth-child, https://stackoverflow.com/questions/10547261/get-the-nth-child-number-of-an-element-in-jquery)

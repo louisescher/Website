@@ -3,21 +3,24 @@ var currentLocation;
 var path = window.location.pathname;
 var page = path.split("/").pop();
 
+//Letzte Page als Session Storage
 
-if(page == "index.html" || window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
-    currentLocation = 1;
-} if(page == "about.html" && window.location.hostname === "codedotspirit.dev" && window.location.hostname === "codedotspirit.pages.dev") {
-    currentLocation = 2;
-} if(page == "skills.html" && window.location.hostname === "codedotspirit.dev" && window.location.hostname === "codedotspirit.pages.dev") {
-    currentLocation = 3;
-} if(page == "tools.html" && window.location.hostname === "codedotspirit.dev" && window.location.hostname === "codedotspirit.pages.dev") {
-    currentLocation = 4;
-} if(page == "gear.html" && window.location.hostname === "codedotspirit.dev" && window.location.hostname === "codedotspirit.pages.dev") {
-    currentLocation = 5;
-} if(page == "projects.html" && window.location.hostname === "codedotspirit.dev" && window.location.hostname === "codedotspirit.pages.dev") {
-    currentLocation = 6;
-} if(page == "contact.html" && window.location.hostname === "codedotspirit.dev" && window.location.hostname === "codedotspirit.pages.dev") {
-    currentLocation = 7;
+if(window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
+    if(page == "about.html") {
+        currentLocation = 2;
+    } else if(page == "skills.html") {
+        currentLocation = 3;
+    } else if(page == "tools.html") {
+        currentLocation = 4;
+    } else if(page == "gear.html") {
+        currentLocation = 5;
+    } else if(page == "projects.html") {
+        currentLocation = 6;
+    } else if(page == "contact.html") {
+        currentLocation = 7;
+    } else {
+        currentLocation = 1;
+    }
 }
 
 var lastRedirect; // 1 or 0
@@ -65,14 +68,14 @@ function leaveScrollHigher() {
 function redirectLower() {
     var sec = document.getElementById('sec');
     sec.classList.toggle('active');
-    lastRedirect = 0; // 1 or 0
+    lastRedirect = currentLocation; // 1 or 0
     localStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
     leaveScrollHigher();
 }
 function redirectHigher() {
     var sec = document.getElementById('sec');
     sec.classList.toggle('active');
-    lastRedirect = 1; // 1 or 0
+    lastRedirect = currentLocation; // 1 or 0
     localStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
     leaveScrollLower();
 }
@@ -80,13 +83,12 @@ function redirectHigher() {
 $(document).ready(() => {
     console.log(currentLocation)
     if (localStorage.getItem("LastRedirect") === null) {
-        retrievedObject = 0;
-    }
-    if(JSON.parse(retrievedObject) == 1) {
-        console.log(retrievedObject);
+        retrievedObject = 8;
+    } else if(parseInt(retrievedObject) > currentLocation) {
+        console.log(parseInt(retrievedObject));
         loadScrollHigher();
-    } else {
-        console.log(retrievedObject);
+    } else if(parseInt(retrievedObject) < currentLocation) {
+        console.log(parseInt(retrievedObject));
         loadScrollHigher();
     }
 
@@ -95,7 +97,7 @@ $(document).ready(() => {
             console.log($(this).index()+1);
             redirectHigher();
             setTimeout(function() {
-                window.location.href = "./index.html";
+                window.location.href = window.location.hostname;
             }, 1000);
         } if($(this).index()+1 == currentLocation) {
             console.log($(this).index()+1);
@@ -104,7 +106,7 @@ $(document).ready(() => {
             console.log($(this).index()+1);
             redirectLower();
             setTimeout(function() {
-                window.location.href = "./index.html";
+                window.location.href = window.location.hostname;
             }, 1000);
         }
     });

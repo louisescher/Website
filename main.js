@@ -5,22 +5,20 @@ var page = path.split("/").pop();
 
 //Letzte Page als Session Storage
 
-if(window.location.hostname === "codedotspirit.dev" || window.location.hostname === "codedotspirit.pages.dev") {
-    if(page == "about.html") {
-        currentLocation = 2;
-    } else if(page == "skills.html") {
-        currentLocation = 3;
-    } else if(page == "tools.html") {
-        currentLocation = 4;
-    } else if(page == "gear.html") {
-        currentLocation = 5;
-    } else if(page == "projects.html") {
-        currentLocation = 6;
-    } else if(page == "contact.html") {
-        currentLocation = 7;
-    } else {
-        currentLocation = 1;
-    }
+if(page == "about.html") {
+    currentLocation = 2;
+} else if(page == "skills.html") {
+    currentLocation = 3;
+} else if(page == "tools.html") {
+    currentLocation = 4;
+} else if(page == "gear.html") {
+    currentLocation = 5;
+} else if(page == "projects.html") {
+    currentLocation = 6;
+} else if(page == "contact.html") {
+    currentLocation = 7;
+} else {
+    currentLocation = 1;
 }
 
 var lastRedirect; // 1 or 0
@@ -81,32 +79,37 @@ function redirectHigher() {
 }
 
 $(document).ready(() => {
-    console.log(currentLocation)
-    if (localStorage.getItem("LastRedirect") === null) {
-        retrievedObject = 8;
-    } else if(parseInt(retrievedObject) > currentLocation) {
-        console.log(parseInt(retrievedObject));
+    console.log("Current Page: " + currentLocation);
+    if(currentLocation == 1) {
+        console.log("You are on the Home Page!")
         loadScrollHigher();
-    } else if(parseInt(retrievedObject) < currentLocation) {
-        console.log(parseInt(retrievedObject));
-        loadScrollHigher();
+    } else {
+        if (localStorage.getItem("LastRedirect") === null) {
+            retrievedObject = 8;
+        } else if(parseInt(retrievedObject) > currentLocation) {
+            console.log("Last Page was Higher than current Page: " + parseInt(retrievedObject));
+            loadScrollHigher();
+        } else if(parseInt(retrievedObject) < currentLocation) {
+            console.log("Last Page was lower than current Page: " + parseInt(retrievedObject));
+            loadScrollLower();
+        }
     }
+    
 
     $('#home').on("click", function(){
         if($(this).index()+1 < currentLocation) {    // Wenns lower ist = Nach oben
             console.log($(this).index()+1);
             redirectHigher();
             setTimeout(function() {
-                window.location.href = window.location.hostname;
+                window.location.href = "./index.html";
             }, 1000);
         } if($(this).index()+1 == currentLocation) {
-            console.log($(this).index()+1);
             return;
         } if($(this).index()+1 > currentLocation) {
             console.log($(this).index()+1);
             redirectLower();
             setTimeout(function() {
-                window.location.href = window.location.hostname;
+                window.location.href = "./index.html";
             }, 1000);
         }
     });

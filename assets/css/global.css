@@ -232,11 +232,9 @@ li {
 }
 
 .navslide-li {
-    padding: .4em .7em;
     color: rgba(255,255,255,.5);
     position: relative;
     text-decoration: none;
-    font-size: 20px;
 }
 
 .navslide-li.black:hover > span {

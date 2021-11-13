@@ -12,6 +12,13 @@
     --tile-color: #353841;
     --tile-color-light: #50535e;
     --nav-clr: rgb(53, 100, 255);
+    --discord-clr: #7289DA;
+    --html-clr: #e79261;
+    --css-clr: #61abe7;
+    --cpp-clr: #384bf7;
+    --cs-clr: #d463f0;
+    --js-clr: #e7da61;
+    /*var(--cpp-clr);*/
 }
 
 * {
@@ -242,15 +249,15 @@ li {
 }
   
 .navslide-li:hover > span {
-    color: #363636;
+    color: #202020;
 }
 
 .navslide-li span {
-    transition: all 200ms ease-in;
+    transition: all 300ms ease-in;
 }
 
 .fab.fa-discord {
-    color: #7289DA; 
+    color: var(--discord-clr); 
     margin-left: 0.2rem; 
     margin-right: 0.2rem;
     transition: all 300ms ease-in;
@@ -258,48 +265,265 @@ li {
 }
 
 .fab.fa-discord:hover {
-    color: #7289DA; 
+    color: var(--discord-clr); 
     margin-left: 0.2rem; 
     margin-right: 0.2rem;
-    text-shadow: 0 0 4px #7289DA;
+    text-shadow: 0 0 4px var(--discord-clr);
 }
 
 #about_span {
     transition: all 300ms ease-in;
+    position: relative;
+    text-decoration: none;
+    transition: 0.5s;
 }
 
 #about_span:hover {
     cursor: pointer;
-} 
+}
+
+.discord_js::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0.1rem;
+    width: 100%;
+    height: 1px;
+    background: var(--discord-clr);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.discord_js:hover::after {
+    transform: scaleX(1.01);
+    transform-origin: left;
+}
+
+.about_html::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0.1rem;
+    width: 100%;
+    height: 1px;
+    background: var(--html-clr);;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.about_html:hover::after {
+    transform: scaleX(1.01);
+    transform-origin: left;
+}
+
+.about_css::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0.1rem;
+    width: 100%;
+    height: 1px;
+    background: var(--css-clr);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.about_css:hover::after {
+    transform: scaleX(1.01);
+    transform-origin: left;
+}
+
+.about_cpp::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0.1rem;
+    width: 100%;
+    height: 1px;
+    background: var(--cpp-clr);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.about_cpp:hover::after {
+    transform: scaleX(1.01);
+    transform-origin: left;
+}
+
+.about_cs::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0.1rem;
+    width: 100%;
+    height: 1px;
+    background: var(--cs-clr);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.about_cs:hover::after {
+    transform: scaleX(1.01);
+    transform-origin: left;
+}
+
+.about_js::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0.1rem;
+    width: 100%;
+    height: 1px;
+    background: var(--js-clr);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.about_js:hover::after {
+    transform: scaleX(1.01);
+    transform-origin: left;
+}
 
 .discord_js:hover {
-    color: #7289DA; 
-    text-shadow: 0 0 4px #7289DA;
+    color: var(--discord-clr); 
+    text-shadow: 0 0 4px var(--discord-clr);
 }
 
 .about_html:hover {
-    color: #e79261;
-    text-shadow: 0 0 4px #e79261;
+    color: var(--html-clr);
+    text-shadow: 0 0 4px var(--html-clr);
 }
 
 .about_css:hover {
-    color: #61abe7;
-    text-shadow: 0 0 4px #61abe7;
+    color: var(--css-clr);
+    text-shadow: 0 0 4px var(--css-clr);
 }
 
 .about_cpp:hover {
-    color: #384bf7;
-    text-shadow: 0 0 7px #384bf7;
+    color: var(--cpp-clr);
+    text-shadow: 0 0 7px var(--cpp-clr);
 }
 
 .about_cs:hover {
-    color: #d463f0;
-    text-shadow: 0 0 7px #d463f0;
+    color: var(--cs-clr);
+    text-shadow: 0 0 7px var(--cs-clr);
 }
 
 .about_js:hover {
-    color: #e7da61;
-    text-shadow: 0 0 4px #e7da61;
+    color: var(--js-clr);
+    text-shadow: 0 0 4px var(--js-clr);
+}
+
+.navslide-li {
+    position: relative;
+    display: block;
+    padding: 4px 0;
+    color: #ecf0f1;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.navslide-li::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #202020;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.navslide-li:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navslide-li.black:hover::after {
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.discord_js::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0.1rem;
+    width: 100%;
+    height: 1px;
+    background: var(--discord-clr);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.discord_js:hover::after {
+    transform: scaleX(1.01);
+    transform-origin: left;
+}
+
+.no-clr {
+    position: relative;
+    width: fit-content;
+    padding: 4px 0;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.no-clr::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0rem;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.no-clr:hover::after {
+    transform: scaleX(1.01);
+    transform-origin: left;
+}
+
+.cloudflare-href {
+    position: relative;
+    width: fit-content;
+    display: block;
+    padding: 4px 0;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.cloudflare-href::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0rem;
+    width: 100%;
+    height: 1px;
+    background: var(--html-clr);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.cloudflare-href:hover::after {
+    transform: scaleX(1.01);
+    transform-origin: left;
 }
 
 /*SCSS*/

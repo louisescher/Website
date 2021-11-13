@@ -68,14 +68,18 @@ function redirectLower() {
     sec.classList.toggle('active');
     lastRedirect = currentLocation; // 1 or 0
     sessionStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
-    leaveScrollHigher();
+    setTimeout(() => {
+        leaveScrollHigher();
+    }, 300); 
 }
 function redirectHigher() {
     var sec = document.getElementById('sec');
     sec.classList.toggle('active');
     lastRedirect = currentLocation; // 1 or 0
     sessionStorage.setItem('LastRedirect', JSON.stringify(lastRedirect));
-    leaveScrollLower();
+    setTimeout(() => {
+        leaveScrollLower();
+    }, 300);
 }
 
 $(document).ready(() => {

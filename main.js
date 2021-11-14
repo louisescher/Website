@@ -3,6 +3,8 @@ var currentLocation;
 var path = window.location.pathname;
 var page = path.split("/").pop();
 
+var randomImage;
+
 //Letzte Page als Session Storage
 
 if(page == "about.html" || page == "about") {
@@ -82,6 +84,32 @@ function redirectHigher() {
     }, 300);
 }
 
+/*Avatar*/
+
+var images = [
+    "./assets/img/Avatar_shocked.png",
+    "./assets/img/Avatar_shocked_love.png",
+    "./assets/img/Avatar_peace.png",
+    "./assets/img/Avatar_happy.png",
+    "./assets/img/Avatar_demon.png",
+    "./assets/img/Avatar_maid.png",
+    "./assets/img/Avatar_music.png",
+    "./assets/img/Avatar_terrified.png",
+];
+
+randomImage = images[Math.floor(Math.random()*images.length)];
+
+function imageRandomizer() {
+    var Avatar_img = document.getElementById('avatar');
+    Avatar_img.src = randomImage;
+    Avatar_img.style.pointerEvents = 'none';
+    setTimeout(() => {
+        Avatar_img.src = "./assets/img/Avatar.png"
+        Avatar_img.style.pointerEvents = 'auto';
+    }, 1250);
+    randomImage = images[Math.floor(Math.random()*images.length)];
+}
+
 $(document).ready(() => {
     if(currentLocation == 1) {
         loadScrollHigher();
@@ -94,7 +122,10 @@ $(document).ready(() => {
             loadScrollLower();
         }
     }
-    
+
+    $('#avatar').dblclick(function() {
+        imageRandomizer();
+    });
 
     $('#home').on("click", function(){
         if($(this).index()+1 < currentLocation) {    // Wenns lower ist = Nach oben

@@ -502,7 +502,6 @@ li {
 .cloudflare-href {
     position: relative;
     width: fit-content;
-    display: block;
     padding: 4px 0;
     color: #ecf0f1;
     text-decoration: none;
@@ -525,6 +524,29 @@ li {
 .cloudflare-href:hover::after {
     transform: scaleX(1.01);
     transform-origin: left;
+}
+
+.multi-ulwrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.multi-h1 {
+    margin-bottom: 0rem;
+}
+
+.multi-ul {
+    margin-top: 0.2rem;
+    margin-right: 3rem;
+}
+
+.multi-ul li::before {
+    content: '•';
+    margin-right: 0.2rem;
+}
+
+.bold {
+    font-weight: 200;
 }
 
 /*SCSS*/

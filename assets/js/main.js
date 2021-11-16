@@ -40,7 +40,6 @@ function loadScrollHigher() {
     }, 0);
     $('.wrapper').fadeTo(200, 1);
     $('.wrapper.home').fadeTo(200, 1);
-    setTimeout(1000); 
     $('body,html').animate({
         scrollTop: window.screen.height * window.devicePixelRatio * 0.7
     }, 1000);

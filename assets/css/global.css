@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.3.6,
-* Autoprefixer: v10.3.1
-* Browsers: last 4 version
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
@@ -18,9 +11,7 @@
     --cpp-clr: #384bf7;
     --cs-clr: #d463f0;
     --js-clr: #e7da61;
-    /*var(--cpp-clr);*/
 }
-
 * {
     font-family: 'Montserrat', sans-serif;
     text-rendering: optimizeLegibility;
@@ -215,7 +206,8 @@ a:visited {color:rgb(255, 255, 255)}
     height: auto;
     -webkit-filter: drop-shadow(0px 10px 15px #000);
     filter: drop-shadow(0px 10px 15px #000);
-    animation: go 0.15s infinite alternate ease;
+    -webkit-animation: go 0.15s infinite alternate ease;
+            animation: go 0.15s infinite alternate ease;
 }
 
 .landingpage-flexwrapper {
@@ -236,6 +228,8 @@ li {
 }
 
 .navslide-li {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -254,6 +248,8 @@ li {
 }
 
 .navslide-li span {
+    -webkit-transition: all 300ms ease-in;
+    -o-transition: all 300ms ease-in;
     transition: all 300ms ease-in;
 }
 
@@ -261,6 +257,8 @@ li {
     color: var(--discord-clr); 
     margin-left: 0.2rem; 
     margin-right: 0.2rem;
+    -webkit-transition: all 300ms ease-in;
+    -o-transition: all 300ms ease-in;
     transition: all 300ms ease-in;
     top: 2px;
 }
@@ -273,9 +271,13 @@ li {
 }
 
 #about_span {
+    -webkit-transition: all 300ms ease-in;
+    -o-transition: all 300ms ease-in;
     transition: all 300ms ease-in;
     position: relative;
     text-decoration: none;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
 }
 
@@ -291,14 +293,26 @@ li {
     width: 100%;
     height: 1px;
     background: var(--discord-clr);
-    transform: scaleX(0);
-    transform-origin: right;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .discord_js:hover::after {
-    transform: scaleX(1.01);
-    transform-origin: left;
+    -webkit-transform: scaleX(1.01);
+        -ms-transform: scaleX(1.01);
+            transform: scaleX(1.01);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
 }
 
 .about_html::after {
@@ -309,14 +323,26 @@ li {
     width: 100%;
     height: 1px;
     background: var(--html-clr);;
-    transform: scaleX(0);
-    transform-origin: right;
+    -webkit-transform: scaleX(0);;
+        -ms-transform: scaleX(0);;
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .about_html:hover::after {
-    transform: scaleX(1.01);
-    transform-origin: left;
+    -webkit-transform: scaleX(1.01);
+        -ms-transform: scaleX(1.01);
+            transform: scaleX(1.01);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
 }
 
 .about_css::after {
@@ -327,14 +353,26 @@ li {
     width: 100%;
     height: 1px;
     background: var(--css-clr);
-    transform: scaleX(0);
-    transform-origin: right;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .about_css:hover::after {
-    transform: scaleX(1.01);
-    transform-origin: left;
+    -webkit-transform: scaleX(1.01);
+        -ms-transform: scaleX(1.01);
+            transform: scaleX(1.01);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
 }
 
 .about_cpp::after {
@@ -345,14 +383,26 @@ li {
     width: 100%;
     height: 1px;
     background: var(--cpp-clr);
-    transform: scaleX(0);
-    transform-origin: right;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .about_cpp:hover::after {
-    transform: scaleX(1.01);
-    transform-origin: left;
+    -webkit-transform: scaleX(1.01);
+        -ms-transform: scaleX(1.01);
+            transform: scaleX(1.01);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
 }
 
 .about_cs::after {
@@ -363,14 +413,26 @@ li {
     width: 100%;
     height: 1px;
     background: var(--cs-clr);
-    transform: scaleX(0);
-    transform-origin: right;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .about_cs:hover::after {
-    transform: scaleX(1.01);
-    transform-origin: left;
+    -webkit-transform: scaleX(1.01);
+        -ms-transform: scaleX(1.01);
+            transform: scaleX(1.01);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
 }
 
 .about_js::after {
@@ -381,14 +443,26 @@ li {
     width: 100%;
     height: 1px;
     background: var(--js-clr);
-    transform: scaleX(0);
-    transform-origin: right;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .about_js:hover::after {
-    transform: scaleX(1.01);
-    transform-origin: left;
+    -webkit-transform: scaleX(1.01);
+        -ms-transform: scaleX(1.01);
+            transform: scaleX(1.01);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
 }
 
 .discord_js:hover {
@@ -428,6 +502,8 @@ li {
     color: #ecf0f1;
     text-decoration: none;
     text-transform: uppercase;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
 }
 
@@ -439,19 +515,35 @@ li {
     width: 100%;
     height: 3px;
     background: #202020;
-    transform: scaleX(0);
-    transform-origin: right;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .navslide-li:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+    -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
 }
 
 .navslide-li.black:hover::after {
-    transform: scaleX(0);
-    transform-origin: left;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
 }
 
 .discord_js::after {
@@ -462,22 +554,38 @@ li {
     width: 100%;
     height: 1px;
     background: var(--discord-clr);
-    transform: scaleX(0);
-    transform-origin: right;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .discord_js:hover::after {
-    transform: scaleX(1.01);
-    transform-origin: left;
+    -webkit-transform: scaleX(1.01);
+        -ms-transform: scaleX(1.01);
+            transform: scaleX(1.01);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
 }
 
 .no-clr {
     position: relative;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     padding: 4px 0;
     color: #ecf0f1;
     text-decoration: none;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
 }
 
@@ -489,22 +597,38 @@ li {
     width: 100%;
     height: 1px;
     background: rgb(118, 139, 255);
-    transform: scaleX(0);
-    transform-origin: right;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .no-clr:hover::after {
-    transform: scaleX(1.01);
-    transform-origin: left;
+    -webkit-transform: scaleX(1.01);
+        -ms-transform: scaleX(1.01);
+            transform: scaleX(1.01);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
 }
 
 .cloudflare-href {
     position: relative;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     padding: 4px 0;
     color: #ecf0f1;
     text-decoration: none;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
 }
 
@@ -516,19 +640,36 @@ li {
     width: 100%;
     height: 1px;
     background: var(--html-clr);
-    transform: scaleX(0);
-    transform-origin: right;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .cloudflare-href:hover::after {
-    transform: scaleX(1.01);
-    transform-origin: left;
+    -webkit-transform: scaleX(1.01);
+        -ms-transform: scaleX(1.01);
+            transform: scaleX(1.01);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
 }
 
 .multi-ulwrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 
 .multi-h1 {
@@ -1115,7 +1256,7 @@ li {
    }
 }
 
-@media screen and (max-width: 1570px) {
+@media only screen and (max-width: 1570px) {
     .header-relative-div {
         left: 94vw;
     }
@@ -1125,13 +1266,13 @@ li {
 }
 
 
-@media screen and (max-width: 1650px) {
+@media only screen and (max-width: 1650px) {
     #avatar {
         display: none;
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
     #avatar {
         display: none;
     }
@@ -1223,7 +1364,7 @@ li {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
     .header-relative-div {
         left: 92vw;
         top: 20px;
@@ -1240,7 +1381,7 @@ li {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media only screen and (max-width: 700px) {
     .second-header {
         font-weight: 600;
         font-size: 25px;
@@ -1250,21 +1391,21 @@ li {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .header-relative-div {
         left: 88vw;
         top: 20px;
     }
 }
 
-@media screen and (max-width: 400px) {
+@media only screen and (max-width: 400px) {
     .header-relative-div {
         left: 86vw;
         top: 20px;
     }
 }
 
-@media screen and (max-width: 460px) {
+@media only screen and (max-width: 460px) {
     .header-relative-div.active ~ .wrapper {
         -webkit-transform: translateX(-300px);
             -ms-transform: translateX(-300px);
@@ -1314,7 +1455,7 @@ li {
     }
 }
 
-@media screen and (max-width: 360px) {
+@media only screen and (max-width: 360px) {
     .header-relative-div.active ~ .wrapper {
         -webkit-transform: translateX(-200px);
             -ms-transform: translateX(-200px);
@@ -1354,7 +1495,7 @@ li {
     }
 }
 
-@media screen and (min-width: 2500px) {
+@media only screen and (min-width: 2600px) {
     * {
         font-family: 'Montserrat', sans-serif;
         text-rendering: optimizeLegibility;
@@ -1400,9 +1541,17 @@ li {
         width: 100%;
         height: 2px;
         background: var(--discord-clr);
-        transform: scaleX(0);
-        transform-origin: right;
+        -webkit-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: right;
+            -ms-transform-origin: right;
+                transform-origin: right;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        -o-transition: transform 0.3s;
         transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
     }
     .about_html::after {
         position: absolute;
@@ -1412,9 +1561,17 @@ li {
         width: 100%;
         height: 2px;
         background: var(--html-clr);;
-        transform: scaleX(0);
-        transform-origin: right;
+        -webkit-transform: scaleX(0);;
+            -ms-transform: scaleX(0);;
+                transform: scaleX(0);
+        -webkit-transform-origin: right;
+            -ms-transform-origin: right;
+                transform-origin: right;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        -o-transition: transform 0.3s;
         transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
     }
     .about_css::after {
         position: absolute;
@@ -1424,9 +1581,17 @@ li {
         width: 100%;
         height: 2px;
         background: var(--css-clr);
-        transform: scaleX(0);
-        transform-origin: right;
+        -webkit-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: right;
+            -ms-transform-origin: right;
+                transform-origin: right;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        -o-transition: transform 0.3s;
         transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
     }
     .about_cpp::after {
         position: absolute;
@@ -1436,9 +1601,17 @@ li {
         width: 100%;
         height: 2px;
         background: var(--cpp-clr);
-        transform: scaleX(0);
-        transform-origin: right;
+        -webkit-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: right;
+            -ms-transform-origin: right;
+                transform-origin: right;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        -o-transition: transform 0.3s;
         transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
     }
     .about_cs::after {
         position: absolute;
@@ -1448,9 +1621,17 @@ li {
         width: 100%;
         height: 2px;
         background: var(--cs-clr);
-        transform: scaleX(0);
-        transform-origin: right;
+        -webkit-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: right;
+            -ms-transform-origin: right;
+                transform-origin: right;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        -o-transition: transform 0.3s;
         transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
     }
     .about_js::after {
         position: absolute;
@@ -1460,9 +1641,17 @@ li {
         width: 100%;
         height: 2px;
         background: var(--js-clr);
-        transform: scaleX(0);
-        transform-origin: right;
+        -webkit-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: right;
+            -ms-transform-origin: right;
+                transform-origin: right;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        -o-transition: transform 0.3s;
         transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
     }
     .no-clr::after {
         position: absolute;
@@ -1472,9 +1661,17 @@ li {
         width: 100%;
         height: 2px;
         background: rgb(118, 139, 255);
-        transform: scaleX(0);
-        transform-origin: right;
+        -webkit-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: right;
+            -ms-transform-origin: right;
+                transform-origin: right;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        -o-transition: transform 0.3s;
         transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
     }
     .cloudflare-href::after {
         position: absolute;
@@ -1484,9 +1681,17 @@ li {
         width: 100%;
         height: 2px;
         background: var(--html-clr);
-        transform: scaleX(0);
-        transform-origin: right;
+        -webkit-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: right;
+            -ms-transform-origin: right;
+                transform-origin: right;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        -o-transition: transform 0.3s;
         transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
     }
     .navslide-li::after {
         position: absolute;
@@ -1496,9 +1701,17 @@ li {
         width: 100%;
         height: 4px;
         background: #202020;
-        transform: scaleX(0);
-        transform-origin: right;
+        -webkit-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transform-origin: right;
+            -ms-transform-origin: right;
+                transform-origin: right;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        -o-transition: transform 0.3s;
         transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
     }
     #toggle {
         position: fixed;
@@ -1619,7 +1832,7 @@ li {
         font-size: 3.5vh;
     }
 }
-@media screen and (min-width: 3770px) {
+@media only screen and (min-width: 3770px) {
     * {
         font-family: 'Montserrat', sans-serif;
         text-rendering: optimizeLegibility;

@@ -1455,11 +1455,23 @@ li {
     }
 }
 
+@media only screen and (max-width: 530px) {
+    .multi-ulwrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+}
+
 @media only screen and (max-width: 360px) {
     .header-relative-div.active ~ .wrapper {
-        -webkit-transform: translateX(-200px);
-            -ms-transform: translateX(-200px);
-                transform: translateX(-200px);
+        -webkit-transform: translateX(-250px);
+            -ms-transform: translateX(-250px);
+                transform: translateX(-250px);
     }
     .header-relative-div.active + #toggle {
         -webkit-transform: translateX(0px);
@@ -1472,18 +1484,18 @@ li {
                 transform: translateX(0px);
     }
     .header-relative-div.active ~ .navslide {
-        -webkit-transform: translateX(-200px);
-            -ms-transform: translateX(-200px);
-                transform: translateX(-200px);
+        -webkit-transform: translateX(-250px);
+            -ms-transform: translateX(-250px);
+                transform: translateX(-250px);
     }
     .header-relative-div.active {
-        -webkit-transform: translateX(-200px);
-            -ms-transform: translateX(-200px);
-                transform: translateX(-200px);
+        -webkit-transform: translateX(-250px);
+            -ms-transform: translateX(-250px);
+                transform: translateX(-250px);
     }
     .navslide {
         position: fixed;
-        width: 200px;
+        width: 250px;
         height: 100vh;
         left: 100vw;
         top: 0px;
@@ -1492,6 +1504,43 @@ li {
         -webkit-transition: 0.4s;
         -o-transition: 0.4s;
         transition: 0.4s;
+    }
+    body {
+        margin-top: 80vh;
+    }
+    .wrapper {
+        margin-left: 1rem;
+        width: 100%;
+        margin-top: 1rem;
+        width: 90%;
+    }
+    .wrapper.home {
+        margin-left: 1rem;
+        width: 100%;
+        margin-top: 1rem;
+        width: 90%;
+    }
+    #toggle {
+        position: fixed;
+        width: 25px;
+        height: 30px;
+        cursor: pointer;
+    }
+    #toggle::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+    }
+    #toggle::after {
+        content: '';
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        height: 2px;
+        background: #fff;
     }
 }
 

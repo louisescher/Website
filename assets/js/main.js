@@ -38,7 +38,8 @@ function loadScrollHigher() {
     $('body,html').animate({
         scrollTop: window.screen.height * window.devicePixelRatio * 2.6
     }, 0);
-    $('.wrapper').fadeTo("fast", 1);
+    $('.wrapper').fadeTo(200, 1);
+    $('.wrapper.home').fadeTo(200, 1);
     setTimeout(1000); 
     $('body,html').animate({
         scrollTop: window.screen.height * window.devicePixelRatio * 0.7
@@ -48,7 +49,8 @@ function loadScrollLower() {
     $('body,html').animate({
         scrollTop: window.screen.height * window.devicePixelRatio * -2.6
     }, 0);
-    $('.wrapper').fadeTo("fast", 1);
+    $('.wrapper').fadeTo(200, 1);
+    $('.wrapper.home').fadeTo(200, 1);
     $('body,html').animate({
         scrollTop: window.screen.height * window.devicePixelRatio * 0.7
     }, 1000);
@@ -58,11 +60,15 @@ function leaveScrollLower() {
     $('body,html').animate({
         scrollTop: window.screen.height * window.devicePixelRatio * -2
     }, 2000);
+    $('.wrapper').fadeTo(200, 0);
+    $('.wrapper.home').fadeTo(200, 0);
 }
 function leaveScrollHigher() {
     $('body,html').animate({
         scrollTop: window.screen.height * window.devicePixelRatio * 1.6
     }, 1000);
+    $('.wrapper').fadeTo(200, 0);
+    $('.wrapper.home').fadeTo(200, 0);
 }
 
 function redirectLower() {

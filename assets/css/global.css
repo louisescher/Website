@@ -1261,7 +1261,7 @@ li {
         left: 94vw;
     }
     .landingpage-flexwrapper {
-        width: 100%;
+        width: 60%;
     }
 }
 
@@ -1446,12 +1446,15 @@ li {
     .wrapper {
         margin-top: 1.5rem;
         margin-left: 1rem;
-        width: 70%;
+        width: 85%;
     }
     .wrapper.home {
         margin-top: 1.5rem;
         margin-left: 1rem;
-        width: 70%;
+        width: 100%;
+    } 
+    .gearpage {
+        width: 110%;
     }
 }
 

@@ -1450,7 +1450,7 @@ li {
     }
     .wrapper.home {
         margin-top: 1.5rem;
-        margin-left: 1rem;
+        margin-left: 0.5rem;
         width: 100%;
     } 
     .gearpage {
@@ -1512,16 +1512,16 @@ li {
         margin-top: 80vh;
     }
     .wrapper {
-        margin-left: 1rem;
+        margin-left: 0.5rem;
         width: 100%;
         margin-top: 1rem;
-        width: 90%;
+        width: 100% !important;
     }
     .wrapper.home {
-        margin-left: 1rem;
+        margin-left: 0.5rem;
         width: 100%;
         margin-top: 1rem;
-        width: 90%;
+        width: 100% !important;
     }
     #toggle {
         position: fixed;

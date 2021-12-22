@@ -134,7 +134,6 @@ $(document).ready(() => {
 
     $('#home').on("click", function(){
         if($(this).index()+1 < currentLocation) {    // Wenns lower ist = Nach oben
-            console.log($(this).index()+1);
             redirectHigher();
             setTimeout(function() {
                 window.location.href = "./index.html";
@@ -142,7 +141,6 @@ $(document).ready(() => {
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
-            console.log($(this).index()+1);
             redirectLower();
             setTimeout(function() {
                 window.location.href = "./index.html";
@@ -152,7 +150,6 @@ $(document).ready(() => {
 
     $('#about').on("click", function(){
         if($(this).index()+1 < currentLocation) {       // Wenns lower ist = Nach oben
-            console.log($(this).index()+1);
             redirectHigher();
             setTimeout(function() {
                 window.location.href = "./about.html";
@@ -160,7 +157,6 @@ $(document).ready(() => {
         } if($(this).index()+1 == currentLocation) {
             return;
         } if($(this).index()+1 > currentLocation) {
-            console.log($(this).index()+1);
             redirectLower();
             setTimeout(function() {
                 window.location.href = "./about.html";

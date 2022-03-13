@@ -1,0 +1,4 @@
+- JavaScript
+    - Node.js, Plain JS, Next.js/React (Learning)
+- HTML/CSS
+    - (+ TailwindCSS)

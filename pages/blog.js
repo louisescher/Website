@@ -87,7 +87,7 @@ export default function Blog({ allPostsData }) {
             {totalPosts < 10 ? (
               <div>
                 <p className="text-sm text-gray-700">
-                  Showing <span className="font-medium text-gray-400">1</span> of{' '}
+                  Showing <span className="font-medium text-gray-400">{totalPosts}</span> of{' '}
                   <span className="font-medium text-gray-400">{totalPosts}</span> posts
                 </p>
               </div>

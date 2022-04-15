@@ -66,9 +66,9 @@ export default function Blog({ allPostsData }) {
         <div className='ml-4 mr-4 md:ml-16 mt-12 md:mr-16 2xl:w-1/2'>
           <SectionHeader>{title}</SectionHeader>
           <p className='text-xl w-5/6'>{subtitle}</p>
-          <ul className='flex flex-col list-none'>
+          <ul className='flex flex-col list-none ml-0'>
             {finalArray.map(({ id, date, title, desc }) => (
-              <li className="border border-gray-700 text-xl p-6 mt-4" key={id}>
+              <li className="border border-gray-700 text-xl p-6 mt-4 ml-0" key={id}>
                 <span>{title}</span>
                 <br />
                 <small className='text-gray-500'>

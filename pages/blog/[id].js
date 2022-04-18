@@ -35,7 +35,7 @@ export default function Post({ postData }) {
             <Date dateString={postData.date} />
           </div>
           <hr className='my-4' />
-          <div className='article left' dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          <div className='article text-left' dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
         <div className='mt-12 w-1/2 mb-4 text-center mx-auto'>
           <Link href="/blog">

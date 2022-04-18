@@ -24,12 +24,12 @@ export default function Portfolio({ allProjData }) {
         <div className='ml-4 mr-4 md:ml-16 mt-12 md:mr-16 2xl:w-3/4'>
           <SectionHeader>{title}</SectionHeader>
           <p className='text-xl w-5/6'>{subtitle}</p>
-          <ul className='flex flex-col'>
+          <ul className='flex flex-col list-none ml-0'>
             {allProjData.map(({ id, title, desc }) => (
               <li className="text-2xl sm:p2 md:p4 xl:p-8 mt-6 flex flex-row justify-start items-center" key={id}>
                 <div className='md:w-4/5 xl:w-3/5 2xl:w-1/3 hidden sm:block'>
                   <img 
-                    src={`/assets/img/portfolio/${title}/${title}.png`}
+                    src={`https://media.codedotspirit.dev/assets/img/portfolio/${title}/${title}.png`}
                     alt={`${title} Website Image`}
                   />
                 </div>

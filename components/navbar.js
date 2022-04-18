@@ -17,7 +17,7 @@ export default function Navbar({ home, blog, skills, portfolio }) {
       <div className="justify-between sm:justify-evenly w-auto max-w-full mx-auto text-white text bg-maincolor h-16 flex flex-row content-center items-center p-4 px-auto text-xl border-b border-solid border-purple-500 z-20 relative" id='navbar'>
         
         <Link href="/">
-          <a className={"hidden sm:block tech-font hover:text-purple-500 hover:text ease-out duration-300 text-white"} id="c_s_nav">&lt;code.spirit&gt;</a>
+          <a className={"hidden sm:block tech-font hover:text-purple-500 ease-out duration-300 text-white"} id="c_s_nav">&lt;code.spirit&gt;</a>
         </Link>
         <Link href="/">
           <a className={home ? (navitem_classes + "ml-0 sm:ml-auto mr-2 sm:mr-8 active") : (navitem_classes + "ml-0 sm:ml-auto mr-2 sm:mr-8")} id='navitem' onClick={e=> setActiveClass(e)}>Home</a>

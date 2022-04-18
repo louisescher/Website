@@ -5,7 +5,7 @@ export default function LandingWrapper() {
   return (
       <div className='flex flex-row content-center items-center h-auto'>
         <div className='textwrapper ml-4 mr-4 md:ml-16 mt-12 md:mr-16'>
-          <h1 className='tech-font text-5xl glitch' data-text="hello world">hello world,</h1>
+          <h1 className='tech-font text-5xl glitch' data-text="hello world">hello world</h1>
           <h1 className='text-6xl font-extralight'>I'm <span className='text-purple-500 font-semibold'>Spirit</span></h1>
           <br />
           <p className='text-2xl tracking-wide'>I'm a {myAge} year-old developer living in Germany.</p>

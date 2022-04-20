@@ -135,5 +135,3 @@ export default function Blog({ allPostsData }) {
     </div>
   )
 }
-
-//Arrow left if pagenumber !== 1, arrow right if pagenumber < totalPages

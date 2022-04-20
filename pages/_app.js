@@ -54,8 +54,3 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp
-
-/*
-To-do:
-1. 
-*/

@@ -24,7 +24,7 @@ export default function Layout({ children, title, description }) {
         animate="enter"
         exit="exit"
         transition={{ type: 'linear', duration: 0.5 }}
-        className="z-10 text-white mx-auto pt-16 bg-maincolor relative min-h-screen overflow-hidden"
+        className="z-10 text-white w-full sm:w-auto sm:mx-auto pt-16 bg-maincolor relative min-h-screen overflow-hidden"
         id="wrapper"
       >
         {children} 

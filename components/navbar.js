@@ -14,7 +14,7 @@ export default function Navbar({ home, blog, skills, portfolio }) {
 
   return (
     <div id='navbar-wrapper' className='z-20 bg-maincolor'>
-      <div className='bg-gradient-to-r from-fuchsia-600 to-pink-600 pb-px w-4/5 mx-auto'>
+      <div className='bg-gradient-to-r from-fuchsia-600 to-pink-600 pb-px w-full sm:w-4/5 mx-auto'>
         <div className="justify-between sm:justify-evenly w-auto max-w-full mx-auto text-white text bg-maincolor h-16 flex flex-row content-center items-center p-4 px-auto text-xl z-20 relative" id='navbar'>
           <Link href="/">
             <a className={"hidden sm:block tech-font hover:text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-pink-600 ease-out duration-300 text-white"} id="c_s_nav">&lt;code.spirit&gt;</a>

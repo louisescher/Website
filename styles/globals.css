@@ -848,3 +848,9 @@ ul li ul li::before {
     margin-bottom: 2rem;
   }
 }
+
+@media (max-width: 640px) {
+  #wrapper {
+    margin-left: 0;
+  }
+}

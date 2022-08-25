@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function Footer() {
   return(
     <footer className="text-center text-white bg-maincolor mt-8">
-      <div className="bg-gradient-to-r from-fuchsia-600 to-pink-600 pt-px w-4/5 mx-auto">
+      <div className="bg-gradient-to-r from-fuchsia-600 to-pink-600 pt-px w-full sm:w-4/5 mx-auto">
         <div className="bg-maincolor" id="footer-wrapper">
           <div className="pt-8">
             <div className="flex justify-center mb-4">

@@ -797,6 +797,10 @@ h3 {
   font-size: 1.1em;
 }
 
+.article img {
+  @apply mt-4;
+}
+
 #home-proj-img {
   min-width: 200px;
 }

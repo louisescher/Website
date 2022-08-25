@@ -31,7 +31,7 @@ export default function Post({ projData }) {
         <article className='mt-4 sm:w-4/5 2xl:w-1/2 mb-4 text-center mx-auto'>
           <h1 className='text-3xl sm:text-5xl mb-0'>{projData.title}</h1>
           <hr className='my-4' />
-          <div className='article text-left' dangerouslySetInnerHTML={{ __html: projData.contentHtml }} />
+          <div className='article text-left font-light' dangerouslySetInnerHTML={{ __html: projData.contentHtml }} />
         </article>
         <div className='mt-12 w-1/2 mb-4 text-center mx-auto'>
           <Link href="/portfolio">

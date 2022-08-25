@@ -29,19 +29,21 @@ export default function Portfolio({ allProjData }) {
               <li className="text-2xl sm:p2 md:p4 xl:p-8 mt-6 flex flex-row justify-start items-center" key={id}>
                 <div className='md:w-4/5 xl:w-3/5 2xl:w-1/3 hidden sm:block'>
                   <img 
-                    src={`https://media.codedotspirit.dev/assets/img/portfolio/${title}/${title}.png`}
-                    alt={`${title} Website Image`}
+                    src={`https://media.codedotspirit.dev/images/portfolio/${title}/${title}.png`}
+                    alt={`Image of ${title}`}
                   />
                 </div>
-                <div className='pl-4 sm:ml-4 sm:pl-4 xl:ml-8 xl:pl-8 border-l border-l-purple-500'>
-                  <span className='text-3xl'>{title}</span>
-                  <br className='mb-2' />
-                  <small>
-                    <div className='text-gray-400 text-base'>{desc}</div>
-                    <Link href={`/portfolio/${id}`}>
-                      <a id='link'>View Project</a>
-                    </Link>
-                  </small>
+                <div className='bg-gradient-to-b from-fuchsia-600 to-pink-600 ml-8 sm:ml-8 pl-px h-full'>
+                  <div className='bg-maincolor pl-8 h-full w-full'>
+                    <span className='text-3xl'>{title}</span>
+                    <br className='mb-2' />
+                    <small>
+                      <div className='text-gray-400 text-base'>{desc}</div>
+                      <Link href={`/portfolio/${id}`}>
+                        <a id='link'>View Project</a>
+                      </Link>
+                    </small>
+                  </div>
                 </div>
               </li>
             ))}

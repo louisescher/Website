@@ -21,8 +21,8 @@ export async function getServerSideProps() {
 export default function Blog({ allPostsData }) {
   const { query } = useRouter();
 
-  var blogPageCountClasses = "bg-gray-900 relative inline-flex items-center px-4 py-2 border text-sm font-medium hover:bg-gray-800"
-  var blogNavArrowClasses = "relative inline-flex items-center px-2 py-2 border border-gray-300 bg-gray-900 text-sm font-medium text-gray-500 hover:bg-gray-800"
+  var blogPageCountClasses = "bg-gray-900 relative inline-flex items-center px-4 py-2 text-sm font-medium hover:bg-gray-800 bg-maincolor"
+  var blogNavArrowClasses = "relative inline-flex items-center px-2 py-2 border-gray-300 text-sm font-medium text-gray-500 hover:bg-gray-800 cursor-pointer"
 
   function splitArrayIntoChunksOfLen(arr, len) {
     var chunks = [], i = 0, n = arr.length;
@@ -68,7 +68,7 @@ export default function Blog({ allPostsData }) {
           <p className='text-xl w-5/6'>{subtitle}</p>
           <ul className='flex flex-col list-none ml-0'>
             {finalArray.map(({ id, date, title, desc }) => (
-              <li className="border border-gray-700 text-xl p-6 mt-4 ml-0" key={id}>
+              <li className="border border-gray-700 rounded-sm text-xl p-6 mt-4 ml-0" key={id}>
                 <span>{title}</span>
                 <br />
                 <small className='text-gray-500'>
@@ -112,12 +112,14 @@ export default function Blog({ allPostsData }) {
                     href={`/blog?page=${index+1}`}
                     key={index}
                   >
-                    <a
-                      aria-current="page"
-                      className={index+1 == pagenumber ? ("pointer-events-none cursor-default border-purple-500 text-purple-500 z-10 border" + blogPageCountClasses) : ("hover:bg-gray-800" + blogPageCountClasses)}
-                    >
-                      {index+1}
-                    </a>
+                    <div className='bg-gradient-to-r from-fuchsia-600 to-pink-600 p-px rounded-sm'>
+                      <div
+                        aria-current="page"
+                        className={index+1 == pagenumber ? ("pointer-events-none cursor-default text-white z-10 " + blogPageCountClasses) : ("hover:bg-gray-800" + blogPageCountClasses)}
+                      >
+                        {index+1}
+                      </div>
+                    </div>
                   </NextLink>
                 ))}
                 <NextLink href={pagenumber < totalPages ? (`/blog?page=${parseInt(pagenumber)+1}`) : ("/blog")}>

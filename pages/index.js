@@ -48,7 +48,7 @@ export default function Home({ singlePost, singleProj, aboutHTML }) {
           <h1 className='text-2xl'>Latest Article:</h1>
           <ul className='flex flex-col list-none ml-0'>
             {singlePost.map(({ id, date, title, desc }) => (
-              <li className="border border-gray-700 text-xl p-6 mt-4" key={id}>
+              <li className="border border-gray-700 rounded-sm text-xl p-6 mt-4" key={id}>
                 <span>{title}</span>
                 <br />
                 <small className='text-gray-500'>
@@ -72,20 +72,22 @@ export default function Home({ singlePost, singleProj, aboutHTML }) {
               <li className="text-2xl p-8 pl-0 mt-6 flex flex-row justify-start items-center" key={id}>
                 <div className='w-2/3 hidden sm:block'>
                   <img 
-                    src={`https://media.codedotspirit.dev/assets/img/portfolio/${title}/${title}.png`}
+                    src={`https://media.codedotspirit.dev/images/portfolio/${title}/${title}.png`}
                     id="home-proj-img"
-                    alt={`${title} website image`}
+                    alt={`Image of ${title}`}
                   />
                 </div>
-                <div className='ml-0 sm:ml-8 pl-8 border-l border-l-purple-500'>
-                  <span className='text-3xl'>{title}</span>
-                  <br className='mb-2' />
-                  <small>
-                    <div className='text-gray-400 text-base'>{desc}</div>
-                    <Link href={`/portfolio/${id}`}>
-                      <a id='link'>View Project</a>
-                    </Link>
-                  </small>
+                <div className='bg-gradient-to-b from-fuchsia-600 to-pink-600 ml-8 sm:ml-8 pl-px'>
+                  <div className='bg-maincolor pl-8'>
+                    <span className='text-3xl'>{title}</span>
+                    <br className='mb-2' />
+                    <small>
+                      <div className='text-gray-400 text-base'>{desc}</div>
+                      <Link href={`/portfolio/${id}`}>
+                        <a id='link'>View Project</a>
+                      </Link>
+                    </small>
+                  </div>
                 </div>
               </li>
             ))}

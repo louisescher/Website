@@ -1,12 +1,12 @@
 import Link from "next/link";
 export default function LandingWrapper() {
   const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
-  var myAge = getAge('2006-05-07')
+  var myAge = getAge('2006-05-07');
   return (
       <div className='flex flex-row content-center items-center h-auto'>
         <div className='textwrapper ml-4 mr-4 md:ml-16 mt-12 md:mr-16'>
           <h1 className='tech-font text-5xl glitch' data-text="hello world">hello world</h1>
-          <h1 className='text-6xl font-extralight'>I'm <span className='text-purple-500 font-semibold'>Spirit</span></h1>
+          <h1 className='text-6xl font-extralight'>I'm <span className='text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-pink-600 font-semibold'>Spirit</span></h1>
           <br />
           <p className='text-2xl tracking-wide'>I'm a {myAge} year-old developer living in Germany.</p>
           <hr className='w-64 mt-4' />
@@ -31,8 +31,10 @@ export default function LandingWrapper() {
             </div>
           </div>
         </div>
-        <div className='image-wrapper ml-auto mt-12 lg:block hidden'>
-          <img src="../../assets/img/Avatar.png" id='avatar' className='w-5/6' alt='My avatar.'/>
+        <div className='image-wrapper mx-auto relative xl:left-16 xl:mt-20 lg:block hidden bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-full p-0.5 w-1/3 xl:w-1/4'>
+          <div className="bg-maincolor p-px rounded-full">
+            <img src="https://avatars.githubusercontent.com/u/66965600" id='avatar' className='rounded-full p-1' alt='My avatar.'/>
+          </div>
         </div>
     </div>
   )

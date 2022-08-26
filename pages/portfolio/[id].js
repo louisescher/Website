@@ -28,12 +28,12 @@ export default function Post({ projData }) {
     <div className='bg-maincolor min-h-screen h-auto z-0 relative overflow-x-hidden'>
       <Navbar portfolio></Navbar>
       <Layout title={title} description={subtitle}>
-        <article className='mt-4 sm:w-4/5 2xl:w-1/2 mb-4 text-center mx-auto'>
+        <article className='mt-4 sm:w-4/5 2xl:w-1/2 mb-4 text-center mx-auto px-8'>
           <h1 className='text-3xl sm:text-5xl mb-0'>{projData.title}</h1>
           <hr className='my-4' />
           <div className='article text-left font-light' dangerouslySetInnerHTML={{ __html: projData.contentHtml }} />
         </article>
-        <div className='mt-12 w-1/2 mb-4 text-center mx-auto'>
+        <div className='mt-12 w-full mb-4 text-center mx-auto'>
           <Link href="/portfolio">
             <a id='link'>← Back to portfolio</a>
           </Link>

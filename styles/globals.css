@@ -87,15 +87,10 @@ ul {
 div#customul ul li ul {
   margin-left: 0.5rem;
   margin-bottom: 0.5rem;
-  color: grey;
-}
-
-div#customul ul li ul li::before {
-  content: "";
 }
 
 em {
-  color: grey;
+  @apply text-gray-400;
 }
 
 .tech-font {

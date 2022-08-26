@@ -29,7 +29,7 @@ export default function Post({ postData }) {
     <div className='bg-maincolor min-h-screen h-auto z-0 relative overflow-x-hidden'>
       <Navbar blog></Navbar>
       <Layout title={title} description={subtitle}>
-        <article className='mt-4 sm:w-4/5 2xl:w-1/2 mb-4 text-center mx-auto'>
+        <article className='mt-4 sm:w-4/5 2xl:w-1/2 mb-4 text-center mx-auto px-8'>
           <h1 className='text-5xl mb-0'>{postData.title}</h1>
           <div className='text-gray-500 text-xl'>
             <Date dateString={postData.date} />

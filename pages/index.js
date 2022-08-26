@@ -79,7 +79,7 @@ export default function Home({ singlePost, singleProj, aboutHTML }) {
                   />
                 </div>
                 <div className='sm:bg-gradient-to-b from-fuchsia-600 to-pink-600 ml-0 sm:ml-8 pl-px w-full sm:w-1/2'>
-                  <div className='bg-maincolor border border-gray-700 sm:border-hidden p-6 sm:p-0 sm:pl-8'>
+                  <div className='bg-maincolor border border-gray-700 rounded-sm sm:rounded-none sm:border-hidden p-6 sm:p-0 sm:pl-8'>
                     <span className='text-3xl'>{title}</span>
                     <br className='mb-2' />
                     <small>

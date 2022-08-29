@@ -26,13 +26,12 @@ export default function Portfolio({ allProjData }) {
           <p className='text-xl w-5/6'>{subtitle}</p>
           <ul className='flex flex-col list-none ml-0'>
             {allProjData.map(({ id, title, desc }) => (
-              <li className="text-2xl p-8 pt-0 sm:pt-8 pl-0 mt-6 flex flex-row justify-start items-center pr-0 sm:pr-auto" key={id}>
-                <div className='w-1/2 hidden sm:block'>
+              <li className="text-2xl p-8 pt-0 sm:pt-8 pl-0 mt-6 flex flex-row justify-start items-center pr-0 sm:pr-auto h-64" key={id}>
+                <div className='w-1/2 h-full hidden sm:flex flex-col'>
                   <img 
                     src={`https://media.codedotspirit.dev/images/portfolio/${title}/${title}.png`}
-                    id="home-proj-img"
                     alt={`Image of ${title}`}
-                    className={'mx-auto'}
+                    className={'mx-auto my-auto max-h-full'}
                   />
                 </div>
                 <div className='sm:bg-gradient-to-b from-fuchsia-600 to-pink-600 ml-0 sm:ml-8 pl-px w-full sm:w-1/2'>

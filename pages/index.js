@@ -70,7 +70,7 @@ export default function Home({ singlePost, singleProj, aboutHTML }) {
           <ul className='flex flex-col list-none ml-0'>
             {singleProj.map(({ id, title, desc }) => (
               <li className="text-2xl p-8 pt-0 sm:pt-8 pl-0 mt-6 flex flex-row justify-start items-center pr-0 sm:pr-auto" key={id}>
-                <div className='w-1/2 hidden sm:block'>
+                <div className='hidden sm:block'>
                   <img 
                     src={`https://media.codedotspirit.dev/images/portfolio/${title}/${title}.png`}
                     id="home-proj-img"

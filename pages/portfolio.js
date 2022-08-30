@@ -27,7 +27,7 @@ export default function Portfolio({ allProjData }) {
           <ul className='flex flex-col list-none ml-0'>
             {allProjData.map(({ id, title, desc }) => (
               <li className="text-2xl p-8 pt-0 sm:pt-8 pl-0 mt-6 flex flex-row justify-start items-center pr-0 sm:pr-auto h-64" key={id}>
-                <div className='w-1/2 h-full hidden sm:flex flex-col'>
+                <div className='h-full hidden sm:flex flex-col'>
                   <img 
                     src={`https://media.codedotspirit.dev/images/portfolio/${title}/${title}.png`}
                     alt={`Image of ${title}`}

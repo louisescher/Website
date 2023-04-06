@@ -24,19 +24,23 @@ export default function Navbar() {
   // Show the navbar background and border when scrolled down
   useEffect(() => {
     const handleScroll = () => {
-      if(window.scrollY > 0) {
+      // Check if the user has scrolled down
+      if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
     }
 
-    window.addEventListener("scroll", handleScroll);
+    document.body.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => document.body.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
+    window.addEventListener("scroll", (e) => {
+      console.log("huerbfirg");
+    });
     router.events.on("routeChangeStart", () => {
       setResetNavbar(true);
     });

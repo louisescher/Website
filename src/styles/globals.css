@@ -16,14 +16,14 @@ html {
   @apply text-white;
   scroll-behavior: smooth;
   overflow: overlay;
+  background: #151517;
 }
 
 main {
-  min-height: 100vh;
+  height: calc(100vh);
   padding-top: 5rem;
-  padding-top: 5rem;
+  padding-bottom: 1rem;
   padding-left: 1rem; padding-right: 1rem;
-  background: #151517;
   /*TODO: Use this for cards: background: linear-gradient(90deg, #070707 21px, transparent 1%) center, linear-gradient(#070707 21px, transparent 1%) center, #2b2b2b;
   background-position-x: center;
   background-position-y: center;
@@ -94,6 +94,12 @@ main {
   top: 0; left: 0;
   width: 2px; height: 100%;
   z-index: 21;
+}
+
+.dotted-corners.inverted::after, .dotted-corners.inverted::before {
+  @apply border-accent-2;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
 }
 
 .dotted-corners.borders-existent::before, .dotted-corners.borders-existent::after {
@@ -260,7 +266,7 @@ body, html {
 .navbar-item::before {
   content: "";
   left: 2px; bottom: -2px;
-  @apply bg-accent-1;
+  @apply bg-gradient-to-r from-accent-1 to-accent-2;
 }
 
 .navbar-item:hover > .navitem-bg, .navbar-item.active > .navitem-bg, .navbar-item:hover::before, .navbar-item.active::before {
@@ -323,4 +329,45 @@ body, html {
   50% { opacity: 1; }
   95% { opacity: 1; }
   100% { opacity: 0; }
+}
+
+.button {
+  @apply relative border-2 border-accent-1 text-white text-sm text-center w-44 flex flex-row items-center justify-center transition-all duration-75 ease-linear font-medium;
+  height: 2.5rem;
+  outline: none;
+  font-stretch: expanded;
+  z-index: 20;
+}
+
+.button *:not(.button-cover-up) {
+  z-index: 20 !important;
+}
+
+.button.inverted {
+  @apply border-white text-accent-1;
+}
+
+.button > .button-cover-up {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+  z-index: 19;
+  @apply bg-opacity-40 bg-accent-1 absolute top-0 left-0 w-full h-full;
+}
+
+.button.inverted {
+  @apply border-white;
+}
+
+.button.inverted > .button-cover-up {
+  @apply bg-opacity-[0.15] bg-white;
+}
+
+.button:hover > .button-cover-up {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.landing-logo {
+  @apply drop-shadow-lg;
 }

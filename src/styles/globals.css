@@ -24,10 +24,6 @@ main {
   padding-top: 5rem;
   padding-bottom: 1rem;
   padding-left: 1rem; padding-right: 1rem;
-  /*TODO: Use this for cards: background: linear-gradient(90deg, #070707 21px, transparent 1%) center, linear-gradient(#070707 21px, transparent 1%) center, #2b2b2b;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: 22px 22px;*/
 }
 
 *::-webkit-scrollbar {
@@ -269,12 +265,13 @@ body, html {
   @apply bg-gradient-to-r from-accent-1 to-accent-2;
 }
 
-.navbar-item:hover > .navitem-bg, .navbar-item.active > .navitem-bg, .navbar-item:hover::before, .navbar-item.active::before {
-  transform: scaleX(1);
-  transform-origin: left;
+.navbar-item.big::before {
+  content: "";
+  left: 6px; bottom: -6px;
+  @apply bg-gradient-to-r from-accent-1 to-accent-2;
 }
 
-.navbar-item.active > .navitem-bg {
+.navbar-item:hover > .navitem-bg, .navbar-item.active > .navitem-bg, .navbar-item:hover::before, .navbar-item.active::before {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -370,4 +367,71 @@ body, html {
 
 .landing-logo {
   @apply drop-shadow-lg;
+}
+
+.preview-window {
+  aspect-ratio: 16 / 9;
+}
+
+.mac-dot {
+  aspect-ratio: 1 / 1;
+}
+
+.grid-bg {
+  background: linear-gradient(90deg, #070707 21px, transparent 1%) center, linear-gradient(#070707 21px, transparent 1%) center, #2b2b2b;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 22px 22px;
+}
+
+.window-tab .progress-bar {
+  @apply bg-gradient-to-r from-accent-1 to-accent-2 absolute -bottom-px w-[calc(100%+2px)] -left-px h-px transition-transform duration-[0s] ease-linear;
+  transform: scaleX(0);
+  transform-origin: right;
+  opacity: 0;
+}
+
+.window-tab.active .progress-bar {
+  @apply transition-transform duration-[20s] ease-linear;
+  opacity: 1;
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navbar-mobile-dropdown {
+  @apply z-40 sm:hidden;
+  position: fixed;
+  right: -100vw;
+  top: 0;
+  height: 100vh;
+  padding: 0.5rem;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-mobile-dropdown.active {
+  animation: slide-in 0.4s ease-out forwards;
+}
+
+.navbar-mobile-dropdown.active.hiding {
+  animation: slide-out 0.4s ease-in forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    right: -100vw;
+  }
+  100% {
+    right: 0rem;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    right: 0rem;
+  }
+  100% {
+    right: -100vw;
+  }
 }

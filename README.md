@@ -5,8 +5,7 @@
   - Logo // DONE
   - Links to GitHub, Mail // DONE
   - Who I am (Brief) // DONE
-  - Featured project, quicklink to portfolio
-  - Quick overview of known programming languages
+  - Featured project, quicklink to portfolio entry // DONE
 - About (/about)
   - Detailed info on background, edu, experience
   - Explanation of areas of expertise

@@ -1,4 +1,0 @@
-- JavaScript
-    - Node.js, Plain JS, Next.js
-- HTML/CSS
-    - (+ TailwindCSS)

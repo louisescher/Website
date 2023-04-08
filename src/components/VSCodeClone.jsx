@@ -17,7 +17,7 @@ export default function VSCodeClone() {
         <div className="w-[calc(100%-48px)] flex flex-row items-center overflow-auto">
           <div className="w-10 h-full flex flex-col text-center pt-[3px] bg-lighter cursor-default">
             {Array.from(Array(27).keys()).map((i) => {
-              return <div className="line-indicator">{i + 1}</div>;
+              return <div key={i} className="line-indicator">{i + 1}</div>;
             })}
           </div>
           <pre className="w-[calc(100%-40px)] h-full outline-none p-0.5">

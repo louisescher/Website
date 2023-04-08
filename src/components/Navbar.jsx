@@ -3,6 +3,33 @@ import { useRouter } from "next/router";
 import { Divide as Hamburger } from 'hamburger-react'
 import { useEffect, useState } from "react";
 
+function NavbarItem({ text, href, page, hideDropdownAndNavigate }) {
+  const [ isHovered, setHovered ] = useState(false);
+  const [ active, setActive ] = useState(false);
+
+  return (
+    <Link 
+      className={`w-fit flex navbar-dropdown-link ${isHovered === false && "test"} flex-row items-center group mx-2 navbar-item big bg-transparent ${(page === href || active) ? "active active-navdrop" : "cursor-pointer"}`} 
+      href={href}
+      onClick={(e) => {
+        e.preventDefault();
+        console.log(document.getElementsByClassName("active-navdrop"));
+        document.getElementsByClassName("active-navdrop")[0].classList.remove("active");
+        document.getElementsByClassName("active-navdrop")[0].classList.remove("active-navdrop");
+        setActive(true);
+        hideDropdownAndNavigate(href, setActive);
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onMouseDown={() => {
+      }}
+    >
+      <span className={`text-7xl z-20 stretch-text ${page === href ? "font-bold" : "font-thin"}`}>{text}</span>
+      <div className="navitem-bg" />
+    </Link>
+  )
+}
+
 export default function Navbar() {
   const router = useRouter();
   
@@ -15,31 +42,16 @@ export default function Navbar() {
 
   const page = router.pathname;
 
-  const hideDropdownAndNavigate = (href) => {
+  const hideDropdownAndNavigate = (href, setActive) => {
     setOpen(false);
     setDropdownHiding(true);
     document.body.style.overflow = "auto";
     setTimeout(() => {
       setDropdownHiding(false);
       setDropdownShown(false);
+      setActive(false);
       router.push(href);
     }, 400);
-  }
-
-  function NavbarItem({ text, href }) {
-    return (
-      <Link 
-        className={`w-fit flex flex-row items-center group mx-2 navbar-item big bg-transparent ${page === href ? "active" : "cursor-pointer"}`} 
-        href={href}
-        onClick={(e) => {
-          e.preventDefault();
-          hideDropdownAndNavigate(href);
-        }}
-      >
-        <span className={`text-7xl z-20 stretch-text ${page === href ? "font-bold" : "font-thin"}`}>{text}</span>
-        <div className="navitem-bg" />
-      </Link>
-    )
   }
 
   // Show the navbar background and border when scrolled down
@@ -94,11 +106,12 @@ export default function Navbar() {
           }} />
         </div>
       </nav>
-      <div className={`navbar-mobile-dropdown !px-4 !pt-16 glass dark ${(isOpen === true || dropdownShown === true) && "active"} ${dropdownHiding === true && "hiding"}`}>
+      <div className={`navbar-dropdown !px-4 !pt-16 glass dark ${(isOpen === true || dropdownShown === true) && "active"} ${dropdownHiding === true && "hiding"}`}>
         <div className="h-1/2 flex flex-col justify-between m-16">
-          <NavbarItem text={"Home"} href={'/'} />
-          <NavbarItem text={"About"} href={'/about'} />
-          <NavbarItem text={"Portfolio"} href={'/portfolio'} />
+          <NavbarItem text={"Home"} href={'/'} page={page} hideDropdownAndNavigate={hideDropdownAndNavigate} />
+          <NavbarItem text={"About"} href={'/about'} page={page} hideDropdownAndNavigate={hideDropdownAndNavigate} />
+          <NavbarItem text={"Portfolio"} href={'/portfolio'} page={page} hideDropdownAndNavigate={hideDropdownAndNavigate} />
+          <NavbarItem text={"Contact"} href={'/contact'} page={page} hideDropdownAndNavigate={hideDropdownAndNavigate} />
         </div>
       </div>
     </>

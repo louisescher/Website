@@ -369,7 +369,7 @@ body, html {
   @apply drop-shadow-lg;
 }
 
-.preview-window {
+.preview-window, .aspect-16-to-9 {
   aspect-ratio: 16 / 9;
 }
 
@@ -377,7 +377,7 @@ body, html {
   aspect-ratio: 1 / 1;
 }
 
-.grid-bg {
+.grid-bg, .skill-card, .about-card {
   background: linear-gradient(90deg, #070707 21px, transparent 1%) center, linear-gradient(#070707 21px, transparent 1%) center, #2b2b2b;
   background-position-x: center;
   background-position-y: center;
@@ -398,11 +398,11 @@ body, html {
   transform-origin: left;
 }
 
-.navbar-mobile-dropdown {
+.navbar-dropdown {
   @apply z-40 sm:hidden;
   position: fixed;
-  right: -100vw;
-  top: 0;
+  top: -120vw;
+  left: 0;
   height: 100vh;
   padding: 0.5rem;
   width: 100vw;
@@ -410,28 +410,172 @@ body, html {
   flex-direction: column;
 }
 
-.navbar-mobile-dropdown.active {
+.navbar-dropdown.active {
   animation: slide-in 0.4s ease-out forwards;
 }
 
-.navbar-mobile-dropdown.active.hiding {
+.navbar-dropdown.active.hiding {
   animation: slide-out 0.4s ease-in forwards;
 }
 
 @keyframes slide-in {
   0% {
-    right: -100vw;
+    top: -120vw;
   }
   100% {
-    right: 0rem;
+    top: 0rem;
   }
 }
 
 @keyframes slide-out {
   0% {
-    right: 0rem;
+    top: 0rem;
   }
   100% {
-    right: -100vw;
+    top: -120vw;
   }
+}
+
+.navbar-dropdown-link:not(.active) {
+  font-variation-settings: "wght" 100;
+  @apply transition-all duration-100 ease-linear;
+}
+
+.navbar-dropdown-link:not(.active):hover, .navbar-dropdown-link.active {
+  font-variation-settings: "wght" 700;
+}
+
+.mac-dot {
+  box-shadow: 0 0 0.4em currentColor;
+}
+
+.progress-bar.gradient {
+  box-shadow:
+    0 0 3px #5436ff,
+    0 0 7px #cc00ff
+}
+
+.window-tab-image {
+  -webkit-filter: drop-shadow(5px 5px 5px #000);
+  filter: drop-shadow(5px 5px 5px #000);
+}
+
+.initial-reveal {
+  @apply relative w-fit;
+} 
+
+.initial-reveal::before {
+  content: "";
+  @apply absolute w-full h-full left-0 top-px;
+  transform: scaleX(1);
+  background: #fff;
+  z-index: 5;
+  transform-origin: right;
+} 
+
+.initial-reveal::after {
+  content: "";
+  @apply absolute w-full h-full left-0 top-px;
+  transform: scaleX(1);
+  background: #dadada;
+  z-index: 4;
+  transform-origin: right;
+} 
+
+.initial-reveal.delay-step-0::before {
+  animation: initial-reveal 0.3s ease-out 200ms forwards;
+}
+
+.initial-reveal.delay-step-0::after, .initial-reveal.delay-step-1::before {
+  animation: initial-reveal 0.3s ease-out 300ms forwards;
+}
+
+.initial-reveal.delay-step-1::after, .initial-reveal.delay-step-2::before {
+  animation: initial-reveal 0.3s ease-out 400ms forwards;
+}
+
+.initial-reveal.delay-step-2::after {
+  animation: initial-reveal 0.3s ease-out 500ms forwards;
+}
+
+@keyframes initial-reveal {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+.section-header .large-text::before, .section-header .sub-text::before {
+  content: "";
+  @apply absolute w-full h-full left-0 top-px;
+  transform: scaleX(1);
+  background: #fff;
+  z-index: 5;
+  transform-origin: right;
+} 
+
+.section-header .large-text::after, .section-header .sub-text::after {
+  content: "";
+  @apply absolute w-full h-full left-0 top-px;
+  transform: scaleX(1);
+  background: #dadada;
+  z-index: 4;
+  transform-origin: right;
+} 
+
+.section-header.active .large-text::before {
+  animation: initial-reveal 0.3s ease-out 200ms forwards;
+}
+
+.section-header.active .large-text::after {
+  animation: initial-reveal 0.3s ease-out 300ms forwards;
+}
+
+.section-header.active .sub-text::before {
+  animation: initial-reveal 0.3s ease-out 350ms forwards;
+}
+
+.section-header.active .sub-text::after{
+  animation: initial-reveal 0.3s ease-out 450ms forwards;
+}
+
+.skill-card-underline {
+  transform: scaleX(0);
+  z-index: 5;
+  transform-origin: left !important;
+  @apply h-0.5 w-full;
+  transition: all 0.2s ease-out;
+}
+
+.skill-card-underline.active {
+  transform: scaleX(1);
+  z-index: 5;
+  transform-origin: left !important;
+  @apply h-0.5 w-full;
+}
+
+.vscode-clone {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  aspect-ratio: 18 / 9;
+}
+
+.activity-bar-icon-1::before {
+  content: "\eaf0";
+  font-size: 24px;
+}
+
+/* 
+  Fourth one: debug
+  Fifth one: extensions
+  Error: error-small
+  First one: Files
+  Second one: Search
+  Third one: source-control
+  Warn: warning
+*/
+
+.line-indicator {
+  @apply flex flex-row items-center justify-center text-gray-400 text-sm font-light bg-lighter;
 }

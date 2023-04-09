@@ -23,12 +23,12 @@ export default function PreviewWindow({ projects, activeWindow, setActiveWindow 
   }, []);
 
   return (
-    <div className="min-w-[367px] w-2/5 preview-window rounded-lg border border-lighter overflow-hidden relative">
-      <div className="w-full h-9 rounded-t-lg border-b border-lighter !bg-black flex flex-row items-center">
+    <div className="min-w-[367px] w-2/5 preview-window rounded-lg border border-lighter overflow-hidden relative shadow-black shadow-lg">
+      <div className="w-full h-9 rounded-t-lg border-b border-lighter glass flex flex-row items-center">
         <div className="w-fit h-full border-r border-lighter rounded-tl-lg flex flex-row items-center">
-          <div className="mac-dot text-red-500 bg-red-500 h-4 rounded-full mr-2 ml-4" />
-          <div className="mac-dot text-yellow-500 bg-yellow-500 h-4 rounded-full mr-2" />
-          <div className="mac-dot text-green-500 bg-green-500 h-4 rounded-full mr-4" />
+          <div className="mac-dot text-red-500 bg-red-500 h-3.5 rounded-full mr-2 ml-4" />
+          <div className="mac-dot text-yellow-500 bg-yellow-500 h-3.5 rounded-full mr-2" />
+          <div className="mac-dot text-green-500 bg-green-500 h-3.5 rounded-full mr-4" />
         </div>
         {projects.map((project, index) => {
           return (
@@ -36,7 +36,7 @@ export default function PreviewWindow({ projects, activeWindow, setActiveWindow 
               key={index} 
               className={`
                 w-fit h-full border-r border-lighter flex flex-row items-center justify-center relative window-tab 
-                ${activeWindow == index ? "bg-opacity-50 bg-dark cursor-default active" : "cursor-pointer"}
+                ${activeWindow == index ? "bg-opacity-50 bg-black cursor-default active" : "cursor-pointer"}
               `}
               onClick={() => setActiveWindow(index)}
             >
@@ -53,9 +53,8 @@ export default function PreviewWindow({ projects, activeWindow, setActiveWindow 
             <div 
               key={index} 
               className={`h-[70%] max-w-[70%] ${activeWindow == index ? "block" : "hidden"}`}
-              data-atropos-offset="1.5"
             >
-              <img src={project.img} className="w-full h-full object-contain window-tab-image transform group-hover:scale-105 transition-all duration-300 ease-linear" />
+              <img src={project.img} className="w-full h-full object-contain window-tab-image transform group-hover:scale-105 transition-all duration-300 ease-linear z-20" />
             </div>
           )
         })}

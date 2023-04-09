@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import SkillCard from "@/components/SkillCard";
 import PreviewWindow from "@/components/PreviewWindow";
-import VSCodeClone from "@/components/VSCodeClone";
+import getCurrentAge from "@/utils/getCurrentAge";
 
 export default function Home() {
   const [ activeShowcaseWindow, setActiveShowcaseWindow ] = useState(69);
@@ -113,7 +113,7 @@ export default function Home() {
               <span className="text-6xl stretch-text font-semibold initial-reveal delay-step-1">I'm <span className="font-extrabold glow-text blue">Spirit</span></span>
             </header>
             <hr className="my-2" />
-            <span className="text-2xl initial-reveal delay-step-2">I'm a 16 year old developer living in Germany.</span>
+            <span className="text-2xl initial-reveal delay-step-2">I'm a {getCurrentAge()} year old developer from Germany.</span>
             <div className="flex flex-row items-center mt-2">
               <Button isLink href={'https://github.com/SpiritLetsPlays'} className={'mr-1'}>
                 <GitHubLogo className={'h-6 w-6 mr-1.5'} />
@@ -129,22 +129,6 @@ export default function Home() {
         <div className="w-1/2 h-4/5 ml-2 flex justify-center items-center">
           <div className="h-1/2">
             <WhiteLogo className={"w-full h-full landing-logo"} />
-          </div>
-        </div>
-      </div>
-      <div className="w-[95%] mx-auto flex flex-col mt-4 mb-16">
-        <Header text={"About me"} sub={"A quick summary of who I am"} />
-        <div className="flex flex-row h-fit">
-          <VSCodeClone />
-          <div className="w-2/6 ml-2 pl-2">
-            <h1 className="mt-2">Hey there!</h1>
-            <p className="mt-2">I'm Spirit (or Louis), 16 year old developer from Germany, currently in High School, dabbling in all kinds of languages and fields of interest.
-              Cyber security and web tech especially have a big place in my heart.
-              I started coding at the age of 13 with JavaScript,
-              and I have since explored many corners of the programming world. My biggest area of expertise is NodeJS. I have used a
-              multitude of frameworks over the years, some of which include NextJS and Electron. I also have experience in Rust and a
-              little experience in Java.
-            </p>
           </div>
         </div>
       </div>

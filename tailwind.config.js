@@ -13,8 +13,9 @@ module.exports = {
         "scrollbar-bg": "#141414",
         "scrollbar-thumb-bg": "#323232",
         "scrollbar-thumb-hover": "#484848",
-        "accent-1": "#5436ff",
-        "accent-2": "#cc00ff",
+        "accent-1": "#5436ff", // rgb(84, 54, 255)
+        "accent-2": "#cc00ff", // rgb(204, 0, 255)
+        "href-color": "#816bff", // rgb(129, 107, 255)
         "code-color-1": "#F97583", // Declarations
         "code-color-2": "#B392F0", // Functions
         "code-color-3": "#E1E4E8", // Default

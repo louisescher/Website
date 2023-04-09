@@ -106,8 +106,8 @@ export default function Navbar() {
           }} />
         </div>
       </nav>
-      <div className={`navbar-dropdown !px-4 !pt-16 glass dark ${(isOpen === true || dropdownShown === true) && "active"} ${dropdownHiding === true && "hiding"}`}>
-        <div className="h-1/2 flex flex-col justify-between m-16">
+      <div className={`navbar-dropdown !px-4 glass dark ${(isOpen === true || dropdownShown === true) && "active"} ${dropdownHiding === true && "hiding"}`}>
+        <div className="h-2/5 my-auto flex flex-col justify-between mx-16">
           <NavbarItem text={"Home"} href={'/'} page={page} hideDropdownAndNavigate={hideDropdownAndNavigate} />
           <NavbarItem text={"About"} href={'/about'} page={page} hideDropdownAndNavigate={hideDropdownAndNavigate} />
           <NavbarItem text={"Portfolio"} href={'/portfolio'} page={page} hideDropdownAndNavigate={hideDropdownAndNavigate} />

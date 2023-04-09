@@ -1,27 +1,36 @@
+import { useState } from "react";
 import { Debug, ErrorSmall, Extensions, Files, Search, SourceControl, Warning } from "./VSCodeIcons";
-
-
+import getCurrentAge from "@/utils/getCurrentAge";
 
 export default function VSCodeClone() {
+  const [ editable, setEditable ] = useState(false);
+
+  const checkForTab = (e) => {
+    if (e.key === "Tab") {
+      e.preventDefault();
+      document.execCommand("insertHTML", false, "&nbsp;&nbsp;");
+    }
+  }
+
   return (
-    <div className="w-4/6 border vscode-clone aspect-16-to-9 glass rounded-lg overflow-hidden border-lighter text-xl flex flex-col">
+    <div className="w-4/6 border vscode-clone !shadow-black !shadow-lg h-fit glass rounded-lg overflow-hidden border-lighter text-xl flex flex-col">
       <div className="w-full h-6 items-center justify-center flex border-b border-lighter text-sm font-light text-gray-400"><span>aboutme.js - codedotspirit.dev</span></div>
-      <div className="h-[calc(100%-48px)] flex flex-row w-full">
-        <div className="h-full w-12 flex flex-col items-center py-3 border-r border-lighter">
+      <div className="h-fit flex flex-row w-full">
+        <div className="h-full w-12 flex flex-col items-center py-3">
           <Files className={"w-6 mb-6"} />
           <Search className={"w-6 mb-6"} />
           <SourceControl className={"w-6 mb-6"} />
           <Debug className={"w-6 mb-6"} />
           <Extensions className={"w-6 mb-6"} />
         </div>
-        <div className="w-[calc(100%-48px)] flex flex-row items-center overflow-auto">
-          <div className="w-10 h-full flex flex-col text-center pt-[3px] bg-lighter cursor-default">
-            {Array.from(Array(27).keys()).map((i) => {
+        <div className="w-[calc(100%-48px)] h-fit flex flex-row items-center overflow-auto bg-light">
+          <div className="w-8 h-full flex flex-col text-center pt-0.5 bg-light cursor-default border-x border-lighter">
+            {Array.from(Array(25).keys()).map((i) => {
               return <div key={i} className="line-indicator">{i + 1}</div>;
             })}
           </div>
-          <pre className="w-[calc(100%-40px)] h-full outline-none p-0.5">
-            <code className="w-full h-full text-white text-sm">
+          <pre autoCorrect="off" autoComplete='off' spellCheck='false' className="w-[calc(100%-32px)] overflow-auto h-fit outline-none p-0.5 grid-bg">
+            <code onKeyDown={checkForTab} contentEditable={editable} className="w-full h-full text-white text-sm outline-none">
               <div>
                 <span className="text-code-color-1">export default function&nbsp;</span> 
                 <span className="text-code-color-2">aboutMe</span>
@@ -34,7 +43,7 @@ export default function VSCodeClone() {
               </div>
               <div>
                 <span className="text-code-color-3">&nbsp;&nbsp;&nbsp;&nbsp;age:</span>
-                <span className="text-code-color-4">&nbsp;16</span>
+                <span className="text-code-color-4">&nbsp;{getCurrentAge()}</span>
                 <span className="text-code-color-3">,</span>
               </div>
               <div>
@@ -87,10 +96,7 @@ export default function VSCodeClone() {
                 <span className="text-code-color-3">&nbsp;&nbsp;&nbsp;&nbsp;frameworks:&nbsp;&#123;</span>
               </div>
               <div>
-                <span className="text-code-color-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;javascript:&nbsp;&#123;</span>
-              </div>
-              <div>
-                <span className="text-code-color-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frontend:&nbsp;[</span>
+                <span className="text-code-color-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frontend:&nbsp;[</span>
                 <span className="text-code-color-5">'NextJS'</span>
                 <span className="text-code-color-3">,&nbsp;</span>
                 <span className="text-code-color-5">'TailwindCSS'</span>
@@ -99,7 +105,7 @@ export default function VSCodeClone() {
                 <span className="text-code-color-3">],</span>
               </div>
               <div>
-                <span className="text-code-color-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backend:&nbsp;[</span>
+                <span className="text-code-color-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backend:&nbsp;[</span>
                 <span className="text-code-color-5">'NodeJS'</span>
                 <span className="text-code-color-3">,&nbsp;</span>
                 <span className="text-code-color-5">'ExpressJS'</span>
@@ -108,21 +114,18 @@ export default function VSCodeClone() {
                 <span className="text-code-color-3">],</span>
               </div>
               <div>
-                <span className="text-code-color-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;databases:&nbsp;[</span>
+                <span className="text-code-color-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;databases:&nbsp;[</span>
                 <span className="text-code-color-5">'SurrealDB'</span>
                 <span className="text-code-color-3">],</span>
               </div>
               <div>
-                <span className="text-code-color-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other:&nbsp;[</span>
+                <span className="text-code-color-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other:&nbsp;[</span>
                 <span className="text-code-color-5">'ElectronJS'</span>
                 <span className="text-code-color-3">,&nbsp;</span>
                 <span className="text-code-color-5">'DiscordJS'</span>
                 <span className="text-code-color-3">,&nbsp;</span>
                 <span className="text-code-color-5">'SurrealQL'</span>
                 <span className="text-code-color-3">],</span>
-              </div>
-              <div>
-                <span className="text-code-color-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;,&nbsp;</span>
               </div>
               <div>
                 <span className="text-code-color-3">&nbsp;&nbsp;&nbsp;&nbsp;&#125;,&nbsp;</span>
@@ -215,9 +218,9 @@ export default function VSCodeClone() {
           <Warning className={"w-4 ml-2"} />
           <span>0</span>
         </div>
-        <span className="ml-auto">JavaScript</span>
+        <span className="ml-auto mr-4 hover:underline cursor-pointer" onClick={() => setEditable(!editable)}>{editable ? "Stop editing" : "Edit"}</span>
+        <span className="">JavaScript</span>
       </div>
-      {/*I'm a */}
     </div>
   )
 }

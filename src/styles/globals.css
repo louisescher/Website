@@ -446,7 +446,7 @@ body, html {
 }
 
 .mac-dot {
-  box-shadow: 0 0 0.4em currentColor;
+  box-shadow: 0 0 0.2em currentColor;
 }
 
 .progress-bar.gradient {
@@ -558,7 +558,6 @@ body, html {
 
 .vscode-clone {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  aspect-ratio: 18 / 9;
 }
 
 .activity-bar-icon-1::before {
@@ -566,16 +565,26 @@ body, html {
   font-size: 24px;
 }
 
-/* 
-  Fourth one: debug
-  Fifth one: extensions
-  Error: error-small
-  First one: Files
-  Second one: Search
-  Third one: source-control
-  Warn: warning
-*/
-
 .line-indicator {
-  @apply flex flex-row items-center justify-center text-gray-400 text-sm font-light bg-lighter;
+  @apply flex flex-row items-center justify-center text-gray-400 text-sm font-light bg-light;
+}
+
+a.href {
+  @apply text-purple-400 transition-none duration-75 ease-linear;
+}
+
+a.href:hover {
+  @apply text-href-color underline;
+}
+
+a.href:active {
+  @apply text-gray-600;
+}
+
+.portfolio-card-cover {
+  bottom: -100%;
+}
+
+.portfolio-card-cover.active {
+  bottom: 0.5rem;
 }

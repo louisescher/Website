@@ -133,7 +133,7 @@ export default function Home() {
         </div>
       </div>
       <div className="w-[95%] mx-auto mb-16">
-        <Header text={"Skills"} sub={"A small overview of my skills"} moreInfoHref={'/skills'} />
+        <Header text={"Skills"} sub={"A small overview of my skills"} moreInfoHref={'/skills'} className={"mt-4"} />
         <div className="w-full flex flex-row flex-wrap skill-cards-container">
           {featuredSkills.map((skill, index) => {
             return (

@@ -48,21 +48,28 @@ main {
 }
 
 .glass {
-  background: rgba(0, 0, 0, 0.2) !important;
+  background-color: rgba(0, 0, 0, 0.2) !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   backdrop-filter: blur(5px) !important;
   -webkit-backdrop-filter: blur(5px) !important;
 }
 
 .glass.dark {
-  background: rgba(0, 0, 0, 0.8) !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+}
+
+.glass.mid-dark {
+  background-color: rgba(0, 0, 0, 0.6) !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   backdrop-filter: blur(5px) !important;
   -webkit-backdrop-filter: blur(5px) !important;
 }
 
 .glass.light {
-  background: rgba(20, 20, 20, 0.5) !important;
+  background-color: rgba(20, 20, 20, 0.5) !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   backdrop-filter: blur(5px) !important;
   -webkit-backdrop-filter: blur(5px) !important;
@@ -529,7 +536,7 @@ body, html {
   animation: initial-reveal 0.3s ease-out 200ms forwards;
 }
 
-.section-header.active .large-text::after {
+.section-header.active .large-text::after, .section-header.delay.active .large-text::before {
   animation: initial-reveal 0.3s ease-out 300ms forwards;
 }
 
@@ -537,8 +544,20 @@ body, html {
   animation: initial-reveal 0.3s ease-out 350ms forwards;
 }
 
-.section-header.active .sub-text::after{
+.section-header.delay.active .large-text::after {
+  animation: initial-reveal 0.3s ease-out 400ms forwards;
+}
+
+.section-header.active .sub-text::after {
   animation: initial-reveal 0.3s ease-out 450ms forwards;
+}
+
+.section-header.delay.active .sub-text::before {
+  animation: initial-reveal 0.3s ease-out 550ms forwards;
+}
+
+.section-header.delay.active .sub-text::after {
+  animation: initial-reveal 0.3s ease-out 650ms forwards;
 }
 
 .skill-card-underline {
@@ -587,4 +606,123 @@ a.href:active {
 
 .portfolio-card-cover.active {
   bottom: 0.5rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.modal-card {
+  @apply transition-all duration-300 ease-linear hidden;
+}
+
+.modal-card-content-wrapper {
+  overflow-y: overlay;
+}
+
+.modal-card-content-wrapper::-webkit-scrollbar {
+  font-size: 18px;
+  width: 0.2rem;
+  margin-right: 1rem;
+  padding-right: 1rem;
+  @apply bg-transparent rounded relative;
+}
+
+.modal-card-content-wrapper::-webkit-scrollbar-thumb {
+  margin: 10px;
+  width: 10px;
+  height: 10px;
+  position: relative;
+  right: 6px;
+  @apply bg-scrollbar-thumb-bg rounded;
+}
+
+.modal-card-content-wrapper::-webkit-scrollbar-thumb:hover {
+  @apply bg-scrollbar-thumb-hover;
+}
+
+.modal-card.animate {
+  @apply transition-all duration-300 ease-linear block;
+  width: calc(100% / 2.75) !important;
+  height: 80% !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate3d(-50%, -50%, 0) !important;
+}
+
+.modal-card.hiding {
+  @apply block;
+}
+
+.animate-glass {
+  background-color: rgba(0, 0, 0, 0) !important;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  @apply transition-all duration-200 ease-linear;
+}
+
+.portfolio-card:hover > *:not(.portfolio-card-hovertext, .portfolio-tags) {
+  filter: blur(5px);
+}
+
+.portfolio-card:hover > .portfolio-card-hovertext, .portfolio-card.active > .portfolio-card-hovertext {
+  opacity: 1;
+}
+
+.portfolio-card:hover > .portfolio-card-hovertext > *, .portfolio-card.active > .portfolio-card-hovertext > * {
+  transform: scale(1);
+}
+
+.portfolio-card-hovertext {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+  opacity: 0;
+  word-wrap: normal;
+}
+
+.portfolio-card-hovertext > * {
+  transition: all 0.2s ease;
+  transform: scale(0.9);
+}
+
+.git-link {
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.modal-card.animate .git-link {
+  opacity: 1 !important;
+}
+
+.modal-card .text-content {
+  opacity: 0;
+  transition: all 0.15s ease;
+}
+
+.modal-card .text-content.shown {
+  opacity: 1 !important;
+}
+
+.modal-card .text-content.hide {
+  display: none !important;
+}
+
+.modal-card .text-content p {
+  @apply mb-1;
+}
+
+.modal-close-icon {
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.modal-card.animate .modal-close-icon {
+  opacity: 1 !important;
 }

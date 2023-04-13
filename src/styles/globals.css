@@ -611,7 +611,6 @@ a.href:active {
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .modal-card {
@@ -664,8 +663,8 @@ a.href:active {
   @apply transition-all duration-200 ease-linear;
 }
 
-.portfolio-card:hover > *:not(.portfolio-card-hovertext, .portfolio-tags) {
-  filter: blur(5px);
+.portfolio-card:hover > *:not(.portfolio-card-hovertext, .portfolio-tags), .modal-main-image {
+  filter: blur(1px);
 }
 
 .portfolio-card:hover > .portfolio-card-hovertext, .portfolio-card.active > .portfolio-card-hovertext {
@@ -680,8 +679,6 @@ a.href:active {
   position: absolute;
   width: 100%;
   height: 100%;
-  display: grid;
-  place-items: center;
   transition: all 0.2s ease;
   opacity: 0;
   word-wrap: normal;
@@ -725,4 +722,17 @@ a.href:active {
 
 .modal-card.animate .modal-close-icon {
   opacity: 1 !important;
+}
+
+.webpage-showcase-img {
+  transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) scale(1.25);
+  transform-style: preserve-3d;
+  /* Make it glow slightly in yellow to give the image a sense of elevation*/
+  transition: all 0.2s ease;
+  @apply shadow-accent-1 shadow-md;
+  box-shadow: 10px 10px 15px 1px rgba(46, 46, 46, 0.4);
+}
+
+.webpage-showcase-img.mobile {
+  transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translate(5rem, 5rem) scale(1.25);
 }

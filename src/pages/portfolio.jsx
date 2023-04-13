@@ -6,14 +6,14 @@ import { useEffect, useRef, useState } from "react";
 function InfoTag({ text }) {
   return (
     <div 
-      className="border cursor-pointer border-lighter bg-dark bg-opacity-50 hover:bg-opacity-100 w-fit px-3 mb-1 rounded-full mx-1 flex items-center stretch-text hover:border-accent-1"
+      className="border cursor-pointer border-lighter bg-dark bg-opacity-75 hover:bg-opacity-100 w-fit px-3 mb-1 rounded-full mx-1 flex items-center stretch-text hover:border-accent-1"
     >
       {text}
     </div>
   )
 }
 
-function Card({ clickFunc, cardID, activeID }) {
+function Card({ clickFunc, cardID, activeID, entry }) {
   const cardRef = useRef(null);
 
   return (
@@ -23,21 +23,22 @@ function Card({ clickFunc, cardID, activeID }) {
         onClick={() => clickFunc(cardRef, cardID)}
       > 
         <div className="portfolio-tags absolute w-[calc(100%-24px)] bottom-2.5 left-2.5 z-20 flex flex-row items-center flex-wrap">
-          <InfoTag text={"NodeJS"} />
-          <InfoTag text={"Rust"} />
+          {entry.tags.map((tag, index) => (
+            <InfoTag key={index} text={tag} />
+          ))}
         </div>
         <div className="w-full h-full absolute top-0 left-0 p-2 z-0">
-          <img src="/img/image-test-finished.png" className="w-full h-full object-cover rounded-sm" />
+          <img src={entry.images.first_view} className="w-full h-full object-cover rounded-sm" />
         </div>
-        <div className="portfolio-card-hovertext bg-black bg-opacity-50 z-10">
-          <span className="stretch-text text-lg font-bold">NAME/WIDE LOGO HERE</span>
+        <div className="portfolio-card-hovertext bg-black bg-opacity-75 z-10 flex items-center justify-center">
+          <div className="stretch-text text-lg font-bold h-1/4 max-h-full flex flex-row items-center" dangerouslySetInnerHTML={{ __html: entry ? entry.logo_html : ""}} />
         </div>
       </div>
     </div>
   )
 }
 
-function Modal({ initialStyles, open, closeModal, gitHubHref }) {
+function Modal({ initialStyles, open, closeModal, activeData }) {
   const [ animate, setAnimate ] = useState(false);
   const [ hiding, setHiding ] = useState(false);
   const [ showText, setShowText ] = useState(false);
@@ -78,50 +79,51 @@ function Modal({ initialStyles, open, closeModal, gitHubHref }) {
           />
           <div className="w-full relative">
             <div className="portfolio-tags absolute w-fit h-8 bottom-1 left-1 z-20 flex flex-row items-center">
-              <InfoTag text={"NodeJS"} />
-              <InfoTag text={"Rust"} />
+              {activeData && activeData.tags.map((tag, index) => (
+                <InfoTag key={index} text={tag} />
+              ))}
             </div>
-            <div className={`absolute w-fit h-8 bottom-1 right-2 z-20 flex flex-row items-center ${!gitHubHref && "hidden"}`}>
+            <div className={`absolute w-fit h-8 bottom-1 right-2 z-20 flex flex-row items-center ${(!activeData || !activeData.links.github) && "hidden"}`}>
               <Link 
                 target="_blank" 
-                href={gitHubHref}
+                href={activeData ? activeData.links.github : ""}
                 className="ml-auto flex flex-row items-center hover:text-gray-400 git-link" 
                 onClick={(e) => {
                   e.stopPropagation();
                   e.preventDefault();
-                  window.open(gitHubHref, "_blank");
+                  window.open(activeData.links.github, "_blank");
                 }}
               >
                 <GitHubLogo className={"h-7 relative"} />
                 <span className="font-bold ml-2">GitHub</span>
               </Link>
             </div>
-            <div className="bg-black bg-opacity-50 absolute top-0 left-0 w-full h-full grid content-center text-center">
-              <span className="stretch-text text-lg font-bold">NAME/WIDE LOGO HERE</span>
+            <div className="bg-black bg-opacity-75 absolute top-0 left-0 w-full h-full grid content-center text-center z-10">
+              <div className="stretch-text text-lg font-bold h-1/4 m-auto flex flex-row items-center" dangerouslySetInnerHTML={{ __html: (activeData ? activeData.logo_html : "") }} />
             </div>
-            <img src="/img/image-test-finished.png" className="w-full rounded-sm" />
+            <img src="/img/valtracker-webpage.png" className="w-full rounded-sm modal-main-image" />
           </div>
           <div className={`w-full text-content pb-1 ${showText && "shown"} ${hideText && "hide"}`}>
-            <Header text={"What is Foo?"} small delay />
-            <p>
-              "Foo" is a cloud-based project management tool that simplifies team collaboration, task management, and progress tracking. 
-              With an intuitive interface, it allows users to create projects, assign tasks, set deadlines, and collaborate seamlessly.
-            </p>
-            <p>
-              "Foo" also offers advanced analytics and reporting features, empowering team leaders to measure performance, identify areas 
-              for improvement, and optimize processes. Overall, "Foo" is a powerful yet user-friendly tool that helps teams work more efficiently 
-              and achieve their goals.
-            </p>
+            <Header text={`What is ${activeData ? activeData.name : "N/A"}?`} small delay />
+            {activeData ? activeData.description.split("\n").map((line, index) => {
+              return (
+                <p key={index}>
+                  {line}
+                </p>
+              )
+            }) : ""}
+            <div className="w-full h-[32rem] flex items-center justify-center">
+              <img src={activeData ? activeData.images.desktop_fullpage : ""} className="h-full webpage-showcase-img mr-2" />
+              <img src={activeData ? activeData.images.mobile_fullpage : ""} className="h-full webpage-showcase-img mobile" />
+            </div>
             <h1 className="mt-4 mb-2 text-xl">Tech stack</h1>
-            <p>
-              "Foo" is built using modern web technologies, including HTML, CSS, and JavaScript. It runs on a Node.js server and uses the Express.js 
-              framework to handle HTTP requests. The application's front-end is built using React, a popular JavaScript library for building user interfaces.
-            </p>
-            <p>
-              "Foo" also uses several third-party libraries and tools to improve its functionality and performance. These include Redux for state management, 
-              Axios for handling HTTP requests, and Webpack for bundling and optimizing assets. Overall, "Foo's" tech stack provides a robust and scalable 
-              foundation for the application's features and functionality.
-            </p>
+            {activeData ? activeData.tech_stack_desc.split("\n").map((line, index) => {
+              return (
+                <p key={index}>
+                  {line}
+                </p>
+              )
+            }) : ""}
           </div>
         </div>
       </div>
@@ -129,7 +131,19 @@ function Modal({ initialStyles, open, closeModal, gitHubHref }) {
   )
 }
 
-export default function Portfolio() {
+export async function getServerSideProps({ req, res }) {
+  //res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
+  
+  const entries = await(await fetch(`http://127.0.0.1:3000/api/portfolio`)).json();
+
+  return {
+    props: {
+      entries: entries.data
+    },
+  }
+}
+
+export default function Portfolio({ entries }) {
   const [ modalOpen, setModalOpen ] = useState(false);
   const [ acitveCard, setActiveCard ] = useState(null);
   const [ initialModalStyles, setInitialModalStyles ] = useState({ width: 0, height: 0, top: 0, left: 0, display: "none" });
@@ -159,9 +173,12 @@ export default function Portfolio() {
     <main>
       <Header text={"My portfolio"} sub={"A collection of all projects I've worked on and published."} className={"ml-2"} />
       <div className="flex-container">
-        <Modal closeModal={closeModal} initialStyles={initialModalStyles} open={modalOpen} gitHubHref={"https://github.com/"} />
-        {Array(4).fill().map((_, i) => (
+        <Modal activeData={entries[acitveCard]} closeModal={closeModal} initialStyles={initialModalStyles} open={modalOpen} gitHubHref={"https://github.com/"} />
+        {/*Array(4).fill().map((_, i) => (
           <Card key={i} cardID={i} activeID={acitveCard} clickFunc={clickFunc} />
+        ))*/}
+        {entries.map((entry, i) => (
+          <Card key={i} cardID={i} activeID={acitveCard} clickFunc={clickFunc} entry={entry} />
         ))}
       </div>
     </main>

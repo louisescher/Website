@@ -46,7 +46,7 @@ export default function PreviewWindow({ projects, activeWindow, setActiveWindow 
           )
         })}
       </div>
-      <div className="w-full h-[calc(100%-2.25rem)] grid-bg opacity-100 absolute bottom-0 left-0" />
+      <div className="w-full h-[calc(100%-2.25rem)] rounded-b-lg grid-bg opacity-100 absolute bottom-0 left-0" />
       <div className="w-full h-[calc(100%-2.25rem)] absolute bottom-0 left-0 flex items-center justify-center group">
         {projects.map((project, index) => {
           return (

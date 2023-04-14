@@ -2,37 +2,50 @@ import Button from "@/components/Button";
 import { WhiteLogo } from "@/components/C.S Logos";
 import DedicatedLink from "@/components/DedicatedLink";
 import { Envelope, ExternalLink, GitHubLogo } from "@/components/Icons";
-import { Electron, NextJS, NodeJS, Rust, TailwindCSS } from "@/components/ProgrammingIcons";
+import * as ProgrammingLangIcons from "@/components/ProgrammingIcons";
 import formatUnixTimestamp from "@/utils/formatUnixTimestamp";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import SkillCard from "@/components/SkillCard";
 import PreviewWindow from "@/components/PreviewWindow";
 import getCurrentAge from "@/utils/getCurrentAge";
+import Layout from "@/components/Layout";
 
-export default function Home() {
+export async function getServerSideProps({req, res}) {
+  //res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
+
+  const entries = await(await fetch(`http://127.0.0.1:3000/api/skills/featured`)).json();
+
+  return {
+    props: {
+      allFeaturedSkills: entries ? (entries.status === 200 ? entries.data : []) : [],
+    }
+  }
+}
+
+export default function Home({ allFeaturedSkills }) {
   const [ activeShowcaseWindow, setActiveShowcaseWindow ] = useState(69);
-  const [ portfolioShowcases, setPortfolioShowcases ] = useState([
+  const [ portfolioShowcases, _ ] = useState([
     {
       name: "ValoGraphs", 
-      img: "/img/ValoGraphs%20Wide%20Final.svg", 
+      img: "http://localhost:7002/images/ValoGraphs/ValoGraphs%20Wide%20Final.svg", 
       desc: "ValoGraphs is a website designed to bring the data of competitive VALORANT to the masses. ValoGraphs collects the data of every single competitive match played from around the globe and displays a few average statistics on the website. Aditionally, we \"flag\" players who are suspected of cheating and provide a service to look up a player by their name to see if they are a cheater.",
       link: "https://valographs.net", 
       link_text: "Visit valographs.net",
       entry_link: "/portfolio/valographs",
-      date: 1638037920000, 
+      date: 1677315600000, 
       stats: [],
       prog_langs_frameworks: [
-        <Rust className={"w-7 text-white"} />, 
-        <NextJS className={"w-7 text-white"} />,
-        <TailwindCSS className={"w-7 text-white"} />,
-        <NodeJS className={"w-7 text-white"} />
+        <ProgrammingLangIcons.Rust className={"w-7 text-white"} />, 
+        <ProgrammingLangIcons.NextJS className={"w-7 text-white"} />,
+        <ProgrammingLangIcons.TailwindCSS className={"w-7 text-white"} />,
+        <ProgrammingLangIcons.NodeJS className={"w-7 text-white"} />
       ],
       status: "Under Development"
     },
     {
       name: "VALTracker", 
-      img: "/img/VALTrackerLogo.png", 
+      img: "http://localhost:7002/images/VALTracker/VALTrackerLogo.png", 
       desc: "VALTracker is a statistics tracker for the video game VALORANT. It allows you to track your stats, view your match history and shop, search for other players' stats and more.", 
       link: "https://valtracker.gg", 
       link_text: "Visit valtracker.gg",
@@ -40,44 +53,15 @@ export default function Home() {
       date: 1638037920000, 
       stats: [{"name":"Downloads", "value": "11,000+"}],
       prog_langs_frameworks: [
-        <Electron className={"w-7 text-white"} />, 
-        <NextJS className={"w-7 text-white"} />,
-        <TailwindCSS className={"w-7 text-white"} />,
-        <NodeJS className={"w-7 text-white"} />
+        <ProgrammingLangIcons.Electron className={"w-7 text-white"} />, 
+        <ProgrammingLangIcons.NextJS className={"w-7 text-white"} />,
+        <ProgrammingLangIcons.TailwindCSS className={"w-7 text-white"} />,
+        <ProgrammingLangIcons.NodeJS className={"w-7 text-white"} />
       ],
       status: "Under Development"
     },
   ]);
-  const [ featuredSkills, setFeaturedSkills ] = useState([
-    {
-      icon: <Rust className={"w-full h-full text-gray-400 group-hover:text-[#E33B26] transition-all duration-100 ease-linear"} />,
-      name: "Rust",
-      stat1: {text:"Expericence", value: "Little"},
-      stat2: {text:"Projects", value: "1"},
-      hoverColor: "#E33B26"
-    },
-    {
-      icon: <NextJS className={"w-full h-full text-gray-400 group-hover:text-[#ffffff] transition-all duration-100 ease-linear"} />,
-      name: "NextJS",
-      stat1: {text:"Expericence", value: "1 year"},
-      stat2: {text:"Projects", value: "5"},
-      hoverColor: "#ffffff"
-    },
-    {
-      icon: <TailwindCSS className={"w-full h-full text-gray-400 group-hover:text-[#38BDF8] transition-all duration-100 ease-linear"} />,
-      name: "TailwindCSS",
-      stat1: {text:"Expericence", value: "1 year"},
-      stat2: {text:"Projects", value: "4"},
-      hoverColor: "#38BDF8"
-    },
-    {
-      icon: <NodeJS className={"w-full h-full text-gray-400 group-hover:text-[#68A063] transition-all duration-100 ease-linear"} />,
-      name: "NodeJS",
-      stat1: {text:"Expericence", value: "3 years"},
-      stat2: {text:"Projects", value: "10"},
-      hoverColor: "#68A063"
-    }
-  ]);
+  const [ featuredSkills, __ ] = useState(allFeaturedSkills);
 
   const [ smallSkillCards, setSmallSkillCards ] = useState(false);
   const [ miniSkillCards, setMiniSkillCards ] = useState(false);
@@ -104,8 +88,8 @@ export default function Home() {
   });
 
   return (
-    <main>
-      <div className="h-full w-[90%] mx-auto flex flex-row items-start justify-center">
+    <Layout>
+      <div className="h-screen w-[90%] mx-auto flex flex-row items-start justify-center">
         <div className="w-1/2 h-4/5 mr-2 relative flex items-center">
           <div className="!m-auto relative w-2/3">
             <header>
@@ -132,7 +116,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-[95%] mx-auto mb-16">
+      <div className="w-[95%] mx-auto mb-14">
         <Header text={"Skills"} sub={"A small overview of my skills"} moreInfoHref={'/skills'} className={"mt-4"} />
         <div className="w-full flex flex-row flex-wrap skill-cards-container">
           {featuredSkills.map((skill, index) => {
@@ -140,18 +124,19 @@ export default function Home() {
               <SkillCard 
                 key={index} 
                 name={skill.name} 
-                icon={skill.icon} 
+                icon={ProgrammingLangIcons[skill.name]({className: `w-full h-full text-gray-400 lang-icon transition-all duration-100 ease-linear`, style: { color: skill.hoverColor }})} 
                 stat1={skill.stat1} 
                 stat2={skill.stat2} 
                 hoverColor={skill.hoverColor} 
                 smallMode={smallSkillCards} 
                 miniMode={miniSkillCards}
+                homeCard={true}
               />
             )
           })}
         </div>
       </div>
-      <div className="w-[95%] mx-auto mt-4 pb-4">
+      <div className="w-[95%] mx-auto pb-4">
         <Header text={"Featured projects"} sub={"A few things I've worked on"} moreInfoHref={'/portfolio'} />
         <div className="items-center flex flex-row justify-around">
           <PreviewWindow activeWindow={activeShowcaseWindow} setActiveWindow={setActiveShowcaseWindow} projects={portfolioShowcases} />
@@ -210,17 +195,10 @@ export default function Home() {
                   <span className="ml-1">{portfolioShowcases[activeShowcaseWindow] ? portfolioShowcases[activeShowcaseWindow].link_text : "N/A"}</span>
                 </>}
               />
-              <DedicatedLink 
-                className=""
-                href={portfolioShowcases[activeShowcaseWindow] ? portfolioShowcases[activeShowcaseWindow].entry_link : "/portfolio"} 
-                text={<>
-                  <span className="ml-1">More info</span>
-                </>}
-              />
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </Layout>
   )
 }

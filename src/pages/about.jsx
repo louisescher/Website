@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Layout from "@/components/Layout";
 import VSCodeClone from "@/components/VSCodeClone";
 import getCurrentAge from "@/utils/getCurrentAge";
 import Link from "next/link";
@@ -11,7 +12,7 @@ function ExternalLink({ children, href }) {
 
 export default function About() {
   return (
-    <main>
+    <Layout>
       <div className="w-[95%] h-full mx-auto flex flex-col">
         <Header large text={"About me"} sub={"A quick summary of who I am"} />
         <div className="flex flex-row h-fit">
@@ -39,6 +40,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </main>
+    </Layout>
   )
 }

@@ -11,16 +11,26 @@
   font-stretch: 75% 125%;
 }
 
+@font-face {
+  font-family: 'Mona Sans';
+  src:
+    url('/fonts/Mona-Sans.woff2') format('woff2 supports variations'),
+    url('/fonts/Mona-Sans.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
 html {
   font-family: 'Hubot Sans';
   @apply text-white;
   scroll-behavior: smooth;
   overflow: overlay;
   background: #151517;
+  height: 100%;
 }
 
 main {
-  height: calc(100vh);
+  min-height: calc(100vh);
   padding-top: 5rem;
   padding-bottom: 1rem;
   padding-left: 1rem; padding-right: 1rem;
@@ -283,26 +293,6 @@ body, html {
   transform-origin: left;
 }
 
-.loading-anim-text {
-  color: #000;
-  opacity: 0;
-  @apply transition-all duration-75 ease-out w-full font-bold text-lg md:text-2xl;
-  font-stretch: extra-expanded;
-}
-
-.loading-anim-text.animated {
-  animation: flicker 2s infinite;
-  animation-delay: 0.4s;
-  opacity: 1;
-}
-
-.loading-anim-text.stop-anim {
-  color: #000;
-  opacity: 1;
-  animation: flicker-alt 1s infinite;
-  animation-delay: 1s;
-}
-
 @keyframes flicker-alt {
   0% { opacity: 0; }
   9% { opacity: 0; }
@@ -408,7 +398,7 @@ body, html {
 .navbar-dropdown {
   @apply z-40 sm:hidden;
   position: fixed;
-  top: -120vw;
+  top: -100vh;
   left: 0;
   height: 100vh;
   padding: 0.5rem;
@@ -427,7 +417,7 @@ body, html {
 
 @keyframes slide-in {
   0% {
-    top: -120vw;
+    top: -100vh;
   }
   100% {
     top: 0rem;
@@ -589,7 +579,7 @@ body, html {
 }
 
 a.href {
-  @apply text-purple-400 transition-none duration-75 ease-linear;
+  @apply text-purple-400 transition-none duration-75 ease-linear font-medium;
 }
 
 a.href:hover {
@@ -698,6 +688,15 @@ a.href:active {
   opacity: 1 !important;
 }
 
+.modal-tags {
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.modal-card.animate .modal-tags {
+  opacity: 1 !important;
+}
+
 .modal-card .text-content {
   opacity: 0;
   transition: all 0.15s ease;
@@ -725,14 +724,125 @@ a.href:active {
 }
 
 .webpage-showcase-img {
-  transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) scale(1.25);
+  transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg);
   transform-style: preserve-3d;
-  /* Make it glow slightly in yellow to give the image a sense of elevation*/
   transition: all 0.2s ease;
   @apply shadow-accent-1 shadow-md;
-  box-shadow: 10px 10px 15px 1px rgba(46, 46, 46, 0.4);
+  box-shadow: 10px 10px 15px 1px rgba(80, 80, 80, 0.4);
 }
 
-.webpage-showcase-img.mobile {
-  transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translate(5rem, 5rem) scale(1.25);
+.webpage-showcase-img.valtracker.mobile {
+  transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translate(3rem, 5rem);
+}
+
+.webpage-showcase-img.valographs.mobile {
+  transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translate(4rem, 7rem);
+}
+
+.portfolio-tag:first-child {
+  @apply ml-0;
+}
+
+.contact-list li {
+  @apply mb-4 text-xl font-medium border border-transparent w-fit rounded-lg hover:border-lighter bg-black bg-opacity-0 hover:bg-opacity-25 transition-all duration-100 ease-linear;
+}
+
+.contact-list li a {
+  @apply flex flex-row items-center p-2;
+}
+
+.contact-form * {
+  @apply transition-all duration-75 ease-linear;
+}
+
+.contact-form input {
+  @apply appearance-none block w-full !bg-input-bg text-white border border-input-border rounded py-3 px-4 mb-3 leading-tight outline-none focus:bg-input-bg-light;
+}
+
+.contact-form input:-webkit-autofill, .contact-form textarea:-webkit-autofill, #grid-email:-webkit-autofill {
+  @apply !bg-input-bg;
+}
+
+.contact-form textarea {
+  @apply resize-none appearance-none block w-full bg-input-bg text-white border border-input-border rounded py-3 px-4 mb-3 leading-tight outline-none focus:bg-input-bg-light h-48;
+}
+
+.contact-form label {
+  @apply block uppercase tracking-wide text-lightest text-xs font-bold mb-2;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgb(23, 23, 23) inset;
+  -webkit-text-fill-color: #959ba5;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.contact-form {
+  @apply transition-all duration-150 ease-linear overflow-hidden relative;
+}
+
+.contact-form.loading {
+  @apply h-16;
+}
+
+.contact-form.loading *:not(.contact-form-cover) {
+  @apply opacity-0 transition-all duration-75 ease-linear;
+}
+
+.contact-form .contact-form-cover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-out;
+  z-index: 15;
+  @apply flex items-center justify-center;
+  transition-delay: 300ms;
+}
+
+.contact-form.loading .contact-form-cover {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.loading-anim-text {
+  color: #000;
+  opacity: 0;
+  @apply transition-all duration-75 ease-out w-full font-bold text-lg md:text-2xl;
+  font-stretch: extra-expanded;
+}
+
+.loading-anim-text.animated {
+  animation: flicker 2s infinite;
+  animation-delay: 0.4s;
+  opacity: 1;
+}
+
+.loading-anim-text.stop-anim {
+  color: #000;
+  opacity: 1;
+  animation: flicker-alt 1s forwards;
+  animation-delay: 1s;
+}
+
+.skill-card .lang-icon path {
+  fill: #ccc;
+  @apply transition-all duration-100 ease-linear;
+}
+
+.skill-card.active .lang-icon path {
+  fill: currentColor;
 }

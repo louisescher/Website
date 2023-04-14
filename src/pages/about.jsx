@@ -15,10 +15,10 @@ export default function About() {
     <Layout>
       <div className="w-[95%] h-full mx-auto flex flex-col">
         <Header large text={"About me"} sub={"A quick summary of who I am"} />
-        <div className="flex flex-row h-fit">
+        <div className="flex flex-col lg:flex-row h-fit">
           <VSCodeClone />
-          <div className="w-2/6 h-full pl-2 ml-2">
-            <h1 className="mt-1">Hey there!</h1>
+          <div className="w-full lg:w-2/6 h-full mt-0 md:mt-8 lg:mt-0 lg:pl-2 lg:ml-2">
+            <h1 className="mt-1 md:block hidden">Hey there!</h1>
             <p className="mt-4 text-lg">
               My name is Spirit (or Louis), and I'm a {getCurrentAge()} year old developer from Germany. I'm currently in High School 
               and have experience in all kinds of programming languages and fields of interest. Cyber security, game development and web tech 

@@ -632,13 +632,42 @@ a.href:active {
   @apply bg-scrollbar-thumb-hover;
 }
 
-.modal-card.animate {
+#modal-card.animate {
   @apply transition-all duration-300 ease-linear block;
-  width: calc(100% / 2.75) !important;
   height: 80% !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate3d(-50%, -50%, 0) !important;
+}
+
+@media (max-width: 640px) {
+  #modal-card.animate {
+    width: calc((100% / 1) - 2rem) !important;
+  }
+}
+
+@media (min-width: 640px) {
+  #modal-card.animate {
+    width: calc(100% / 1.25) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #modal-card.animate {
+    width: calc(100% / 1.5) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #modal-card.animate {
+    width: calc(100% / 2) !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  #modal-card.animate {
+    width: calc(100% / 2.75) !important;
+  }
 }
 
 .modal-card.hiding {

@@ -29,7 +29,7 @@ function NavbarItem({ text, href, page, hideDropdownAndNavigate }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <span className={`text-7xl z-20 stretch-text ${page === href ? "font-bold" : "font-thin"}`}>{text}</span>
+      <span className={`text-5xl sm:text-7xl z-20 stretch-text ${page === href ? "font-bold" : "font-thin"}`}>{text}</span>
       <div className="navitem-bg" />
     </Link>
   )
@@ -102,7 +102,7 @@ export default function Navbar() {
           }}
         >
           <img src={"/img/C.S%20White.svg"} className={"h-full wide-logo-white mr-4"} />
-          <span className="font-extrabold text-2xl z-20 stretch-text">code.spirit</span>
+          <span className="font-extrabold text-2xl z-20 stretch-text hidden xs:block">code.spirit</span>
         </Link>
         <div className="ml-auto flex flex-row items-center">
           <span className="text-lg font-semibold text-accent-1 mr-4">MENU</span> 
@@ -124,7 +124,7 @@ export default function Navbar() {
         </div>
       </nav>
       <div className={`navbar-dropdown !px-4 glass dark ${(isOpen === true || dropdownShown === true) && "active"} ${dropdownHiding === true && "hiding"}`}>
-        <div className="h-3/5 my-auto flex flex-col justify-between mx-16">
+        <div className="h-1/2 sm:h-3/5 my-auto flex flex-col justify-between ml-4 sm:mx-16">
           <NavbarItem text={"Home"} href={'/'} page={page} hideDropdownAndNavigate={hideDropdownAndNavigate} />
           <NavbarItem text={"About"} href={'/about'} page={page} hideDropdownAndNavigate={hideDropdownAndNavigate} />
           <NavbarItem text={"Skills"} href={'/skills'} page={page} hideDropdownAndNavigate={hideDropdownAndNavigate} />

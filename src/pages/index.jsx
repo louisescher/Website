@@ -89,15 +89,15 @@ export default function Home({ allFeaturedSkills }) {
 
   return (
     <Layout>
-      <div className="h-screen w-[90%] mx-auto flex flex-row items-start justify-center">
-        <div className="w-1/2 h-4/5 mr-2 relative flex items-center">
-          <div className="!m-auto relative w-2/3">
+      <div className="h-[50vh] md:h-screen xl:w-[90%] w-full md:px-4 mx-auto flex flex-col md:flex-row items-start justify-center">
+        <div className="w-full md:w-1/2 h-full md:h-4/5 md:mr-2 relative flex items-center">
+          <div className="!m-auto relative w-full lg:w-2/3">
             <header>
-              <span className="text-3xl stretch-text font block mb-2 landing-hello-world-text initial-reveal delay-step-0">hello world</span>
-              <span className="text-6xl stretch-text font-semibold initial-reveal delay-step-1">I'm <span className="font-extrabold glow-text blue">Spirit</span></span>
+              <span className="text-2xl md:text-3xl stretch-text font block mb-2 landing-hello-world-text initial-reveal delay-step-0">hello world</span>
+              <span className="text-5xl md:text-6xl stretch-text font-semibold initial-reveal delay-step-1">I'm <span className="font-extrabold glow-text blue">Spirit</span></span>
             </header>
             <hr className="my-2" />
-            <span className="text-2xl initial-reveal delay-step-2">I'm a {getCurrentAge()} year old developer from Germany.</span>
+            <span className="text-xl md:text-2xl initial-reveal delay-step-2">I'm a {getCurrentAge()} year old developer from Germany.</span>
             <div className="flex flex-row items-center mt-2">
               <Button isLink href={'https://github.com/SpiritLetsPlays'} className={'mr-1'}>
                 <GitHubLogo className={'h-6 w-6 mr-1.5'} />
@@ -110,13 +110,13 @@ export default function Home({ allFeaturedSkills }) {
             </div>
           </div>
         </div>
-        <div className="w-1/2 h-4/5 ml-2 flex justify-center items-center">
-          <div className="h-1/2">
+        <div className="w-1/2 hidden md:flex h-4/5 ml-2 justify-center items-center">
+          <div className="lg:h-1/2 w-full lg:w-auto">
             <WhiteLogo className={"w-full h-full landing-logo"} />
           </div>
         </div>
       </div>
-      <div className="w-[95%] mx-auto mb-14">
+      <div className="w-full md:w-[95%] mx-auto mb-14">
         <Header text={"Skills"} sub={"A small overview of my skills"} moreInfoHref={'/skills'} className={"mt-4"} />
         <div className="w-full flex flex-row flex-wrap skill-cards-container">
           {featuredSkills.map((skill, index) => {
@@ -136,26 +136,26 @@ export default function Home({ allFeaturedSkills }) {
           })}
         </div>
       </div>
-      <div className="w-[95%] mx-auto pb-4">
+      <div className="w-full md:w-[95%] mx-auto pb-4">
         <Header text={"Featured projects"} sub={"A few things I've worked on"} moreInfoHref={'/portfolio'} />
-        <div className="items-center flex flex-row justify-around">
+        <div className="items-center flex flex-col lg:flex-row justify-around">
           <PreviewWindow activeWindow={activeShowcaseWindow} setActiveWindow={setActiveShowcaseWindow} projects={portfolioShowcases} />
-          <div className="w-3/5 flex flex-col relative ml-8">
+          <div className="w-full lg:w-2/5 mt-8 xl:w-3/5 flex flex-col relative lg:mt-0 lg:ml-8">
             <span className="text-lightest stretch-text font-medium text-xl">Featured project</span>
             <h1 className="mt-0 mb-4 font-extrabold">{portfolioShowcases[activeShowcaseWindow] ? portfolioShowcases[activeShowcaseWindow].name : "N/A"}</h1>
             <span className="text-lightest stretch-text font-medium text-xl">Project stats</span>
             <div className="flex flex-col mb-4">
-              <div className="flex flex-row items-center">
-                <div className='z-20 min-w-fit pr-2 text-lg stretch-text'>Date of creation</div>
-                <div className={'middle-line z-10 w-full h-px border-dashed border-b border-lighter m-auto'} />
-                <div className='ml-auto z-20 min-w-fit pr-2 text-lg stretch-text pl-2'>
+              <div className="flex flex-col sm:flex-row sm:items-center">
+                <div className='z-20 min-w-fit pr-2 text-lg stretch-text order-1'>Date of creation</div>
+                <div className={'middle-line z-10 w-full h-px border-dashed border-b sm:order-2 order-3 border-lighter m-auto'} />
+                <div className='ml-auto z-20 min-w-fit pr-2 text-lg stretch-text pl-2 order-2 sm:order-3'>
                   {portfolioShowcases[activeShowcaseWindow] ? formatUnixTimestamp(portfolioShowcases[activeShowcaseWindow].date) : "N/A"}
                 </div>
               </div>
-              <div className="flex flex-row items-center">
-                <div className='z-20 min-w-fit pr-2 text-lg stretch-text'>Languages & Tools</div>
-                <div className={'middle-line z-10 w-full h-px border-dashed border-b border-lighter m-auto'} />
-                <div className='ml-auto z-20 min-w-fit pr-2 text-lg stretch-text pl-2 flex flex-row items-center'>
+              <div className="flex flex-col sm:flex-row sm:items-center">
+                <div className='z-20 min-w-fit pr-2 text-lg stretch-text order-1'>Languages & Tools</div>
+                <div className={'middle-line z-10 w-full h-px border-dashed border-b sm:order-2 order-3 border-lighter m-auto'} />
+                <div className='ml-auto z-20 min-w-fit pr-2 text-lg stretch-text pl-2 order-2 sm:order-3 flex flex-row items-center mb-1 sm:mb-0'>
                   {portfolioShowcases[activeShowcaseWindow] ? portfolioShowcases[activeShowcaseWindow].prog_langs_frameworks.map((lang, index) => {
                     return (
                       <span key={index} className="mr-2">
@@ -167,17 +167,17 @@ export default function Home({ allFeaturedSkills }) {
               </div>
               {portfolioShowcases[activeShowcaseWindow] ? portfolioShowcases[activeShowcaseWindow].stats.map((stat, index) => {
                 return (
-                  <div key={index} className="flex flex-row items-center">
-                    <div className='z-20 min-w-fit pr-2 text-lg stretch-text'>{stat.name}</div>
-                    <div className={'middle-line z-10 w-full h-px border-dashed border-b border-lighter m-auto'} />
-                    <div className='ml-auto z-20 min-w-fit pr-2 text-lg stretch-text pl-2'>{stat.value}</div>
+                  <div key={index} className="flex flex-col sm:flex-row sm:items-center">
+                    <div className='z-20 min-w-fit pr-2 text-lg stretch-text order-1'>{stat.name}</div>
+                    <div className={'middle-line z-10 w-full h-px border-dashed border-b sm:order-2 order-3 border-lighter m-auto'} />
+                    <div className='ml-auto z-20 min-w-fit pr-2 text-lg stretch-text pl-2 order-2 sm:order-3'>{stat.value}</div>
                   </div>
                 )
               }) : null}
-              <div className="flex flex-row items-center">
-                <div className='z-20 min-w-fit pr-2 text-lg stretch-text'>Project status</div>
-                <div className={'middle-line z-10 w-full h-px border-dashed border-b border-lighter m-auto'} />
-                <div className='ml-auto z-20 min-w-fit pr-2 text-lg stretch-text pl-2'>
+              <div className="flex flex-col sm:flex-row sm:items-center">
+                <div className='z-20 min-w-fit pr-2 text-lg stretch-text order-1'>Project status</div>
+                <div className={'middle-line z-10 w-full h-px border-dashed border-b sm:order-2 order-3 border-lighter m-auto'} />
+                <div className='ml-auto z-20 min-w-fit pr-2 text-lg stretch-text pl-2 order-2 sm:order-3'>
                   {portfolioShowcases[activeShowcaseWindow] ? portfolioShowcases[activeShowcaseWindow].status : "N/A"}
                 </div>
               </div>

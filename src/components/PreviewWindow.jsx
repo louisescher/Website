@@ -23,8 +23,8 @@ export default function PreviewWindow({ projects, activeWindow, setActiveWindow 
   }, []);
 
   return (
-    <div className="min-w-[367px] w-2/5 preview-window rounded-lg border border-lighter overflow-hidden relative shadow-black shadow-lg">
-      <div className="w-full h-9 rounded-t-lg border-b border-lighter glass flex flex-row items-center">
+    <div className="min-w-[337px] w-full sm:w-4/5 lg:w-3/5 xl:w-2/5 preview-window rounded-lg border border-lighter overflow-hidden relative shadow-black shadow-lg">
+      <div className="w-full h-8 md:h-9 rounded-t-lg border-b border-lighter glass flex flex-row items-center">
         <div className="w-fit h-full border-r border-lighter rounded-tl-lg flex flex-row items-center">
           <div className="mac-dot text-red-500 bg-red-500 h-3.5 rounded-full mr-2 ml-4" />
           <div className="mac-dot text-yellow-500 bg-yellow-500 h-3.5 rounded-full mr-2" />
@@ -40,14 +40,14 @@ export default function PreviewWindow({ projects, activeWindow, setActiveWindow 
               `}
               onClick={() => setActiveWindow(index)}
             >
-              <span className="stretch-text px-5">{project.name}</span>
+              <span className="stretch-text px-3 md:px-5">{project.name}</span>
               <div className="progress-bar gradient z-20" />
             </div>
           )
         })}
       </div>
-      <div className="w-full h-[calc(100%-2.25rem)] rounded-b-lg grid-bg opacity-100 absolute bottom-0 left-0" />
-      <div className="w-full h-[calc(100%-2.25rem)] absolute bottom-0 left-0 flex items-center justify-center group">
+      <div className="w-full h-[calc(100%-2rem)] md:h-[calc(100%-2.25rem)] rounded-b-lg grid-bg opacity-100 absolute bottom-0 left-0" />
+      <div className="w-full h-[calc(100%-2rem)] md:h-[calc(100%-2.25rem)] absolute bottom-0 left-0 flex items-center justify-center group">
         {projects.map((project, index) => {
           return (
             <div 

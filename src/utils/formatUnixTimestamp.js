@@ -14,9 +14,7 @@ export default function formatUnixTimestamp(unix, locale) {
   const dateFormatter = new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'numeric',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
+    day: 'numeric'
   });
 
   const formattedDate = dateFormatter.format(date);

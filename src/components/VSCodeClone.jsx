@@ -13,7 +13,7 @@ export default function VSCodeClone() {
   }
 
   return (
-    <div className="w-4/6 border vscode-clone !shadow-lg h-fit glass rounded-lg overflow-hidden border-lighter text-xl flex flex-col">
+    <div className="lg:w-4/6 w-full border vscode-clone !shadow-lg h-fit glass rounded-lg overflow-hidden border-lighter text-xl hidden md:flex flex-col">
       <div className="w-full h-6 items-center justify-center flex border-b border-lighter text-sm font-light text-gray-400"><span>aboutme.js - codedotspirit.dev</span></div>
       <div className="h-fit flex flex-row w-full">
         <div className="h-full w-12 flex flex-col items-center py-3">

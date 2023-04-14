@@ -56,7 +56,7 @@ function Card({ clickFunc, cardID, activeID, entry }) {
   const cardRef = useRef(null);
 
   return (
-    <div ref={cardRef} className={`p-2 pl-0 pr-4 w-1/4 h-64 ${activeID === cardID && "opacity-0 pointer-events-none"}`}>
+    <div ref={cardRef} className={`p-2 pl-0 pr-4 w-full md:w-1/2 lg:w-1/3 2xl:w-1/4 h-64 ${activeID === cardID && "opacity-0 pointer-events-none"}`}>
       <div 
         className={`portfolio-card shadow-lg relative grid-bg cursor-pointer w-full h-full rounded border border-lighter overflow-hidden ${activeID === cardID && "active"}`}
         onClick={() => clickFunc(cardRef, cardID)}
@@ -106,15 +106,16 @@ function Modal({ initialStyles, open, closeModal, activeData, activeTags, setAct
           position: "absolute",
           ...initialStyles
         }}
+        id="modal-card"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="w-full h-full relative modal-card-content-wrapper p-2">
+        <div className="w-full h-full relative modal-card-content-wrapper p-2 overflow-x-hidden">
           <XMark 
             className="modal-close-icon fixed top-4 right-4 z-40 w-8 glass rounded border border-lighter hover:!bg-dark cursor-pointer" 
             onClick={() => closeModal()} 
           />
           <div className="w-full relative">
-            <div className={`portfolio-tags absolute w-fit h-8 bottom-1 left-1 z-20 flex flex-row items-center modal-tags`}>
+            <div className={`portfolio-tags absolute w-fit max-w-[80%] min-h-8 h-fit bottom-1 left-1 z-20 flex flex-row flex-wrap items-center modal-tags`}>
               {activeData && activeData.tags.map((tag, index) => (
                 <InfoTag activeTags={activeTags} setActiveTags={setActiveTags} key={index} text={tag.name} closeModal={closeModal} />
               ))}

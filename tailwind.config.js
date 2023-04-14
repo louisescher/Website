@@ -26,7 +26,7 @@ module.exports = {
         "code-color-5": "#9ECBFF", // Strings
       },
       screens: {
-        "xs": "551px",
+        "xs": "430px",
       }
     },
   },

@@ -88,10 +88,10 @@ function ContactForm() {
 export default function Contact() {
   return (
     <Layout>
-      <div className="h-[calc(100vh-8rem)] w-4/5 mx-auto flex flex-row items-center justify-around">
-        <div className="w-1/2 h-3/5 px-12">
+      <div className="h-fit lg:h-[calc(100vh-8rem)] w-full 2xl:w-4/5 mx-auto flex flex-col lg:flex-row items-center justify-around">
+        <div className="w-full lg:w-1/2 lg:h-3/5 lg:px-12">
           <Header text={"Let's get in touch!"} nonStretch sub={"Got any questions? Want to hire me for a project?<br />Either shoot me a message using the contact form or find me on social media:"} large className={"mb-8"} />
-          <ul className="contact-list">
+          <ul className="contact-list flex flex-row justify-between flex-wrap lg:justify-normal lg:flex-col">
             <li>
               <Link href={"https://twitter.com/SpiritLetsPlays"}>
                 <Twitter active className={"h-8 w-8 mr-4"} />
@@ -118,7 +118,7 @@ export default function Contact() {
             </li>
           </ul>
         </div>
-        <div className="w-1/2 h-3/5 flex flex-col items-center justify-center">
+        <div className="w-full lg:w-1/2 lg:h-3/5 flex flex-col items-center justify-center">
           <ContactForm />
         </div>
       </div>

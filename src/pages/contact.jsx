@@ -39,7 +39,7 @@ function ContactForm() {
       onSubmit={handleSubmit} 
       method="POST"
       className={`
-        w-full contact-form shadow-black shadow-lg mx-auto h-full grid-bg rounded-lg border border-lighter p-4 flex flex-col justify-between 
+        w-full contact-form shadow-black shadow-lg mx-auto h-fit grid-bg rounded-lg border border-lighter p-4 flex flex-col justify-between 
         ${submitted && "submitted"} ${error && "error"} ${loading && "loading"}
       `}
     >
@@ -118,7 +118,7 @@ export default function Contact() {
             </li>
           </ul>
         </div>
-        <div className="w-full lg:w-1/2 lg:h-3/5 flex flex-col items-center justify-center">
+        <div className="w-full lg:w-1/2 lg:min-h-3/5 flex flex-col items-center justify-center">
           <ContactForm />
         </div>
       </div>

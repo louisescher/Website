@@ -98,10 +98,18 @@ function Modal({ initialStyles, open, closeModal, activeData, activeTags, setAct
     }
   }, [open]);
 
+  useEffect(() => {
+    if(animate) {
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.documentElement.style.overflow = "overlay";
+    }
+  }, [animate]);
+
   return (
-    <div className={`absolute z-30 transition-all duration-100 ease-linear w-screen h-screen top-0 left-0 bg-opacity-0 ${(animate && !hiding) ? "!bg-black !bg-opacity-90" : "pointer-events-none"}`} onClick={() => closeModal()}>
+    <div className={`fixed z-30 transition-all duration-100 ease-linear w-screen h-screen top-0 left-0 bg-opacity-0 ${(animate && !hiding) ? "!bg-black !bg-opacity-90" : "pointer-events-none"}`} onClick={() => closeModal()}>
       <div 
-        className={`modal-card grid-bg rounded border border-lighter ${(animate && !hiding) && "animate"} ${hiding && "hiding"}`}
+        className={`modal-card grid-bg mt-4 rounded border border-lighter ${(animate && !hiding) && "animate"} ${hiding && "hiding"}`}
         style={{
           position: "absolute",
           ...initialStyles
@@ -115,7 +123,7 @@ function Modal({ initialStyles, open, closeModal, activeData, activeTags, setAct
             onClick={() => closeModal()} 
           />
           <div className="w-full relative">
-            <div className={`portfolio-tags absolute w-fit max-w-[80%] min-h-8 h-fit bottom-1 left-1 z-20 flex flex-row flex-wrap items-center modal-tags`}>
+            <div className={`portfolio-tags absolute w-fit max-w-[80%] min-h-8 h-fit bottom-1 left-1 z-20 hidden lg:flex flex-row flex-wrap items-center modal-tags`}>
               {activeData && activeData.tags.map((tag, index) => (
                 <InfoTag activeTags={activeTags} setActiveTags={setActiveTags} key={index} text={tag.name} closeModal={closeModal} />
               ))}
@@ -135,12 +143,17 @@ function Modal({ initialStyles, open, closeModal, activeData, activeTags, setAct
                 <span className="font-bold ml-2">GitHub</span>
               </Link>
             </div>
-            <div className="bg-black bg-opacity-75 absolute top-0 left-0 w-full h-full grid content-center text-center z-10">
+            <div className="bg-black bg-opacity-75 absolute top-0 left-0 w-full h-[calc(100%+2px)] grid content-center text-center z-10">
               <div className="h-1/4 m-auto flex flex-row items-center">
                 <img className="w-5/6 mx-auto" src={activeData ? activeData.logo : ""} />
               </div>
             </div>
             <img src={activeData ? activeData.images.first_view : ""} className="w-full rounded-sm modal-main-image" />
+          </div>
+          <div className={`portfolio-tags mt-4 w-full min-h-8 h-fit z-20 flex lg:hidden flex-row flex-wrap items-center modal-tags`}>
+            {activeData && activeData.tags.map((tag, index) => (
+              <InfoTag activeTags={activeTags} setActiveTags={setActiveTags} key={index} text={tag.name} closeModal={closeModal} />
+            ))}
           </div>
           <div className={`w-full text-content pb-1 ${showText && "shown"} ${hideText && "hide"}`}>
             <Header text={`What is ${activeData ? activeData.name : "N/A"}?`} small delay />

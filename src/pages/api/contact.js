@@ -5,7 +5,7 @@ export default async function contactFormHandler(req, res) {
     return res.status(405).json({ status: 405, message: 'Method Not Allowed' });
   }
 
-  /*var transporter = nodemailer.createTransport({
+  var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: process.env.GMAIL_MAIL,
@@ -23,11 +23,10 @@ export default async function contactFormHandler(req, res) {
   transporter.sendMail(mailOptions, function(error, info){
     if (error) {
       console.log(error);
-      res.status(500).json({ status: 200, message: "Message failed to send!" });
+      return res.status(500).json({ status: 200, message: "Message failed to send!" });
     } else {
       console.log('Email sent: ' + info.response);
-      res.status(200).json({ status: 200, message: "Message sent successfully!" });
+      return res.status(200).json({ status: 200, message: "Message sent successfully!" });
     }
-  });*/
-  res.status(200).json({ status: 200, message: "Message sent successfully!" });
+  });
 }

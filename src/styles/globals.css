@@ -785,7 +785,7 @@ a.href:active {
 }
 
 .contact-form input {
-  @apply appearance-none block w-full !bg-input-bg text-white border border-input-border rounded py-3 px-4 mb-3 leading-tight outline-none focus:bg-input-bg-light;
+  @apply appearance-none block w-full !bg-input-bg text-white border border-input-border rounded py-3 px-4 mb-3 leading-tight outline-none focus:!bg-input-bg-light;
 }
 
 .contact-form input:-webkit-autofill, .contact-form textarea:-webkit-autofill, #grid-email:-webkit-autofill {
@@ -810,7 +810,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px rgb(23, 23, 23) inset;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(34, 34, 34) inset;
   -webkit-text-fill-color: #959ba5;
   transition: background-color 5000s ease-in-out 0s;
 }

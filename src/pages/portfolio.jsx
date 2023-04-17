@@ -184,8 +184,8 @@ function Modal({ initialStyles, open, closeModal, activeData, activeTags, setAct
 export async function getServerSideProps({req, res}) {
   //res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
 
-  const entries = await(await fetch(`http://127.0.0.1:3000/api/portfolio`)).json();
-  const tags = await(await fetch(`http://127.0.0.1:3000/api/portfolio/tags`)).json();
+  const entries = await(await fetch(`http://185.245.61.41:3100/api/portfolio`)).json();
+  const tags = await(await fetch(`http://185.245.61.41:3100/api/portfolio/tags`)).json();
 
   return {
     props: {

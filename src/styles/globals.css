@@ -458,7 +458,7 @@ body, html {
 }
 
 .initial-reveal {
-  @apply relative w-fit;
+  @apply relative !w-fit block;
 } 
 
 .initial-reveal::before {

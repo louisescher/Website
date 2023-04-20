@@ -45,6 +45,14 @@ export default function Skills({ allSkills }) {
 
   return (
     <Layout>
+      <SeoHandler 
+        title={"<code.spirit> | Skills"}
+        description={"Programming languages and frameworks I am (somewhat) proficient in"}
+        url={"https://codedotspirit.dev/skills"}
+        image={"/img/C.S%20White.svg"}
+        noindex
+        keywordsStr={"German Developer, Spirit, SpiritLetsPlays, C.S, CodedotSpirit, CodedotSpirit.dev, CodedotSpirit.com"}
+      />
       <div className="h-full w-[95%] mx-auto">
         <Header large text={"My skills"} sub={"Programming languages and frameworks I am (somewhat) proficient in"} />
         <div className="w-full flex flex-row flex-wrap skill-cards-container pb-4">

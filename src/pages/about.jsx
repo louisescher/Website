@@ -13,6 +13,14 @@ function ExternalLink({ children, href }) {
 export default function About() {
   return (
     <Layout>
+      <SeoHandler 
+        title={"<code.spirit> | About"}
+        description={"A quick summary of who I am"}
+        url={"https://codedotspirit.dev/about"}
+        image={"/img/C.S%20White.svg"}
+        noindex
+        keywordsStr={"German Developer, Spirit, SpiritLetsPlays, C.S, CodedotSpirit, CodedotSpirit.dev, CodedotSpirit.com"}
+      />
       <div className="w-[95%] h-full mx-auto flex flex-col">
         <Header large text={"About me"} sub={"A quick summary of who I am"} />
         <div className="flex flex-col lg:flex-row h-fit">

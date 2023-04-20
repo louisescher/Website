@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import { GitHubLogo, XMark } from "@/components/Icons";
 import Layout from "@/components/Layout";
+import SeoHandler from "@/components/SeoHandler";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
@@ -241,6 +242,14 @@ export default function Portfolio({ entries, tags }) {
 
   return (
     <Layout>
+      <SeoHandler 
+        title={"<code.spirit> | Portfolio"}
+        description={"A collection of all projects I've worked on and published."}
+        url={"https://codedotspirit.dev/portfolio"}
+        image={"/img/C.S%20White.svg"}
+        noindex
+        keywordsStr={"German Developer, Spirit, SpiritLetsPlays, C.S, CodedotSpirit, CodedotSpirit.dev, CodedotSpirit.com"}
+      />
       <div className="h-full w-[95%] mx-auto">
         <Header text={"My portfolio"} large sub={"A collection of all projects I've worked on and published."} />
         <div className="flex flex-row items-center flex-wrap">

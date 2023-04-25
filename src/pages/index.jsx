@@ -10,11 +10,12 @@ import SkillCard from "@/components/SkillCard";
 import PreviewWindow from "@/components/PreviewWindow";
 import getCurrentAge from "@/utils/getCurrentAge";
 import Layout from "@/components/Layout";
+import SeoHandler from "@/components/SeoHandler";
 
 export async function getServerSideProps({req, res}) {
   //res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
 
-  const entries = await(await fetch(`http://127.0.0.1:3000/api/skills/featured`)).json();
+  const entries = await(await fetch(`http://185.245.61.41:3100/api/skills/featured`)).json();
 
   return {
     props: {
@@ -89,6 +90,13 @@ export default function Home({ allFeaturedSkills }) {
 
   return (
     <Layout>
+      <SeoHandler 
+        title={"<code.spirit>"}
+        description={"Hello World, I'm Spirit, a " + getCurrentAge() + " year old developer from Germany."}
+        url={"https://codedotspirit.dev"}
+        image={"/img/C.S%20White.svg"}
+        keywordsStr={"German Developer, Spirit, SpiritLetsPlays, C.S, CodedotSpirit, CodedotSpirit.dev, CodedotSpirit.com"}
+      />
       <div className="h-[50vh] md:h-screen xl:w-[90%] w-full md:px-4 mx-auto flex flex-col md:flex-row items-start justify-center">
         <div className="w-full md:w-1/2 h-full md:h-4/5 md:mr-2 relative flex items-center">
           <div className="!m-auto relative w-full lg:w-2/3">

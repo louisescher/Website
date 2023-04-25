@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import { GitHubLogo, XMark } from "@/components/Icons";
 import Layout from "@/components/Layout";
+import SeoHandler from "@/components/SeoHandler";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
@@ -184,8 +185,8 @@ function Modal({ initialStyles, open, closeModal, activeData, activeTags, setAct
 export async function getServerSideProps({req, res}) {
   //res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=120');
 
-  const entries = await(await fetch(`http://127.0.0.1:3000/api/portfolio`)).json();
-  const tags = await(await fetch(`http://127.0.0.1:3000/api/portfolio/tags`)).json();
+  const entries = await(await fetch(`http://185.245.61.41:3100/api/portfolio`)).json();
+  const tags = await(await fetch(`http://185.245.61.41:3100/api/portfolio/tags`)).json();
 
   return {
     props: {
@@ -241,6 +242,14 @@ export default function Portfolio({ entries, tags }) {
 
   return (
     <Layout>
+      <SeoHandler 
+        title={"<code.spirit> | Portfolio"}
+        description={"A collection of all projects I've worked on and published."}
+        url={"https://codedotspirit.dev/portfolio"}
+        image={"/img/C.S%20White.svg"}
+        noindex
+        keywordsStr={"German Developer, Spirit, SpiritLetsPlays, C.S, CodedotSpirit, CodedotSpirit.dev, CodedotSpirit.com"}
+      />
       <div className="h-full w-[95%] mx-auto">
         <Header text={"My portfolio"} large sub={"A collection of all projects I've worked on and published."} />
         <div className="flex flex-row items-center flex-wrap">

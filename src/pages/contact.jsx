@@ -2,6 +2,7 @@ import Button from "@/components/Button";
 import Header from "@/components/Header";
 import { Discord, Envelope, GitHubLogo, LinkedIn, Twitter } from "@/components/Icons";
 import Layout from "@/components/Layout";
+import SeoHandler from "@/components/SeoHandler";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -88,8 +89,16 @@ function ContactForm() {
 export default function Contact() {
   return (
     <Layout>
+      <SeoHandler 
+        title={"<code.spirit> | Contact"}
+        description={"Want to get in touch? Feel free to contact me!"}
+        url={"https://codedotspirit.dev/contact"}
+        image={"/img/C.S%20White.svg"}
+        noindex
+        keywordsStr={"German Developer, Spirit, SpiritLetsPlays, C.S, CodedotSpirit, CodedotSpirit.dev, CodedotSpirit.com"}
+      />
       <div className="h-fit lg:h-[calc(100vh-8rem)] w-full 2xl:w-4/5 mx-auto flex flex-col lg:flex-row items-center justify-around">
-        <div className="w-full lg:w-1/2 lg:h-3/5 lg:px-12">
+        <div className="w-full lg:w-1/2 lg:min-h-3/5 lg:px-12">
           <Header text={"Let's get in touch!"} nonStretch sub={"Got any questions? Want to hire me for a project?<br />Either shoot me a message using the contact form or find me on social media:"} large className={"mb-8"} />
           <ul className="contact-list flex flex-row justify-between flex-wrap lg:justify-normal lg:flex-col">
             <li>

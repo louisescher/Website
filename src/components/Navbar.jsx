@@ -61,15 +61,15 @@ export default function Navbar() {
 
   // Show the navbar background and border when scrolled down
   useEffect(() => {
+    // Check window scroll position
     const handleScroll = () => {
-      // Check if the user has scrolled down in the html element
-      if(document.documentElement.scrollTop > 0) {
+      if(window.scrollY > 0) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
     }
-
+    
     document.addEventListener("scroll", handleScroll);
 
     return () => document.removeEventListener("scroll", handleScroll);

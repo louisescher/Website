@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
+import SeoHandler from "@/components/SeoHandler";
 import VSCodeClone from "@/components/VSCodeClone";
 import getCurrentAge from "@/utils/getCurrentAge";
 import Link from "next/link";

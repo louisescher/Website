@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import * as ProgrammingLangIcons from "@/components/ProgrammingIcons";
+import SeoHandler from "@/components/SeoHandler";
 import SkillCard from "@/components/SkillCard";
 import { useEffect, useState } from "react";
 
@@ -45,7 +46,7 @@ export default function Skills({ allSkills }) {
 
   return (
     <Layout>
-      <SeoHandler 
+      <SeoHandler
         title={"<code.spirit> | Skills"}
         description={"Programming languages and frameworks I am (somewhat) proficient in"}
         url={"https://codedotspirit.dev/skills"}

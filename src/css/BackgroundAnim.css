@@ -1,0 +1,31 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.landing-background-anim {
+  --size: 750px;
+  --speed: 50s;
+  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  top: 5%;
+  right: 15%;
+  filter: blur(calc(var(--size) / 5));
+  opacity: 0.5;
+  background-image: linear-gradient(var(--color-main), var(--color-accent));
+  animation: rotate var(--speed) var(--easing) alternate infinite;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+@media (min-width: 720px) {
+  .landing-background-anim {
+    --size: 750px;
+  }
+}

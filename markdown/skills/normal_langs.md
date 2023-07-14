@@ -1,2 +1,0 @@
-- German *(primary)*
-- English *(secondary)*

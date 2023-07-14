@@ -3,7 +3,7 @@
   width: fit-content;
 }
 
-.header-item:has(h1)::before, header.header-item:has(h1) h1::before, header.header-item:has(h1) h1::after {
+.header-item:has(h1)::before, div.header-item:has(h1) h1::before, div.header-item:has(h1) h1::after {
   content: "";
   border-radius: 10px;
   background: var(--color-main);
@@ -45,7 +45,7 @@
   color: rgb(var(--color-text));
 }
 
-.header-item__underline {
+.header_item_underline {
   content: "";
   position: absolute;
   left: 0;

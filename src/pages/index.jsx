@@ -234,11 +234,13 @@ export default function Home({ domain, name }) {
                     <Twitter className={"h-6 w-6 mx-auto"} />
                   </div>
                 </a>
-                <a href="https://www.linkedin.com/in/louis-escher-148603272/" className="diamond-container">
-                  <div>
-                    <LinkedInLogo className={"h-6 w-6 mx-auto"} />
-                  </div>
-                </a>
+                {domain === "louisescher.dev" && (
+                  <a href="https://www.linkedin.com/in/louis-escher-148603272/" className="diamond-container">
+                    <div>
+                      <LinkedInLogo className={"h-6 w-6 mx-auto"} />
+                    </div>
+                  </a>
+                )}
                 <a href="mailto:louis@codedotspirit.dev" className="diamond-container">
                   <div>
                     <Envelope className={"h-6 w-6 mx-auto"} />

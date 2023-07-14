@@ -1,5 +1,5 @@
-import '@/css/BackgroundAnim.css'
+import styles from '@/css/BackgroundAnim.module.css'
 
 export default function BackgroundAnim() {
-  return <div className='landing-background-anim' />;
+  return <div className={styles['landing-background-anim']} />;
 }

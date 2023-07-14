@@ -1,5 +1,5 @@
-import "@/css/ContactFormAnim.css"
+import styles from "@/css/ContactFormAnim.module.css"
 
 export default function ContactFormAnim() {
-  return <div className="contact-form-anim" />
+  return <div className={styles["contact-form-anim"]} />
 }

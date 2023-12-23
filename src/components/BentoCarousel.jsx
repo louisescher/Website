@@ -15,6 +15,7 @@ export default function BentoCarousel({ onClick, onClose, disableSwitching }) {
 
   useEffect(() => {
     setSlides([
+      { img: '/img/at_sign.svg', name: "PerformantAsciiEffect", content: <p>A modified version of the AsciiEffect from the <a className='highlighted' href="https://unpkg.com/browse/three@0.160.0/examples/jsm/effects/AsciiEffect.js">three.js examples</a>. This version is way more performant when using colors and also supports colors based on the brightness of pixels. Licensed under the MIT License, anyone is free to use and modify this effect to their liking. A demo is available <a className='highlighted' href="/portfolio/ascii-effect">here</a>.</p>},
       { img: '/img/valtracker-logo.webp', name: "VALTracker", content: <p>VALTracker is a statistics tracker for the video game <a className='highlighted' href="https://playvalorant.com">VALORANT</a> by Riot Games. It ships with features like a customizable Discord Rich Presence, which replaces the game's own implementation, a shop checker that enables the user to view their daily store without opening the game itself, and an inventory manager including presets. <br /> The desktop app was built using <a className='highlighted' href="https://github.com/saltyshiomix/nextron">Nextron</a>, a framework which combines NextJS and Electron. Additionally, VALTracker has a public API which provides developers with information about the game's collectable bundles. It is also the only public API providing the prices of these bundles.</p> },
     ]);
   }, []);

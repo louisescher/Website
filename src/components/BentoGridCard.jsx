@@ -18,12 +18,12 @@ export default function BentoGridCard({ item, animate, passRef, exceptionItem, d
   const [ animateText, setAnimateText ] = useState(false);
 
   const itemLookup = {
-    "javascript": { "name": "JavaScript", icon: <JavaScriptLogo />, classes: "highlightLeft highlightTop", stats: ["4+", "20+", "5"] },
-    "html_css": { "name": "HTML/CSS", icon: <HTMLLogo />, classes: "highlightCenter highlightTop", stats: ["4+", "15+", "3"] },
+    "javascript": { "name": "JavaScript", icon: <JavaScriptLogo />, classes: "highlightLeft highlightTop", stats: ["4+", "30+", "2"] },
+    "html_css": { "name": "HTML/CSS", icon: <HTMLLogo />, classes: "highlightCenter highlightTop", stats: ["4+", "15+", "0"] },
     "rust": { "name": "Rust", icon: <RustLangLogo />, classes: "highlightRight highlightTop", stats: ["<1", "0", "1"] },
     "php": { "name": "PHP", icon: <PhpLogo />, classes: "highlightLeft highlightBottom", stats: ["<1", "1", "0"] },
-    "nextjs": { "name": "NextJS", icon: <NextJSLogo />, classes: "highlightCenter highlightBottom", stats: ["2+", "10+", "3"] },
-    "sql": { "name": "SQL", icon: <SQLLogo />, classes: "highlightRight highlightBottom", stats: ["1", "4", "1"] },
+    "nextjs": { "name": "NextJS", icon: <NextJSLogo />, classes: "highlightCenter highlightBottom", stats: ["3+", "20+", "2"] },
+    "sql": { "name": "SQL", icon: <SQLLogo />, classes: "highlightRight highlightBottom", stats: ["1", "4", "0"] },
   };
 
   const stats = [

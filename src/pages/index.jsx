@@ -202,9 +202,9 @@ export default function Home({ domain, name }) {
               <div className={`bento-card anim-right ${showJobStatus && "animate"}`}>
                 <div className="flex flex-col">
                   <div className="h-[48px] flex w-full items-center">
-                    <div className="h-8 w-8 bg-yellow-400 rounded-full" />
+                    <div className="h-8 w-8 bg-red-400 rounded-full" />
                   </div>
-                  <p>busy but available</p>
+                  <p>unavilable</p>
                 </div>
               </div>
             </div>

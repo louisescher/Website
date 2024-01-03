@@ -1,0 +1,62 @@
+.nav__drawer {
+  width: 20vw;
+  position: fixed;
+  top: 0;
+  padding-top: 10vh;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  z-index: 100;
+}
+
+.nav__drawer__border {
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 10vh;
+  left: 0;
+}
+
+.nav__drawer__indicator {
+  height: 5px;
+  position: absolute;
+  top: calc(10vh - 2px);
+  left: 0;
+  background-color: var(--color-accent);
+  width: 25%;
+  transition: left 0.15s ease-in-out;
+}
+
+.nav__drawer__indicator.home {
+  left: 0;
+}
+
+.nav__drawer__indicator.about {
+  left: 25%;
+}
+
+.nav__drawer__indicator.projects {
+  left: 50%;
+}
+
+.nav__drawer__indicator.contact {
+  left: 75%;
+}
+
+.nav__drawer__item {
+  height: 2.25rem;
+  width: 25%;
+  padding-top: 3px;
+  cursor: pointer !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #bbbbbb;
+  transition: all 0.15s ease-in-out;
+}
+
+.nav__drawer__item.active, .nav__drawer__item:hover {
+  color: #fff;
+  background-color: #101010;
+}

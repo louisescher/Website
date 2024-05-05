@@ -1,0 +1,33 @@
+.contact-form-anim {
+  --size: 50px;
+  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+
+  width: var(--size);
+  height: var(--size);
+  filter: blur(calc(var(--size) / 5));
+  opacity: 0.5;
+  background-image: linear-gradient(var(--color-main), #000, var(--color-accent));
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  position: relative;
+}
+
+.contact-form-anim::after {
+  --size: 50px;
+  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+
+  content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  transform: translateX(-300%) translateY(50%);
+  filter: blur(calc(var(--size) / 5));
+  opacity: 0.3;
+  background: #fff;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+@media (min-width: 720px) {
+  .contact-form-anim {
+    --size: 750px;
+  }
+}

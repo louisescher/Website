@@ -1,0 +1,63 @@
+.header-item {
+  position: relative;
+  width: fit-content;
+}
+
+.header-item:has(h1)::before, div.header-item:has(h1) h1::before, div.header-item:has(h1) h1::after {
+  content: "";
+  border-radius: 10px;
+  background: var(--color-main);
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  bottom: -10px;
+}
+
+.header-item:has(h1)::before {
+  left: 0;
+}
+
+.header-item h1::before {
+  left: 16px;
+}
+
+.header-item h1::after {
+  background: var(--color-background);
+  border: 2px solid var(--color-main);
+  left: 32px;
+}
+
+.header-item:has(h1)::after {
+  content: "";
+  background: linear-gradient(to right, var(--color-main), var(--color-accent));
+  width: 60%;
+  height: 2px;
+  position: absolute;
+  bottom: -6px;
+  left: 48px;
+}
+
+.header-item:has(h2) {
+  padding-left: 0.5rem;
+}
+
+.header-item h2 {
+  color: rgb(var(--color-text));
+}
+
+.header_item_underline {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  width: 6rem;
+  height: 0.5rem;
+  background-color: var(--color-main);
+  z-index: -1;
+  box-shadow: 0 0 10px 0 var(--color-main);
+}
+
+.header-followup {
+  color: rgba(0,0,0,0);
+  -webkit-text-stroke: 1px rgb(var(--color-text));
+}
